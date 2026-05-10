@@ -38,7 +38,7 @@ public class GerenciadorBatalha {
         } else if (p instanceof Guerreiro) {
             p.setHabilidade(new HabilidadeDanoExtra(p, 35, 3));
         } else if (p instanceof Cacadora) {
-            p.setHabilidade(new HabilidadeCritico(p, 50, 4));
+            p.setHabilidade(new HabilidadeCritico(p, 20, 4));
         } else if (p instanceof Sabio) {
             p.setHabilidade(new HabilidadePoderMagico(p, 45, 3));
         } else if (p instanceof Arcanista) {
@@ -168,7 +168,7 @@ public class GerenciadorBatalha {
                 jogador.getPersonagem().addExperiencia(experienciaInimigo);
                 System.out.println("📚 +" + experienciaInimigo + " EXP por derrotar o inimigo!");
 
-                int bonus = estagio.getNumero() * 50;
+                int bonus = estagio.getNumero() * 10;
                 pontuacaoTotal += bonus;
                 System.out.println("🏆 Bônus de estágio: +" + bonus + " pontos!");
                 return true;
