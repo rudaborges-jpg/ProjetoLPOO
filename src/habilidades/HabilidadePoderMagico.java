@@ -46,10 +46,8 @@ public class HabilidadePoderMagico implements HabilidadeEspecial {
         int dano = danoBase + usuario.getAtaque();
         alvo.tomarDano(dano);
 
-        // Cura o usuário
         usuario.curar(30);
 
-        // Recupera mana se for Sábio
         if (usuario instanceof Sabio) {
             Sabio sabio = (Sabio) usuario;
             System.out.println("🔮 Mana recuperada!");
