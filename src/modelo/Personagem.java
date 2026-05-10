@@ -102,10 +102,6 @@ public abstract class Personagem {
     public abstract String getNomeHabilididade();
     public abstract String getDescricaoHabilidade();
 
-    public void reduzirCooldown() {
-        if (atualCooldown > 0) atualCooldown--;
-    }
-
     public void addExperiencia(int exp) {
         this.experiencia += exp;
         System.out.println("📚 " + nome + " ganhou " + exp + " de experiência!");
@@ -142,5 +138,9 @@ public abstract class Personagem {
     @Override
     public String toString() {
         return nome + " (Nv." + nivel + " - " + tipo.getNome() + ")";
+    }
+
+    public void reduzirCooldownHabilidade() {
+        if (atualCooldown > 0) atualCooldown--;
     }
 }
