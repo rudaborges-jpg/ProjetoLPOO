@@ -4213,209 +4213,209 @@ public class BancoPerguntas {
     }
 
     private void carregarArcanistaFacilLacuna() {
-        // MITOLOGIA (15 perguntas)
+        // MITOLOGIA (15 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na mitologia grega, o rei dos deuses é __________.",
-                "Zeus", "Mitologia", 1);
+                "Na mitologia grega, o deus mensageiro é __________.",
+                "Hermes", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O deus do mar na mitologia grega é __________.",
-                "Poseidon", "Mitologia", 1);
+                "A esposa de Zeus e deusa do casamento é __________.",
+                "Hera", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na mitologia nórdica, o deus que empunha o martelo Mjolnir é __________.",
-                "Thor", "Mitologia", 1);
+                "O deus nórdico que perdeu um olho em troca de sabedoria é __________.",
+                "Odin", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A deusa do amor e da beleza na mitologia romana é __________.",
-                "Vênus", "Mitologia", 1);
+                "A deusa egípcia da magia e esposa de Osíris é __________.",
+                "Ísis", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O deus do submundo na mitologia grega é __________.",
-                "Hades", "Mitologia", 1);
+                "O deus grego do vinho e do teatro é __________.",
+                "Dionísio", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na mitologia egípcia, o deus do sol é __________.",
-                "Rá", "Mitologia", 1);
+                "A criatura mitológica que renasce das cinzas é a __________.",
+                "fênix", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O herói grego que matou a Medusa foi __________.",
-                "Perseu", "Mitologia", 1);
+                "O titã grego que roubou o fogo para dar aos humanos foi __________.",
+                "Prometeu", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na mitologia nórdica, os heróis mortos em batalha vivem no __________.",
-                "Valhala", "Mitologia", 1);
+                "Na mitologia nórdica, o lobo gigante filho de Loki é __________.",
+                "Fenrir", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A deusa da sabedoria na mitologia grega é __________.",
-                "Atena", "Mitologia", 1);
+                "O deus grego da guerra é __________.",
+                "Ares", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A criatura mitológica com torso de homem e corpo de cavalo é o __________.",
-                "centauro", "Mitologia", 1);
+                "A morada dos deuses gregos no topo da montanha é o __________.",
+                "Olimpo", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O herói grego que voou perto demais do sol foi __________.",
-                "Ícaro", "Mitologia", 1);
+                "O deus nórdico da travessura e do caos é __________.",
+                "Loki", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na mitologia nórdica, o deus do trovão é __________.",
-                "Thor", "Mitologia", 1);
+                "A serpente marinha da mitologia nórdica que rodeia o mundo é __________.",
+                "Jörmungandr", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A deusa da caça na mitologia grega é __________.",
-                "Artemisa", "Mitologia", 1);
+                "O deus egípcio com cabeça de falcão é __________.",
+                "Hórus", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na mitologia egípcia, o deus dos mortos que reina no submundo é __________.",
-                "Osíris", "Mitologia", 1);
+                "O herói grego que matou a Hidra de Lerna foi __________.",
+                "Hércules", "Mitologia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O monstro grego com cabeça de touro e corpo de homem é o __________.",
-                "minotauro", "Mitologia", 1);
+                "Na mitologia grega, a deusa da vitória é __________.",
+                "Nice", "Mitologia", 1);
 
-        // MAGIA (10 perguntas)
+        // MAGIA (10 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O livro de magia é chamado de __________.",
-                "grimório", "Magia", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na série Harry Potter, a varinha de Harry tem pena da cauda da __________.",
-                "fênix", "Magia", 1);
+                "O instrumento usado para direcionar energia mágica é a __________.",
+                "varinha", "Magia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O círculo mágico serve para __________ e concentração de energia.",
-                "proteção", "Magia", 1);
+                "A palavra mágica mais famosa usada por ilusionistas é __________.",
+                "Abracadabra", "Magia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A prática de transformar metais em ouro é chamada de __________.",
-                "alquimia", "Magia", 1);
+                "O recipiente onde se preparam poções mágicas é o __________.",
+                "caldeirão", "Magia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A pedra lendária que transforma metais em ouro é a Pedra __________.",
-                "Filosofal", "Magia", 1);
+                "O feitiço de luz na série Harry Potter é __________.",
+                "Lumus", "Magia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O feitiço lançado em objetos é chamado de __________.",
-                "encantamento", "Magia", 1);
+                "A planta mágica que grita quando arrancada é a __________.",
+                "mandrágora", "Magia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A feiticeira da Ilha de Eéia que transformou homens em porcos foi __________.",
-                "Circe", "Magia", 1);
+                "O objeto mágico capaz de ver o futuro é a bola de __________.",
+                "cristal", "Magia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A arte de prever o futuro é chamada de __________.",
-                "adivinhação", "Magia", 1);
+                "O lendário mago conselheiro do Rei Artur foi __________.",
+                "Merlin", "Magia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A proteção contra energia negativa mais comum é o __________ grosso.",
-                "sal", "Magia", 1);
+                "A vassoura é tradicionalmente usada por __________ para voar.",
+                "bruxas", "Magia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O pentagrama representa os quatro elementos mais o __________.",
-                "espírito", "Magia", 1);
-
-        // ELEMENTOS (10 perguntas)
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Os quatro elementos clássicos da natureza são: fogo, água, terra e __________.",
-                "ar", "Elementos", 1);
+                "O animal associado às bruxas e à magia é o __________.",
+                "gato preto", "Magia", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O elemento associado ao calor e à transformação é o __________.",
-                "fogo", "Elementos", 1);
+                "A poção do amor em Harry Potter é chamada de __________.",
+                "Amortentia", "Magia", 1);
 
+        // ELEMENTOS (10 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O elemento associado às emoções e à intuição é a __________.",
-                "água", "Elementos", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O elemento associado à razão e à comunicação é o __________.",
-                "ar", "Elementos", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O elemento associado à estabilidade e ao físico é a __________.",
+                "O elemento associado à direção Norte na tradição ocidental é a __________.",
                 "terra", "Elementos", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O 'quinto elemento' em algumas tradições é o __________.",
-                "éter", "Elementos", 1);
+                "O elemento associado à direção Leste é o __________.",
+                "ar", "Elementos", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na alquimia, o princípio ativo/combustível (alma) é o __________.",
-                "enxofre", "Elementos", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na alquimia, o espírito volátil é representado pelo __________.",
-                "mercúrio", "Elementos", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na Wicca, o athame (adaga) representa o elemento __________.",
+                "O elemento associado à estação do verão é o __________.",
                 "fogo", "Elementos", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "Na Wicca, o cálice (taça) representa o elemento __________.",
+                "O elemento que representa fluidez e adaptabilidade é a __________.",
                 "água", "Elementos", 1);
 
-        // OCULTISMO (15 perguntas)
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O sistema de adivinhação com 78 cartas é o __________.",
-                "Tarô", "Ocultismo", 1);
+                "O símbolo alquímico do ar é um triângulo com um __________ horizontal.",
+                "traço", "Elementos", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O Tarô tradicional tem __________ arcanos maiores.",
-                "22", "Ocultismo", 1);
+                "O símbolo alquímico da água é um triângulo apontando para __________.",
+                "baixo", "Elementos", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A lei de causa e efeito é chamada de __________.",
-                "karma", "Ocultismo", 1);
+                "O símbolo alquímico da terra é um triângulo apontando para baixo com um __________.",
+                "traço", "Elementos", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O estudo da influência dos astros nos humanos é a __________.",
+                "O símbolo alquímico do fogo é um triângulo apontando para __________.",
+                "cima", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O elemento associado à cor vermelha nas tradições mágicas é o __________.",
+                "fogo", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O elemento associado à cor azul nas tradições mágicas é a __________.",
+                "água", "Elementos", 1);
+
+        // OCULTISMO (15 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O oráculo mais famoso da Grécia Antiga era o Oráculo de __________.",
+                "Delfos", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A carta do Tarô que representa o início de uma jornada é o __________.",
+                "Louco", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A ciência que estuda a influência dos astros é a __________.",
                 "astrologia", "Ocultismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O zodíaco tem __________ signos.",
-                "12", "Ocultismo", 1);
+                "O signo do zodíaco representado por um leão é __________.",
+                "Leão", "Ocultismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O objeto carregado com energia para um fim específico é o __________.",
-                "talismã", "Ocultismo", 1);
+                "O número considerado de azar em muitas culturas ocidentais é o __________.",
+                "13", "Ocultismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A pedra associada ao chakra coronário é a __________.",
-                "ametista", "Ocultismo", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A leitura das mãos é chamada de __________.",
-                "quiromancia", "Ocultismo", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O símbolo do infinito (oito deitado) é associado à magia do __________.",
-                "amor", "Ocultismo", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A religião pagã moderna é a __________.",
-                "Wicca", "Ocultismo", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O ano novo celta é chamado de __________.",
-                "Samhain", "Ocultismo", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O oráculo chinês baseado em 64 hexagramas é o __________.",
-                "I Ching", "Ocultismo", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "A leitura com bola de cristal é chamada de __________.",
-                "cristalomancia", "Ocultismo", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O campo energético ao redor dos seres vivos é chamado de __________.",
-                "aura", "Ocultismo", 1);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
-                "O amuleto contra o mau-olhado mais conhecido é o olho __________.",
+                "O amuleto em forma de olho azul é chamado de olho __________.",
                 "grego", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A energia vital universal na filosofia hindu é chamada de __________.",
+                "prana", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O primeiro signo do zodíaco é __________.",
+                "Áries", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A leitura da borra de café é chamada de __________.",
+                "cafeomancia", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O animal símbolo do signo de Escorpião é o __________.",
+                "escorpião", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A pedra preciosa associada ao mês de julho é o __________.",
+                "rubi", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O perfume natural usado para purificar ambientes é o __________.",
+                "incenso", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O dia da semana associado à lua é __________.",
+                "segunda-feira", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O símbolo da paz que também é um símbolo esotérico é o __________.",
+                "pentagrama", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A cor associada ao chakra do coração é o __________.",
+                "verde", "Ocultismo", 1);
     }
 
     // 25 questões de MÚLTIPLA ESCOLHA - MÉDIO
@@ -4562,109 +4562,109 @@ public class BancoPerguntas {
     }
 
     private void carregarArcanistaMedioLacuna() {
-        // MITOLOGIA (7 perguntas)
+        // MITOLOGIA (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O deus nórdico da guerra e da poesia é __________.",
-                "Odin", "Mitologia", 4);
+                "O deus grego que carregava o mundo nos ombros era __________.",
+                "Atlas", "Mitologia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O herói grego punido a rolar uma pedra montanha acima eternamente foi __________.",
-                "Sísifo", "Mitologia", 4);
+                "As três irmãs gregas que teciam o destino eram as __________.",
+                "Moiras", "Mitologia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "A criatura com corpo de leão, cabeça de mulher e asas de águia é a __________.",
-                "esfinge", "Mitologia", 4);
+                "O elmo da invisibilidade na mitologia grega pertencia a __________.",
+                "Hades", "Mitologia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "Na mitologia egípcia, Anúbis tem cabeça de __________.",
-                "chacal", "Mitologia", 4);
+                "Na mitologia nórdica, as guerreiras que levavam os mortos a Valhala eram as __________.",
+                "valquírias", "Mitologia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O herói grego que liderou os Argonautas foi __________.",
-                "Jasão", "Mitologia", 4);
+                "O deus grego do sono e irmão gêmeo da Morte é __________.",
+                "Hipnos", "Mitologia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O fim do mundo na mitologia nórdica é chamado de __________.",
-                "Ragnarök", "Mitologia", 4);
+                "A caixa que Pandora abriu continha todos os __________.",
+                "males", "Mitologia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "A deusa do amor na mitologia nórdica é __________.",
-                "Freya", "Mitologia", 4);
+                "O deus egípcio da escrita e sabedoria, com cabeça de íbis, é __________.",
+                "Toth", "Mitologia", 4);
 
-        // MAGIA (5 perguntas)
+        // MAGIA (5 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "A magia baseada em semelhança ou contato é chamada de magia __________.",
-                "simpática", "Magia", 4);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O mago e conselheiro da rainha Elizabeth I foi __________.",
-                "John Dee", "Magia", 4);
+                "A lei mágica que diz que 'semelhante atrai semelhante' é a lei da __________.",
+                "similaridade", "Magia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "Chamar um espírito para fora de si é chamado de __________.",
-                "evocação", "Magia", 4);
+                "O sistema de correspondências mágicas que associa planetas, metais e cores é a __________.",
+                "tábua de correspondências", "Magia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "Na Wicca, o 'Triplo Deusa' representa: Donzela, Mãe e __________.",
-                "Anciã", "Magia", 4);
+                "A tradição mágica que segue o princípio 'Não prejudiques, faze o que queres' é a __________.",
+                "Wicca", "Magia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O diário e livro de feitiços de um bruxo/wiccano é o Livro das __________.",
-                "Sombras", "Magia", 4);
-
-        // ELEMENTOS (5 perguntas)
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "Na tradição ocidental, o ponto cardeal do fogo é o __________.",
-                "Sul", "Elementos", 4);
+                "O grimório medieval atribuído ao Rei Salomão é a __________ de Salomão.",
+                "Chave", "Magia", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O elemento água corresponde à estação do __________.",
-                "outono", "Elementos", 4);
+                "A prática de criar talismãs com símbolos astrológicos é a magia __________.",
+                "talismânica", "Magia", 4);
+
+        // ELEMENTOS (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "Na roda do ano wiccana, o elemento fogo é celebrado no sabá de __________.",
+                "Beltane", "Elementos", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "A transformação espiritual do praticante na alquimia é chamada de alquimia __________.",
-                "interna", "Elementos", 4);
+                "O elemento chinês que representa o centro e a estabilidade é a __________.",
+                "terra", "Elementos", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O símbolo alquímico do enxofre é um triângulo com __________.",
-                "traço", "Elementos", 4);
+                "O sal na alquimia representa o princípio __________ (corpo).",
+                "fixo", "Elementos", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "No sistema dos 5 elementos chinês (Wu Xing), a ordem de geração é: Madeira → Fogo → Terra → Metal → __________.",
-                "Água", "Elementos", 4);
-
-        // OCULTISMO (8 perguntas)
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O alfabeto rúnico antigo (24 runas) é chamado de Elder __________.",
-                "Futhark", "Ocultismo", 4);
+                "O 'Dragão Verde' na alquimia chinesa representa o elemento __________.",
+                "madeira", "Elementos", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "A mistura de diferentes crenças religiosas é chamada de __________.",
-                "sincretismo", "Ocultismo", 4);
+                "A 'Águia Branca' na alquimia representa o princípio __________ (volátil).",
+                "mercúrio", "Elementos", 4);
+
+        // OCULTISMO (8 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A Árvore da Vida na Cabala tem __________ esferas (sefirot).",
+                "dez", "Ocultismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "A cor do chakra raiz (Muladhara) é o __________.",
-                "vermelho", "Ocultismo", 4);
+                "A prática de projetar a consciência para fora do corpo é chamada de __________ astral.",
+                "projeção", "Ocultismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "A comunicação com os mortos é chamada de __________.",
-                "necromancia", "Ocultismo", 4);
+                "O baralho cigano de adivinhação com 36 cartas é o __________.",
+                "Petit Lenormand", "Ocultismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "A planta associada à proteção contra energia negativa é a __________.",
-                "arruda", "Ocultismo", 4);
+                "A pedra que muda de cor conforme a luz e é usada em adivinhação é a __________.",
+                "opala", "Ocultismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "Remover energia negativa na magia é chamado de __________.",
-                "banimento", "Ocultismo", 4);
+                "O ritual wiccano que celebra a lua cheia é chamado de __________.",
+                "Esbat", "Ocultismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "O 'Olho da Providência' no dólar americano é um símbolo da __________.",
-                "Maçonaria", "Ocultismo", 4);
+                "O símbolo composto por três luas (crescente, cheia e minguante) representa a __________.",
+                "Deusa Tríplice", "Ocultismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
-                "A filosofia esotérica de Rudolf Steiner é a __________.",
-                "antroposofia", "Ocultismo", 4);
+                "A tradição esotérica judaica que estuda os mistérios da Torá é a __________.",
+                "Cabala", "Ocultismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O dia dos mortos na tradição celta, que originou o Halloween, é o __________.",
+                "Samhain", "Ocultismo", 4);
     }
 
     private void carregarArcanistaDificilMultiplaEscolha() {
@@ -4808,109 +4808,109 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.DIFICIL, "Eliphas Levi escreveu 'Dogma e Ritual da Alta Magia'.", true, "Ocultismo", 8);
     }
     private void carregarArcanistaDificilLacuna() {
-        // MITOLOGIA (7 perguntas)
+        // MITOLOGIA (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O deus egípcio do caos e da noite (serpente) é __________.",
-                "Apófis", "Mitologia", 8);
+                "O deus grego primordial que personificava o abismo antes da criação é __________.",
+                "Caos", "Mitologia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "Na mitologia grega, o titã que criou os humanos foi __________.",
-                "Prometeu", "Mitologia", 8);
+                "A cidade mítica submersa descrita por Platão é __________.",
+                "Atlântida", "Mitologia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O deus nórdico cego que matou Balder com um galho de visco foi __________.",
-                "Hödr", "Mitologia", 8);
+                "Na mitologia hindu, o preservador do universo que monta Garuda é __________.",
+                "Vishnu", "Mitologia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "Na mitologia hindu, o veículo (vahana) de Ganesha é o __________.",
-                "rato", "Mitologia", 8);
+                "O gigante de fogo que incendiará o mundo no Ragnarök é __________.",
+                "Surt", "Mitologia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "A deusa nórdica do submundo (Helheim) é __________.",
-                "Hel", "Mitologia", 8);
+                "A deusa japonesa da criação e da morte é __________.",
+                "Izanami", "Mitologia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O monstro grego com cabelos de serpente e olhar petrificante é a __________.",
-                "Medusa", "Mitologia", 8);
+                "O deus asteca da guerra e do sol é __________.",
+                "Huitzilopochtli", "Mitologia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "Na mitologia japonesa, a deusa do sol é __________.",
-                "Amaterasu", "Mitologia", 8);
+                "O rio do submundo grego que causa esquecimento é o __________.",
+                "Lete", "Mitologia", 8);
 
-        // MAGIA (5 perguntas)
+        // MAGIA (5 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "A evocação de demônios (parte do grimório Lemegeton) é chamada de __________.",
-                "goécia", "Magia", 8);
-
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O grimório 'A Chave de Salomão' (Clavicula Salomonis) é uma obra __________.",
-                "pseudoepígrafe", "Magia", 8);
+                "O sistema de magia cerimonial baseado na Árvore da Vida é a __________ Hermética.",
+                "Cabala", "Magia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "A magia divina/evocação de deuses é chamada de __________.",
-                "theurgia", "Magia", 8);
+                "A sociedade secreta que influenciou o ocultismo ocidental no século XIX foi a Ordem Hermética da __________.",
+                "Aurora Dourada", "Magia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "A magia enoquiana foi recebida por John Dee e __________.",
-                "Edward Kelley", "Magia", 8);
+                "O mago inglês que fundou a filosofia de Thelema foi __________.",
+                "Aleister Crowley", "Magia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O sistema ocidental de magia baseado na Árvore da Vida é a Cábala __________.",
-                "Hermética", "Magia", 8);
-
-        // ELEMENTOS (5 perguntas)
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "Na visão aristotélica, os elementos são movidos pelas qualidades: quente/frio e __________.",
-                "seco/úmido", "Elementos", 8);
+                "O alfabeto mágico recebido por John Dee e Edward Kelley é o alfabeto __________.",
+                "Enoquiano", "Magia", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O ser humano criado artificialmente na alquimia é chamado de __________.",
-                "homúnculo", "Elementos", 8);
+                "A obra 'Dogma e Ritual da Alta Magia' foi escrita por __________.",
+                "Eliphas Lévi", "Magia", 8);
+
+        // ELEMENTOS (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O conceito chinês de forças opostas e complementares é __________ e Yang.",
+                "Yin", "Elementos", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O elemento associado ao 'Mago' no Tarô (em alguns sistemas) é o __________.",
-                "ar", "Elementos", 8);
+                "A 'Obra em Negro' na alquimia representa o estágio de __________.",
+                "putrefação", "Elementos", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "A 'Quinta Essência' (quintessência) é o __________.",
-                "éter", "Elementos", 8);
+                "A 'Obra em Branco' na alquimia representa o estágio de __________.",
+                "purificação", "Elementos", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "No Wu Xing (cinco elementos chinês), a ordem de controle é: Madeira → Terra → Água → Fogo → __________.",
-                "Metal", "Elementos", 8);
-
-        // OCULTISMO (8 perguntas)
-        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O conhecimento espiritual direto no Gnosticismo é chamado de __________.",
-                "gnose", "Ocultismo", 8);
+                "A 'Obra em Vermelho' na alquimia representa o estágio final da __________.",
+                "transmutação", "Elementos", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O demônio da goécia nº 1 (rei do oriente) é __________.",
-                "Baal", "Ocultismo", 8);
+                "O elemento sutil que compõe o corpo energético segundo os vedas é o __________.",
+                "akasha", "Elementos", 8);
+
+        // OCULTISMO (8 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A esfera mais elevada da Árvore da Vida, que representa a coroa, é __________.",
+                "Kether", "Ocultismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O conceito de 'nada/vazio' no caminho espiritual (Ayin) vem da __________.",
-                "Cabala", "Ocultismo", 8);
+                "O livro central da Cabala, escrito em aramaico, é o __________.",
+                "Zohar", "Ocultismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "A Ordem Hermética da Aurora Dourada (Golden Dawn) foi fundada em __________.",
-                "1888", "Ocultismo", 8);
+                "A técnica de adivinhação que usa areia ou terra é a __________.",
+                "geomancia", "Ocultismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O livro 'O Livro da Lei' (Liber AL vel Legis) foi escrito por __________.",
-                "Aleister Crowley", "Ocultismo", 8);
+                "A palavra egípcia antiga para magia ou poder criador é __________.",
+                "heka", "Ocultismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "A filosofia de Crowley ('Faze o que tu queres') é chamada de __________.",
-                "Thelema", "Ocultismo", 8);
+                "O conceito hindu de centros energéticos no corpo são os __________.",
+                "chakras", "Ocultismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "O mantra associado ao chakra do coração (Anahata) é __________.",
-                "Yam", "Ocultismo", 8);
+                "A prática de comunicação com espíritos através de uma mesa é o __________ giratório.",
+                "copó", "Ocultismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
-                "A biblioteca espiritual/registro de todas as almas é chamada de Arquivos __________.",
-                "Akashicos", "Ocultismo", 8);
+                "O 'Livro dos Mortos' egípcio é na verdade o 'Livro para Sair à __________'.",
+                "Luz do Dia", "Ocultismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A pedra sagrada dos druidas usada na coroação de reis era a Pedra do __________.",
+                "Destino", "Ocultismo", 8);
     }
 
 
