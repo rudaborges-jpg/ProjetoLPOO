@@ -42,7 +42,7 @@ public class GerenciadorBatalha {
         } else if (p instanceof Sabio) {
             p.setHabilidade(new HabilidadePoderMagico(p, 45, 3));
         } else if (p instanceof Arcanista) {
-            p.setHabilidade(new HabilidadeDestruicaoTotal(p, 60, 5));
+            p.setHabilidade(new HabilidadeDestruicaoTotal(p, 40, 5));
         }
 
         if (p.getHabilidade() != null) {
@@ -295,7 +295,7 @@ public class GerenciadorBatalha {
 
         if (dano > 0) {
             System.out.println("\n💥 " + personagem.getNome() + " causa " + dano + " de dano com sua habilidade especial!");
-            inimigoAtual.tomarDano(dano);
+            // inimigoAtual.tomarDano(dano);
 
             int experienciaGanha = 10 + (estagio.getDificuldade() * 5);
             jogador.getPersonagem().addExperiencia(experienciaGanha);
