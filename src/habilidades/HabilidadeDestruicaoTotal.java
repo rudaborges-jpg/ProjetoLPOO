@@ -48,7 +48,7 @@ public class HabilidadeDestruicaoTotal implements HabilidadeEspecial {
         int dano = danoBase + (usuario.getAtaque() * 2);
 
         // Multiplicador aleatório para mais imprevisibilidade
-        double multiplicador = 0.8 + (random.nextDouble() * 1.2);
+        double multiplicador = 0.9 + (random.nextDouble() * 0.2);
         dano = (int)(dano * multiplicador);
 
         alvo.tomarDano(dano);
