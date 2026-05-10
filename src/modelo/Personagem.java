@@ -14,7 +14,6 @@ public abstract class Personagem {
     protected int spatkCooldown;
     protected int atualCooldown;
 
-    // NOVO PARA ENTREGA 2
     protected HabilidadeEspecial habilidade;
 
     public Personagem(PerTipo tipo, String nome, int vida, int ataque, int defesa) {
@@ -41,7 +40,6 @@ public abstract class Personagem {
     public int getExperiencia() { return experiencia; }
     public boolean taProntaHabilidade() { return atualCooldown == 0; }
 
-    // NOVOS GETTERS/SETTERS PARA HABILIDADE (Entrega 2)
     public void setHabilidade(HabilidadeEspecial habilidade) {
         this.habilidade = habilidade;
     }
@@ -58,11 +56,11 @@ public abstract class Personagem {
         return habilidade != null ? habilidade.getCooldownAtual() : 0;
     }
 
-    public void reduzirCooldownHabilidade() {
-        if (habilidade != null) {
-            habilidade.reduzirCooldown();
-        }
-    }
+   // public void reduzirCooldownHabilidade() {
+   //     if (habilidade != null) {
+   //         habilidade.reduzirCooldown();
+   //     }
+   // }
 
     public void resetarCooldownHabilidade() {
         if (habilidade != null) {
@@ -100,7 +98,6 @@ public abstract class Personagem {
 
     public boolean vivo() { return vida > 0; }
 
-    // Métodos abstratos originais (da Entrega 1)
     public abstract void usarHabilidadeEspecial(Personagem alvo);
     public abstract String getNomeHabilididade();
     public abstract String getDescricaoHabilidade();
@@ -122,7 +119,7 @@ public abstract class Personagem {
         nivel++;
         experiencia = 0;
         vidaMax += 20;
-        vida = vidaMax;
+       // vida = vidaMax;
         ataque += 5;
         defesa += 3;
         System.out.println("\n🎉 " + nome + " subiu para o NÍVEL " + nivel + "!");
