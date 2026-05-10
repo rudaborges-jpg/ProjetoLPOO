@@ -16,11 +16,11 @@ public class Game {
 
         System.out.println("\n📋 ESCOLHA SEU PERSONAGEM (CADA UM TEM SUA PRÓPRIA ROTA DE 10 ESTÁGIOS):");
         System.out.println("=".repeat(50));
-        System.out.println("1 🛡️ PALADINO - Rota: Caminho da Fé (perguntas de religião)");
-        System.out.println("2 🌿 CAÇADORA - Rota: Caminho da Natureza (perguntas de animais/natureza)");
+        System.out.println("1 🛡️ PALADINO - Rota: Caminho da Iluminação (perguntas de religião)");
+        System.out.println("2 🌿 CAÇADORA - Rota: Caminho da Predadora (perguntas de animais/natureza)");
         System.out.println("3 ⚔️ GUERREIRO - Rota: Caminho da Glória (perguntas de combate)");
         System.out.println("4 📚 SÁBIO - Rota: Caminho do Conhecimento (perguntas de ciência/arte)");
-        System.out.println("5 🔮 ARCANISTA - Rota: Caminho Arcano (perguntas de magia/mitologia)");
+        System.out.println("5 🔮 ARCANISTA - Rota: Caminho Místico (perguntas de magia/mitologia)");
         System.out.println("=".repeat(50));
 
         System.out.print("\nSua escolha (1-5): ");
