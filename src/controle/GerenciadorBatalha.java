@@ -80,7 +80,7 @@ public class GerenciadorBatalha {
 
     private void criarInimigoParaEstagio(Estagio estagio) {
         int vidaBase = 60 + (estagio.getNumero() * 10);
-        int ataqueBase = 10 + (estagio.getNumero() * 3);
+        int ataqueBase = 15 + (estagio.getNumero() * 5);
         String nome = "🗡️ Guardião do " + estagio.getNome() + " 🗡️";
         this.inimigoAtual = new Inimigo(nome, vidaBase, ataqueBase, estagio.getNumero());
     }
@@ -134,7 +134,7 @@ public class GerenciadorBatalha {
                 System.out.println("🏆 +" + pontos + " pontos! Total: " + pontuacaoTotal);
             } else {
                 System.out.println("\n❌ ERRADO! Resposta correta: " + pergunta.getRespostaCorreta());
-                int penalidade = dano / 2;
+                int penalidade = dano ;
                 jogador.tomarDano(penalidade);
                 System.out.println("⚠️ Você sofreu " + penalidade + " de dano!");
             }
