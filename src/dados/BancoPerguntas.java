@@ -38,12 +38,15 @@ public class BancoPerguntas {
     private void carregarPerguntasPaladino() {
         carregarPaladinoFacilMultiplaEscolha();
         carregarPaladinoFacilVerdadeiroFalso();
+        carregarPaladinoFacilLacuna();
 
         carregarPaladinoMedioMultiplaEscolha();
         carregarPaladinoMedioVerdadeiroFalso();
+        carregarPaladinoMedioLacuna();
 
         carregarPaladinoDificilMultiplaEscolha();
         carregarPaladinoDificilVerdadeiroFalso();
+        carregarPaladinoDificilLacuna();
     }
 
 
@@ -307,6 +310,211 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.FACIL, "O Mahabharata é um dos principais épicos do Hinduísmo.", true, "Hinduísmo", 1);
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.FACIL, "A deusa Lakshmi é a consorte de Brahma.", false, "Hinduísmo", 1);
     }
+    private void carregarPaladinoFacilLacuna() {
+        // CRISTIANISMO (15 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O livro sagrado do Cristianismo é a __________.",
+                "Bíblia", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O filho de Deus para os cristãos é __________.",
+                "Jesus Cristo", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "Jesus escolheu __________ apóstolos.",
+                "12", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O nome da mãe de Jesus é __________.",
+                "Maria", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "Jesus nasceu na cidade de __________.",
+                "Belém", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O primeiro livro da Bíblia é __________.",
+                "Gênesis", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O anjo que anunciou o nascimento de Jesus a Maria chamava-se __________.",
+                "Gabriel", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "Jesus foi crucificado no lugar chamado __________.",
+                "Calvário", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O apóstolo que negou Jesus três vezes foi __________.",
+                "Pedro", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O apóstolo que traiu Jesus por 30 moedas de prata foi __________.",
+                "Judas Iscariotes", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O rio onde Jesus foi batizado por João Batista é o rio __________.",
+                "Jordão", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O dia da semana em que os cristãos celebram a ressurreição de Jesus é o __________.",
+                "Domingo", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O livro da Bíblia que fala da criação do mundo é __________.",
+                "Gênesis", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O imperador romano que governava quando Jesus nasceu era __________.",
+                "Augusto", "Cristianismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O primeiro milagre de Jesus foi transformar água em __________ na cidade de Caná.",
+                "vinho", "Cristianismo", 1);
+
+        // RELIGIÕES AFRO-BRASILEIRAS (15 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A principal religião de matriz africana no Brasil é o __________.",
+                "Candomblé", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "As divindades do Candomblé são chamadas de __________.",
+                "Orixás", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A 'Mãe das Águas' é a Orixá chamada __________.",
+                "Iemanjá", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O Orixá associado aos raios, trovões e à justiça é __________.",
+                "Xangô", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "No sincretismo brasileiro, o Orixá Ogum é associado a São __________.",
+                "Jorge", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A religião sincrética brasileira que mistura elementos africanos, indígenas e espíritas é a __________.",
+                "Umbanda", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O Orixá da paz e da criação é __________.",
+                "Oxalá", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O Orixá caçador e senhor das matas é __________.",
+                "Oxóssi", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A Orixá dos ventos e tempestades é __________.",
+                "Iansã", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "Na Umbanda, os espíritos de escravizados idosos que transmitem sabedoria são chamados de __________.",
+                "Pretos-Velhos", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O instrumento musical de percussão usado nos terreiros é o __________.",
+                "atabaque", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A energia vital ou força divina no Candomblé é chamada de __________.",
+                "Axé", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O Orixá senhor das folhas e da sabedoria vegetal é __________.",
+                "Ossain", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O Orixá mensageiro, guardião dos caminhos, é __________.",
+                "Exu", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A Orixá das águas doces, fertilidade e amor é __________.",
+                "Oxum", "Afro-Brasileira", 1);
+
+        // BUDISMO (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O fundador do Budismo é __________.",
+                "Sidarta Gautama", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O estado de iluminação e libertação no Budismo é chamado de __________.",
+                "Nirvana", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O Budismo possui __________ Nobres Verdades.",
+                "4", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O caminho para a iluminação no Budismo é chamado de Caminho __________.",
+                "Óctuplo", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O princípio de que ações têm consequências no Budismo é o __________.",
+                "Karma", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A Roda do __________ é um símbolo importante do Budismo.",
+                "Dharma", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A prática de meditação sentada é chamada de __________.",
+                "Zazen", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O sofrimento ou insatisfação existencial no Budismo é chamado de __________.",
+                "Dukkha", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O ciclo de renascimentos no Budismo é chamado de __________.",
+                "Samsara", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O líder espiritual do Budismo Tibetano é o __________.",
+                "Dalai Lama", "Budismo", 1);
+
+        // HINDUÍSMO (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A Trindade principal do Hinduísmo (Trimurti) é composta por Brahma, Vishnu e __________.",
+                "Shiva", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O ciclo de renascimento no Hinduísmo é chamado de __________.",
+                "Samsara", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O deus com cabeça de elefante é __________.",
+                "Ganesha", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O princípio de causa e efeito no Hinduísmo é o __________.",
+                "Karma", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O livro sagrado mais antigo do Hinduísmo são os __________.",
+                "Vedas", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O deus preservador e protetor do universo é __________.",
+                "Vishnu", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O deus da destruição e transformação é __________.",
+                "Shiva", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A deusa do conhecimento, música e artes é __________.",
+                "Sarasvati", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A libertação do ciclo de renascimento é chamada de __________.",
+                "Moksha", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O famoso poema épico que conta a história do príncipe Rama é o __________.",
+                "Ramayana", "Hinduísmo", 1);
+    }
 
     private void carregarPaladinoMedioMultiplaEscolha() {
         adicionarPerguntaMultipla(PerTipo.PALADINO, Dificuldade.MEDIO,
@@ -440,6 +648,112 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.MEDIO, "A vaca é sagrada porque representa a generosidade da terra.", true, "Hinduísmo", 4);
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.MEDIO, "O Ganges é considerado um rio comum sem significado especial.", false, "Hinduísmo", 4);
     }
+    private void carregarPaladinoMedioLacuna() {
+        // CRISTIANISMO (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O Concílio de __________ (325 d.C.) definiu a divindade de Cristo.",
+                "Niceia", "Cristianismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "A heresia que negava a divindade de Cristo era o __________.",
+                "Arianismo", "Cristianismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O Cisma do Oriente (1054) dividiu a Igreja em Católica e __________.",
+                "Ortodoxa", "Cristianismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O livro da Bíblia que narra a saída do povo hebreu do Egito é o __________.",
+                "Êxodo", "Cristianismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O teólogo que escreveu 'A Cidade de Deus' foi Santo __________.",
+                "Agostinho", "Cristianismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O termo 'Cristo' significa __________ em grego.",
+                "Ungido", "Cristianismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O sacramento que significa 'ação de graças' e celebra o corpo e sangue de Cristo é a __________.",
+                "Eucaristia", "Cristianismo", 4);
+
+        // RELIGIÕES AFRO-BRASILEIRAS (8 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "No Candomblé, o rito de iniciação que envolve raspar a cabeça é chamado de __________.",
+                "feitura de santo", "Afro-Brasileira", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O 'jogo de __________' é usado no Candomblé para adivinhação.",
+                "búzios", "Afro-Brasileira", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "A Umbanda foi fundada oficialmente no início do século XX por __________.",
+                "Zélio Fernandino de Moraes", "Afro-Brasileira", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "A Orixá das lagoas, lama e morte (associada à velhice) é __________.",
+                "Nanã", "Afro-Brasileira", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O ritual de fortalecimento da cabeça no Candomblé é chamado de __________.",
+                "Bori", "Afro-Brasileira", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "A oferenda ou ritual funerário no Candomblé é chamado de __________.",
+                "Axexê", "Afro-Brasileira", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "No Candomblé Jeje, as divindades de origem fon (Daomé) são chamadas de __________.",
+                "Voduns", "Afro-Brasileira", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "Na Umbanda, os espíritos infantis são chamados de __________.",
+                "Erês", "Afro-Brasileira", 4);
+
+        // BUDISMO (6 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O 'Grande Veículo' do Budismo é a escola __________.",
+                "Mahayana", "Budismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O 'Veículo dos Anciãos' é a escola __________.",
+                "Theravada", "Budismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O princípio budista de compaixão amorosa é chamado de __________ (em páli).",
+                "Metta", "Budismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "A comunidade de monges budistas é chamada de __________.",
+                "Sangha", "Budismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "A tradição do 'Veículo do Diamante' é o __________.",
+                "Vajrayana", "Budismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O conceito de 'vazio' ou vacuidade no Budismo Mahayana é chamado de __________.",
+                "Sunyata", "Budismo", 4);
+
+        // HINDUÍSMO (4 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "Os textos filosóficos e místicos do Hinduísmo que complementam os Vedas são os __________.",
+                "Upanishads", "Hinduísmo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O avatar de Vishnu que ensina Arjuna no campo de batalha no Bhagavad Gita é __________.",
+                "Krishna", "Hinduísmo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O deus guerreiro filho de Shiva e Parvati é __________.",
+                "Karttikeya", "Hinduísmo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O sistema de estágios da vida no Hinduísmo (estudante, chefe de família, eremita, renunciante) é chamado de __________.",
+                "Ashramas", "Hinduísmo", 4);
+    }
+
 
     private void carregarPaladinoDificilMultiplaEscolha() {
         adicionarPerguntaMultipla(PerTipo.PALADINO, Dificuldade.DIFICIL,
@@ -572,6 +886,111 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.DIFICIL, "O 'Shiva Nataraja' representa Shiva como dançarino cósmico.", true, "Hinduísmo", 8);
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.DIFICIL, "A deusa Kali é consorte de Vishnu.", false, "Hinduísmo", 8);
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.DIFICIL, "O Manusmriti é um famoso código legal hindu.", true, "Hinduísmo", 8);
+    }
+    private void carregarPaladinoDificilLacuna() {
+        // CRISTIANISMO (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A heresia que afirmava que Jesus só parecia humano, mas não era, chamava-se __________.",
+                "Docetismo", "Cristianismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O teólogo que cunhou o termo 'Trindade' (Trinitas) em latim foi __________.",
+                "Tertuliano", "Cristianismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O período da filosofia dos Padres da Igreja é chamado de __________.",
+                "Patrística", "Cristianismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A doutrina da restauração universal de todos os seres é chamada de __________.",
+                "Apokatástasis", "Cristianismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O termo 'Filioque' (que significa 'e do Filho') causou o Grande Cisma entre a Igreja do Ocidente e a Igreja do __________.",
+                "Oriente", "Cristianismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O Concílio que definiu as duas naturezas de Cristo (humana e divina) foi o de __________.",
+                "Calcedônia", "Cristianismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O autor de 'Confissões' e 'A Trindade' foi Santo __________.",
+                "Agostinho", "Cristianismo", 8);
+
+        // RELIGIÕES AFRO-BRASILEIRAS (8 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "No Candomblé Bantu (Angola), os Orixás são chamados de __________ ou Minkisi.",
+                "Inquices", "Afro-Brasileira", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O Orixá do arco-íris e do movimento cíclico é __________.",
+                "Oxumarê", "Afro-Brasileira", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O 'batismo de santo' no Candomblé refere-se à entrega da cabeça ao __________.",
+                "Orixá", "Afro-Brasileira", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A entidade feminina da Umbanda que trabalha com Exu nas demandas amorosas é a __________.",
+                "Pombagira", "Afro-Brasileira", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O ritual conhecido como 'Padê de __________' é uma oferenda feita antes dos rituais para abrir os caminhos.",
+                "Exu", "Afro-Brasileira", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A tradição da Jurema Sagrada é uma prática espiritual __________ incorporada à Umbanda.",
+                "indígena", "Afro-Brasileira", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O 'ponto __________' na Umbanda é um símbolo energético desenhado no chão.",
+                "riscado", "Afro-Brasileira", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "Na Quimbanda (linha de esquerda da Umbanda), os trabalhos são realizados com __________.",
+                "Exus", "Afro-Brasileira", 8);
+
+        // BUDISMO (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O filósofo budista fundador da escola Madhyamaka (caminho do meio) foi __________.",
+                "Nagarjuna", "Budismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O ser que adia a própria iluminação para salvar todos os seres é o __________.",
+                "Bodhisattva", "Budismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A prática de 'dar e receber' (Tonglen) é característica do Budismo __________.",
+                "Tibetano", "Budismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O texto biográfico de Buda em versos sânscritos é o __________.",
+                "Buddhacarita", "Budismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A escola budista que enfatiza a 'consciência-armazenamento' (alaya-vijnana) é a __________.",
+                "Yogacara", "Budismo", 8);
+
+        // HINDUÍSMO (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "Os textos 'da floresta' destinados a eremitas são chamados de __________.",
+                "Aranyakas", "Hinduísmo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O Bhagavad Gita ensina três yogas: jnana (conhecimento), bhakti (devoção) e __________ (ação).",
+                "karma", "Hinduísmo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A representação de Shiva como o dançarino cósmico é chamada de Shiva __________.",
+                "Nataraja", "Hinduísmo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "O famoso código legal hindu escrito por um sábio lendário é o __________.",
+                "Manusmriti", "Hinduísmo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A escola filosófica hindu que prega a não dualidade (Advaita) foi sistematizada por __________.",
+                "Shankara", "Hinduísmo", 8);
     }
 
     // ==================== CAÇADORA - 200 PERGUNTAS ====================
@@ -2875,8 +3294,13 @@ public class BancoPerguntas {
         perguntasPorPersonagem.get(tipo).add(p);
         perguntasPorDificuldade.get(tipo).get(diff).add(p);
     }
-
-    // ==================== MÉTODOS PÚBLICOS ====================
+    private void adicionarPerguntaLacuna(PerTipo tipo, Dificuldade diff, String texto,
+                                         String respostaCorreta, String categoria, int estagioMinimo) {
+        Pergunta p = new PerguntaCompletarLacuna(proximoId++, texto, respostaCorreta,
+                diff, tipo, categoria, estagioMinimo);
+        perguntasPorPersonagem.get(tipo).add(p);
+        perguntasPorDificuldade.get(tipo).get(diff).add(p);
+    }
 
     public List<Pergunta> getPerguntasParaPersonagem(PerTipo tipo) {
         return new ArrayList<>(perguntasPorPersonagem.get(tipo));

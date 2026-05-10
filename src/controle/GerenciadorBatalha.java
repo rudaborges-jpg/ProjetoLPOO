@@ -16,7 +16,6 @@ public class GerenciadorBatalha {
     private int rodadaAtual;
     private int pontuacaoTotal;
     private Scanner scanner;
-    private boolean habilidadeUsadaEstaRodada;
     private Random random;
 
     public GerenciadorBatalha(Jogador jogador, BancoPerguntas bancoPerguntas) {
@@ -27,7 +26,6 @@ public class GerenciadorBatalha {
         this.pontuacaoTotal = 0;
         this.scanner = new Scanner(System.in);
         this.random = new Random();
-        this.habilidadeUsadaEstaRodada = false;
 
         // INICIAR HABILIDADES DOS PERSONAGENS (Entrega 2)
         inicializarHabilidades();
@@ -49,10 +47,12 @@ public class GerenciadorBatalha {
             p.setHabilidade(new HabilidadeDestruicaoTotal(p, 60, 5));
         }
 
-        System.out.println("\n🌟 " + p.getNome() + " possui a habilidade: " +
-                p.getHabilidade().getNome());
-        System.out.println("   " + p.getHabilidade().getDescricao());
-        System.out.println("   ⏱️ Cooldown: " + p.getHabilidade().getCooldown() + " rodadas");
+        if (p.getHabilidade() != null) {
+            System.out.println("\n🌟 " + p.getNome() + " possui a habilidade: " +
+                    p.getHabilidade().getNome());
+            System.out.println("   " + p.getHabilidade().getDescricao());
+            System.out.println("   ⏱️ Cooldown: " + p.getHabilidade().getCooldown() + " rodadas");
+        }
     }
 
     public void iniciarRota() {
@@ -97,7 +97,7 @@ public class GerenciadorBatalha {
 
             if (estagioIndex < rotaAtual.getTotalEstagios()) {
                 jogador.getPersonagem().curar(30);
-                // Resetar cooldown de habilidades ao passar de fase?
+                // Resetar cooldown de habilidades ao passar de fase
                 jogador.getPersonagem().resetarCooldownHabilidade();
                 System.out.println("\n✨ Você avança para o próximo estágio! +30 de vida! ✨");
                 System.out.print("\nPressione ENTER para continuar...");
@@ -118,10 +118,8 @@ public class GerenciadorBatalha {
         this.inimigoAtual = new Inimigo(nome, vidaBase, ataqueBase, estagio.getNumero());
     }
 
-    // ==================== ENTREGA 2: BATALHA COM HABILIDADES ====================
+    // ==================== BATALHA COM HABILIDADES ====================
     private boolean realizarBatalha(Estagio estagio) {
-        habilidadeUsadaEstaRodada = false;
-
         while (jogador.vivo() && inimigoAtual.vivo()) {
             rodadaAtual++;
             System.out.println("\n" + "=".repeat(60));
@@ -146,31 +144,28 @@ public class GerenciadorBatalha {
             }
 
             // ==================== MENU DE AÇÃO (Entrega 2) ====================
-            int escolha = mostrarMenuAcao(personagem);
-
-            boolean combateRealizado = false;
+            int escolha = mostrarMenuAcao();
 
             switch (escolha) {
                 case 1:
                     // Responder pergunta (ataque normal)
-                    combateRealizado = realizarRodadaPergunta(estagio);
+                    realizarRodadaPergunta(estagio);
                     break;
                 case 2:
                     // Usar habilidade especial
                     if (personagem.getHabilidade() != null && personagem.isHabilidadePronta()) {
-                        combateRealizado = realizarRodadaHabilidade(estagio);
-                        habilidadeUsadaEstaRodada = true;
+                        realizarRodadaHabilidade(estagio);
                     } else if (personagem.getHabilidade() == null) {
                         System.out.println("\n❌ Seu personagem não possui habilidade especial!");
-                        combateRealizado = realizarRodadaPergunta(estagio);
+                        realizarRodadaPergunta(estagio);
                     } else {
                         System.out.println("\n⏳ Habilidade ainda em cooldown! Usando ataque normal.");
-                        combateRealizado = realizarRodadaPergunta(estagio);
+                        realizarRodadaPergunta(estagio);
                     }
                     break;
                 default:
                     System.out.println("\n❌ Opção inválida! Usando ataque normal.");
-                    combateRealizado = realizarRodadaPergunta(estagio);
+                    realizarRodadaPergunta(estagio);
             }
 
             // Reduzir cooldown da habilidade no final da rodada
@@ -190,11 +185,13 @@ public class GerenciadorBatalha {
                 return false;
             }
         }
-        return inimigoAtual.vivo() ? false : true;
+        return false;
     }
 
-    // ==================== ENTREGA 2: MENU DE AÇÃO ====================
-    private int mostrarMenuAcao(Personagem personagem) {
+    // ==================== MENU DE AÇÃO ====================
+    private int mostrarMenuAcao() {
+        Personagem personagem = jogador.getPersonagem();
+
         System.out.println("\n📋 O QUE VOCÊ DESEJA FAZER?");
         System.out.println("=".repeat(40));
         System.out.println("1 🗡️ Responder Pergunta (Ataque Normal)");
@@ -215,7 +212,7 @@ public class GerenciadorBatalha {
     }
 
     // ==================== RODADA COM PERGUNTA (ATAQUE NORMAL) ====================
-    private boolean realizarRodadaPergunta(Estagio estagio) {
+    private void realizarRodadaPergunta(Estagio estagio) {
         // Determinar dificuldade baseada no estágio
         Dificuldade dificuldade;
         if (estagio.getDificuldade() <= 3) {
@@ -262,17 +259,15 @@ public class GerenciadorBatalha {
             System.out.println("\n❌ ERRADO!");
             System.out.println("Resposta correta: " + pergunta.getRespostaCorreta());
 
-            // Dano do inimigo baseado no ataque dele (Entrega 2 - mais justo)
+            // Dano do inimigo baseado no ataque dele
             int danoInimigo = calcularDanoInimigo();
             jogador.tomarDano(danoInimigo);
             System.out.println("⚠️ " + inimigoAtual.getNome() + " contra-ataca causando " + danoInimigo + " de dano!");
         }
-
-        return true;
     }
 
-    // ==================== ENTREGA 2: RODADA COM HABILIDADE ====================
-    private boolean realizarRodadaHabilidade(Estagio estagio) {
+    // ==================== RODADA COM HABILIDADE ====================
+    private void realizarRodadaHabilidade(Estagio estagio) {
         Personagem personagem = jogador.getPersonagem();
 
         System.out.println("\n🌟 USANDO HABILIDADE ESPECIAL! 🌟");
@@ -285,7 +280,8 @@ public class GerenciadorBatalha {
 
         if (!confirmacao.equals("S")) {
             System.out.println("\n❌ Uso cancelado! Voltando ao combate normal.");
-            return realizarRodadaPergunta(estagio);
+            realizarRodadaPergunta(estagio);
+            return;
         }
 
         // Executar habilidade
@@ -301,26 +297,23 @@ public class GerenciadorBatalha {
             jogador.addPontuacao(bonusHabilidade);
             System.out.println("🏆 Bônus por usar habilidade: +" + bonusHabilidade + " pontos!");
         }
-
-        return true;
     }
 
-    // ==================== ENTREGA 2: NOVO CÁLCULO DE DANO DO INIMIGO ====================
+    // ==================== CÁLCULO DE DANO DO INIMIGO ====================
     private int calcularDanoInimigo() {
         int danoBase = inimigoAtual.getAtaque();
 
         // Multiplicador baseado no estágio
         int multiplicador = (estagioIndex + 1);
 
-        // Chefão causa mais dano
-        if (inimigoAtual.getNome().contains("CHEFÃO") || rotaAtual.getEstagios().get(estagioIndex).ehChefao()) {
+        // Chefão causa mais dano (verifica pelo estágio atual)
+        if (rotaAtual.getEstagios().get(estagioIndex).ehChefao()) {
             multiplicador *= 2;
         }
 
         int dano = danoBase + (multiplicador * 2);
 
-        // Variação aleatória (±20%)
-        Random random = new Random();
+        // Variação aleatória (±20%) - usando o random da classe
         double variacao = 0.8 + (random.nextDouble() * 0.4);
         dano = (int)(dano * variacao);
 
