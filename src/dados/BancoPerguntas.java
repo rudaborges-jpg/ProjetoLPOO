@@ -4914,14 +4914,18 @@ public class BancoPerguntas {
     }
 
 
-    private void adicionarPerguntaMultipla(PerTipo tipo, Dificuldade diff, String texto,
-                                           List<String> opcoes, String letraCorreta,
-                                           String categoria, int estagioMinimo) {
+
+    private void adicionarPerguntaMultipla(PerTipo tipo, Dificuldade diff,
+                                       String texto, List<String> opcoes,
+                                       String letraCorreta, String categoria, int estagioMinimo) {
         Pergunta p = new PerguntaMultiplaEscolha(proximoId++, texto, opcoes, letraCorreta,
                 diff, tipo, categoria, estagioMinimo);
         perguntasPorPersonagem.get(tipo).add(p);
         perguntasPorDificuldade.get(tipo).get(diff).add(p);
     }
+
+
+
 
     private void adicionarPerguntaVF(PerTipo tipo, Dificuldade diff, String texto,
                                      boolean resposta, String categoria, int estagioMinimo) {
@@ -4930,13 +4934,15 @@ public class BancoPerguntas {
         perguntasPorPersonagem.get(tipo).add(p);
         perguntasPorDificuldade.get(tipo).get(diff).add(p);
     }
-    private void adicionarPerguntaLacuna(PerTipo tipo, Dificuldade diff, String texto,
-                                         String respostaCorreta, String categoria, int estagioMinimo) {
-        Pergunta p = new PerguntaCompletarLacuna(proximoId++, texto, respostaCorreta,
-                diff, tipo, categoria, estagioMinimo);
-        perguntasPorPersonagem.get(tipo).add(p);
-        perguntasPorDificuldade.get(tipo).get(diff).add(p);
-    }
+        private void adicionarPerguntaLacuna(PerTipo tipo, Dificuldade diff, String texto,
+                                     String respostaCorreta, String categoria, int estagioMinimo) {
+            // Usa o estagioMaximo da dificuldade
+            int estagioMaximo = diff.getEstagioMaximo();
+            Pergunta p = new PerguntaCompletarLacuna(proximoId++, texto, respostaCorreta,
+            diff, tipo, categoria, estagioMinimo, estagioMaximo);
+            perguntasPorPersonagem.get(tipo).add(p);
+            perguntasPorDificuldade.get(tipo).get(diff).add(p);
+}
 
     public List<Pergunta> getPerguntasParaPersonagem(PerTipo tipo) {
         return new ArrayList<>(perguntasPorPersonagem.get(tipo));
@@ -4952,15 +4958,29 @@ public class BancoPerguntas {
         return adequadas.get(random.nextInt(adequadas.size()));
     }
 
-    public Pergunta getPerguntaAleatoriaPorDificuldade(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
-        List<Pergunta> perguntas = perguntasPorDificuldade.get(tipo).get(dificuldade);
-        List<Pergunta> adequadas = perguntas.stream()
-                .filter(p -> p.getEstagioMinimo() <= estagioNumero)
-                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+public Pergunta getPerguntaAleatoriaPorDificuldade(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
+    List<Pergunta> perguntas = perguntasPorDificuldade.get(tipo).get(dificuldade);
 
-        if (adequadas.isEmpty()) return null;
-        return adequadas.get(random.nextInt(adequadas.size()));
+    if (perguntas == null || perguntas.isEmpty()) {
+        return null;
     }
+
+    // Filtra perguntas adequadas para o estágio (agora respeita min e max)
+    List<Pergunta> adequadas = new ArrayList<>();
+    for (Pergunta p : perguntas) {
+        if (p.isAdequadaParaEstagio(estagioNumero)) {
+            adequadas.add(p);
+        }
+    }
+
+    if (adequadas.isEmpty()) {
+        return null;
+    }
+
+    // ⭐ Embaralha para maior aleatoriedade
+    Collections.shuffle(adequadas, random);
+    return adequadas.get(0);
+}
 
     public int getTotalPerguntas() {
         return perguntasPorPersonagem.values().stream().mapToInt(List::size).sum();

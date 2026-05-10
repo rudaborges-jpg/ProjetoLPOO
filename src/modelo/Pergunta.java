@@ -64,11 +64,14 @@ public abstract class Pergunta {
     public int getEstagioMaximo() { return estagioMaximo; }
 
     public boolean isAdequadaParaEstagio(int estagioNumero) {
+        // Verifica estágio mínimo
         if (estagioNumero < estagioMinimo) return false;
+
+        // Verifica estágio máximo (se não for -1)
         if (estagioMaximo != -1 && estagioNumero > estagioMaximo) return false;
+
         return true;
     }
-
     public abstract void exibir();
     public abstract List<String> getOpcoes();
 }

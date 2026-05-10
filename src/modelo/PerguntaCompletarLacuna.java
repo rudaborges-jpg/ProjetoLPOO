@@ -5,17 +5,29 @@ import java.util.List;
 public class PerguntaCompletarLacuna extends Pergunta {
     private String dica;
 
+    // Construtor completo com estagioMaximo (sem dica)
     public PerguntaCompletarLacuna(int id, String texto, String respostaCorreta,
                                    Dificuldade dificuldade, PerTipo tipoPersonagem,
-                                   String categoria, int estagioMinimo) {
-        super(id, texto, respostaCorreta, dificuldade, tipoPersonagem, categoria, estagioMinimo);
+                                   String categoria, int estagioMinimo, int estagioMaximo) {
+        super(id, texto, respostaCorreta, dificuldade, tipoPersonagem, categoria,
+                estagioMinimo, estagioMaximo);
         this.dica = null;
     }
 
-    public PerguntaCompletarLacuna(int id, String texto, String respostaCorreta, String dica,
+    // Construtor simplificado (usa estagioMaximo = -1)
+    public PerguntaCompletarLacuna(int id, String texto, String respostaCorreta,
                                    Dificuldade dificuldade, PerTipo tipoPersonagem,
                                    String categoria, int estagioMinimo) {
-        super(id, texto, respostaCorreta, dificuldade, tipoPersonagem, categoria, estagioMinimo);
+        this(id, texto, respostaCorreta, dificuldade, tipoPersonagem,
+                categoria, estagioMinimo, -1);
+    }
+
+    // Construtor com dica
+    public PerguntaCompletarLacuna(int id, String texto, String respostaCorreta, String dica,
+                                   Dificuldade dificuldade, PerTipo tipoPersonagem,
+                                   String categoria, int estagioMinimo, int estagioMaximo) {
+        super(id, texto, respostaCorreta, dificuldade, tipoPersonagem, categoria,
+                estagioMinimo, estagioMaximo);
         this.dica = dica;
     }
 
@@ -31,7 +43,7 @@ public class PerguntaCompletarLacuna extends Pergunta {
 
     @Override
     public List<String> getOpcoes() {
-        return null; // Não tem opções para escolher
+        return null;
     }
 
     public String getDica() {

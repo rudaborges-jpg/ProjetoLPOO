@@ -1,6 +1,7 @@
 package controle;
 
 import modelo.*;
+import java.text.Normalizer;
 
 public class AvaliadorRespostas {
 
@@ -10,12 +11,10 @@ public class AvaliadorRespostas {
         }
 
         if (pergunta instanceof PerguntaCompletarLacuna) {
-            String respostaNormalizada = resposta.trim().toLowerCase();
-            String corretaNormalizada = pergunta.getRespostaCorreta().trim().toLowerCase();
-
-            return respostaNormalizada.equals(corretaNormalizada);
+            String respostaNormalizada = normalizarTexto(resposta);
+            String corretaNormalizada = normalizarTexto(pergunta.getRespostaCorreta());
+            return respostaNormalizada.equalsIgnoreCase(corretaNormalizada);
         }
-
 
         String respostaUpper = resposta.trim().toUpperCase();
 
@@ -30,6 +29,21 @@ public class AvaliadorRespostas {
         }
 
         return respostaUpper.equals(pergunta.getRespostaCorreta().toUpperCase());
+    }
+
+    private static String normalizarTexto(String texto) {
+        if (texto == null) return "";
+
+        String semAcentos = Normalizer.normalize(texto, Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "");
+
+        String minusculas = semAcentos.toLowerCase();
+
+        String trimmed = minusculas.trim();
+
+        // String semPontuacao = trimmed.replaceAll("[.,!?;:]", "");
+
+        return trimmed;
     }
 
     public static String getRespostaCorretaFormatada(Pergunta pergunta) {
