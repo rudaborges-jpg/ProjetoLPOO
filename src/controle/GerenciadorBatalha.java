@@ -94,7 +94,7 @@ public class GerenciadorBatalha {
 
             if (estagioIndex < rotaAtual.getTotalEstagios()) {
                 jogador.getPersonagem().curar(30);
-                jogador.getPersonagem().resetarCooldownHabilidade();
+               // jogador.getPersonagem().resetarCooldownHabilidade();
                 System.out.println("\n✨ Você avança para o próximo estágio! +30 de vida! ✨");
                 System.out.print("\nPressione ENTER para continuar...");
                 scanner.nextLine();
@@ -148,15 +148,15 @@ public class GerenciadorBatalha {
                         realizarRodadaHabilidade(estagio);
                     } else if (personagem.getHabilidade() == null) {
                         System.out.println("\n❌ Seu personagem não possui habilidade especial!");
+                        System.out.println("   Voltando ao ataque normal...");
                         realizarRodadaPergunta(estagio);
                     } else {
-                        System.out.println("\n⏳ Habilidade ainda em cooldown! Usando ataque normal.");
+                        System.out.println("\n⏳ Habilidade ainda em cooldown! " +
+                                "Aguarde " + personagem.getCooldownAtual() + " rodadas.");
+                        System.out.println("   Voltando ao ataque normal...");
                         realizarRodadaPergunta(estagio);
                     }
                     break;
-                default:
-                    System.out.println("\n❌ Opção inválida! Usando ataque normal.");
-                    realizarRodadaPergunta(estagio);
             }
 
             personagem.reduzirCooldownHabilidade();
@@ -201,24 +201,37 @@ public class GerenciadorBatalha {
 
     private int mostrarMenuAcao() {
         Personagem personagem = jogador.getPersonagem();
+        int escolha = -1;
 
-        System.out.println("\n📋 O QUE VOCÊ DESEJA FAZER?");
-        System.out.println("=".repeat(40));
-        System.out.println("1 🗡️ Responder Pergunta (Ataque Normal)");
+        while (escolha != 1 && escolha != 2) {
+            System.out.println("\n📋 O QUE VOCÊ DESEJA FAZER?");
+            System.out.println("=".repeat(40));
+            System.out.println("1 🗡️ Responder Pergunta (Ataque Normal)");
 
-        if (personagem.getHabilidade() != null) {
-            String status = personagem.isHabilidadePronta() ? "✅ PRONTA" : "⏳ COOLDOWN";
-            System.out.println("2 🌟 Usar Habilidade Especial - " +
-                    personagem.getHabilidade().getNome() + " [" + status + "]");
-        } else {
-            System.out.println("2 ❌ Sem habilidade especial");
+            if (personagem.getHabilidade() != null) {
+                String status = personagem.isHabilidadePronta() ? "✅ PRONTA" : "⏳ COOLDOWN";
+                System.out.println("2 🌟 Usar Habilidade Especial - " +
+                        personagem.getHabilidade().getNome() + " [" + status + "]");
+            } else {
+                System.out.println("2 ❌ Sem habilidade especial");
+            }
+            System.out.println("=".repeat(40));
+            System.out.print("Sua escolha (1 ou 2): ");
+
+            try {
+                escolha = scanner.nextInt();
+                scanner.nextLine();
+
+                if (escolha != 1 && escolha != 2) {
+                    System.out.println("\n❌ Opção inválida! Digite 1 ou 2.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\n❌ Entrada inválida! Digite um número (1 ou 2).");
+                scanner.nextLine();
+                escolha = -1;
+            }
         }
-        System.out.println("=".repeat(40));
-        System.out.print("Sua escolha: ");
-
-        int escolha = scanner.nextInt();
-        scanner.nextLine();
-        return escolha;
+        return escolha;  // ⭐ IMPORTANTE: faltava este return!
     }
 
     private void realizarRodadaPergunta(Estagio estagio) {
@@ -257,7 +270,7 @@ public class GerenciadorBatalha {
             System.out.println("\n✅ CORRETO!");
             inimigoAtual.tomarDano(dano);
 
-            int experienciaGanha =  (estagio.getDificuldade() * 5);
+            int experienciaGanha = (estagio.getDificuldade() * 5);
             jogador.getPersonagem().addExperiencia(experienciaGanha);
             System.out.println("📚 +" + experienciaGanha + " de experiência!");
 
@@ -295,7 +308,6 @@ public class GerenciadorBatalha {
 
         if (dano > 0) {
             System.out.println("\n💥 " + personagem.getNome() + " causa " + dano + " de dano com sua habilidade especial!");
-            // inimigoAtual.tomarDano(dano);
 
             int experienciaGanha = 10 + (estagio.getDificuldade() * 5);
             jogador.getPersonagem().addExperiencia(experienciaGanha);

@@ -5,21 +5,21 @@ public class Estagio {
     private String nome;
     private int dificuldade;
     private Inimigo chefao;
-    public Estagio(int numero, String nome, int dificuldade ) {
+
+    // ⭐ CONSTRUTOR PARA ESTÁGIO NORMAL (3 parâmetros) - SEM VÍRGULA EXTRA
+    public Estagio(int numero, String nome, int dificuldade) {
         this.numero = numero;
         this.nome = nome;
         this.dificuldade = dificuldade;
         this.chefao = null;
     }
 
-    public Estagio(int numero, String nome, int dificuldade, int i, Inimigo chefao) {
+    // ⭐ CONSTRUTOR PARA CHEFÃO (4 parâmetros)
+    public Estagio(int numero, String nome, int dificuldade, Inimigo chefao) {
         this.numero = numero;
         this.nome = nome;
         this.dificuldade = dificuldade;
         this.chefao = chefao;
-    }
-
-    public Estagio(int numero, String tronoCelestial, int dificuldade, int i) {
     }
 
     public int getNumero() { return numero; }
@@ -35,7 +35,6 @@ public class Estagio {
         } else {
             System.out.println("🌟 ESTÁGIO " + numero + ": " + nome + " 🌟");
         }
-        System.out.println("=".repeat(60));
         System.out.println("📊 Dificuldade: " + dificuldade + "/10");
         System.out.println("=".repeat(60));
     }
