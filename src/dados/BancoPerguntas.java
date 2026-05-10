@@ -1996,7 +1996,6 @@ public class BancoPerguntas {
 
     // 50 questões de MÚLTIPLA ESCOLHA - FÁCIL
     private void carregarGuerreiroFacilMultiplaEscolha() {
-        // COMBATE E ARTES MARCIAIS (15 perguntas)
         adicionarPerguntaMultipla(PerTipo.GUERREIRO, Dificuldade.FACIL,
                 "Qual dessas é uma arte marcial japonesa?",
                 Arrays.asList("Kung Fu", "Taekwondo", "Judô", "Muay Thai"), "C", "Combate", 1);
@@ -2264,208 +2263,208 @@ public class BancoPerguntas {
     }
 
     private void carregarGuerreiroFacilLacuna() {
-        // COMBATE E ARTES MARCIAIS (15 perguntas)
+        // COMBATE E ARTES MARCIAIS (15 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A arte marcial japonesa que significa 'caminho suave' é o __________.",
-                "Judô", "Combate", 1);
+                "O equipamento que protege as mãos no Boxe são as __________.",
+                "luvas", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A arma tradicionalmente usada por samurais é a __________.",
-                "Katana", "Combate", 1);
+                "A arte marcial chinesa que imita movimentos de animais é o __________.",
+                "Kung Fu", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O país berço do Taekwondo é a __________.",
-                "Coreia do Sul", "Combate", 1);
+                "O local onde se praticam lutas é chamado de __________.",
+                "ringue", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A luta conhecida como 'a arte suave' originária do Japão é o __________.",
-                "Jiu-Jitsu", "Combate", 1);
+                "A faixa que os judocas usam na cintura é chamada de __________.",
+                "obi", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "No Boxe, o golpe desferido com a mão da frente em linha reta é o __________.",
-                "Jab", "Combate", 1);
+                "O golpe do Boxe desferido de baixo para cima é o __________.",
+                "upper", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A arte marcial tailandesa conhecida como 'arte das oito armas' é o __________.",
-                "Muay Thai", "Combate", 1);
+                "A saudação inicial no Caratê é feita com uma __________.",
+                "reverência", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O golpe do Boxe desferido com a mão traseira em movimento semicircular é o __________.",
-                "Gancho", "Combate", 1);
+                "A vestimenta tradicional das artes marciais japonesas é o __________.",
+                "kimono", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O Caratê se originou na ilha japonesa de __________.",
-                "Okinawa", "Combate", 1);
+                "O protetor bucal usado em esportes de combate é chamado de __________.",
+                "protetor bucal", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A técnica de finalização que hiperextende o cotovelo no Jiu-Jitsu é a __________ de braço.",
-                "chave", "Combate", 1);
+                "A arte marcial brasileira que mistura luta, dança e música é a __________.",
+                "Capoeira", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O capacete é equipamento de proteção obrigatório no Boxe __________.",
-                "olímpico", "Combate", 1);
+                "O instrutor de artes marciais japonesas é chamado de __________.",
+                "Sensei", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O fundador do Judô foi __________.",
-                "Jigoro Kano", "Combate", 1);
+                "A arte marcial coreana que enfatiza chutes altos é o __________.",
+                "Taekwondo", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A palavra 'Caratê' significa __________ vazias.",
-                "mãos", "Combate", 1);
+                "O golpe do Caratê que usa a lateral da mão é chamado de __________.",
+                "Shuto", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "No MMA, as luvas são __________.",
-                "abertas", "Combate", 1);
+                "A especialidade do Jiu-Jitsu brasileiro é a luta no __________.",
+                "chão", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A armadura de placas surgiu na Idade __________.",
-                "Média", "Combate", 1);
+                "Os praticantes de Boxe são chamados de __________.",
+                "pugilistas", "Combate", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O 'cinturão preto' no Jiu-Jitsu é precedido pelo cinturão __________.",
-                "marrom", "Combate", 1);
+                "A arte marcial que significa 'caminho das mãos vazias' é o __________.",
+                "Caratê", "Combate", 1);
 
-        // ESTRATÉGIA MILITAR (10 perguntas)
+        // ESTRATÉGIA MILITAR (10 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A manobra de cercar o inimigo por todos os lados é chamada de __________.",
-                "cerco", "Estratégia", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "Atacar o inimigo pelos lados é chamado de __________.",
-                "flanquear", "Estratégia", 1);
+                "O oficial que comanda um exército é o __________.",
+                "general", "Estratégia", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O combate em valas escavadas é chamado de guerra de __________.",
-                "trincheiras", "Estratégia", 1);
+                "A ação de atacar o inimigo durante a noite é chamada de ataque __________.",
+                "noturno", "Estratégia", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O ataque surpresa ao inimigo é chamado de __________.",
-                "emboscada", "Estratégia", 1);
+                "A tática de destruir tudo que possa ser útil ao inimigo é a terra __________.",
+                "arrasada", "Estratégia", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A estratégia alemã de 'guerra relâmpago' é chamada de __________.",
-                "Blitzkrieg", "Estratégia", 1);
+                "O soldado que vigia o acampamento durante a noite é o __________.",
+                "sentinela", "Estratégia", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A unidade militar de aproximadamente 30-40 soldados é o __________.",
-                "pelotão", "Estratégia", 1);
+                "A posição elevada que oferece vantagem tática é chamada de __________.",
+                "terreno alto", "Estratégia", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O planejamento de suprimentos e movimentação de tropas é a __________ militar.",
-                "logística", "Estratégia", 1);
+                "A tropa que se move a pé é chamada de __________.",
+                "infantaria", "Estratégia", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O recuo planejado para obter vantagem futura é chamado de retirada __________.",
-                "estratégica", "Estratégia", 1);
+                "A tropa que se move a cavalo é a __________.",
+                "cavalaria", "Estratégia", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O soldado que coleta informações sobre o inimigo é o __________.",
-                "batedor", "Estratégia", 1);
+                "O muro improvisado para proteção no campo de batalha é a __________.",
+                "barricada", "Estratégia", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "As armas de longo alcance como canhões e obuses são chamadas de __________.",
-                "artilharia", "Estratégia", 1);
-
-        // HISTÓRIA DE GUERRAS (25 perguntas)
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A guerra entre Esparta e Atenas foi a Guerra do __________.",
-                "Peloponeso", "História", 1);
+                "O disparo simultâneo de várias armas de fogo é chamado de __________.",
+                "salva", "Estratégia", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O general cartaginês que cruzou os Alpes com elefantes foi __________.",
-                "Aníbal", "História", 1);
+                "O toque de corneta que ordena o despertar das tropas é a __________.",
+                "alvorada", "Estratégia", 1);
 
+        // HISTÓRIA DE GUERRAS (25 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A maior batalha de Alexandre, o Grande, foi a Batalha de __________.",
-                "Gaugamela", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O líder inglês na Batalha de Hastings (1066) foi Guilherme, o __________.",
-                "Conquistador", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "As Cruzadas foram guerras entre cristãos e __________.",
-                "muçulmanos", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A heroína francesa que liderou exércitos na Guerra dos Cem Anos foi __________.",
-                "Joana d'Arc", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O imperador mongol que criou um dos maiores impérios da história foi __________.",
-                "Gengis Khan", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A causa imediata da Primeira Guerra Mundial foi o assassinato de Francisco __________.",
-                "Ferdinando", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A Segunda Guerra Mundial terminou no ano de __________.",
-                "1945", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O 'Dia D' (6 de junho de 1944) foi o desembarque na __________.",
-                "Normandia", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A primeira cidade a receber a bomba atômica foi __________.",
-                "Hiroshima", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A Guerra do __________ durou de 1955 a 1975 e envolveu EUA e Vietnã.",
-                "Vietnã", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O conflito ideológico entre EUA e URSS sem confronto direto foi a Guerra __________.",
-                "Fria", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A guerra entre Argentina e Reino Unido em 1982 foi a Guerra das __________.",
-                "Malvinas", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O imperador e general francês derrotado em Waterloo foi __________.",
-                "Napoleão Bonaparte", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O general americano que comandou as forças aliadas na Segunda Guerra foi __________.",
-                "Eisenhower", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O filósofo e estrategista militar chinês que escreveu 'A Arte da Guerra' foi __________.",
-                "Sun Tzu", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O líder brasileiro que lutou na Guerra do Paraguai foi o Duque de __________.",
-                "Caxias", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A 'Dama de Ferro' que liderou a Inglaterra na Guerra das Malvinas foi __________.",
-                "Margaret Thatcher", "História", 1);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A Batalha de __________ foi uma vitória naval grega sobre os persas.",
+                "A batalha naval em que os gregos derrotaram os persas foi a Batalha de __________.",
                 "Salamina", "História", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "O Tratado de __________ (1919) impôs duras condições à Alemanha.",
-                "Versalhes", "História", 1);
+                "O herói grego que matou o Minotauro foi __________.",
+                "Teseu", "História", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A maior batalha da Segunda Guerra em número de baixas foi a de __________.",
-                "Stalingrado", "História", 1);
+                "O guerreiro grego invulnerável exceto por seu calcanhar era __________.",
+                "Aquiles", "História", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A 'Operação Barbarossa' foi a invasão alemã da __________.",
-                "URSS", "História", 1);
+                "A rainha egípcia que se aliou a Júlio César foi __________.",
+                "Cleópatra", "História", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A Força Expedicionária Brasileira (FEB) lutou na __________.",
-                "Itália", "História", 1);
+                "O líder huno conhecido como 'Flagelo de Deus' foi __________.",
+                "Átila", "História", 1);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
-                "A guerra entre Israel e países árabes em 1967 foi a Guerra dos __________ Dias.",
-                "Seis", "História", 1);
+                "A batalha em que Guilherme conquistou a Inglaterra (1066) foi a Batalha de __________.",
+                "Hastings", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O monge guerreiro que defendeu a França na Guerra dos Cem Anos foi __________.",
+                "Joana d'Arc", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O inventor da pólvora, segundo a tradição, foi __________.",
+                "os chineses", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A revolução que derrubou a monarquia francesa foi a Revolução __________.",
+                "Francesa", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O general francês que se tornou imperador da França foi __________.",
+                "Napoleão", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A batalha que marcou a derrota final de Napoleão foi __________.",
+                "Waterloo", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O presidente americano que liderou o Norte na Guerra Civil foi __________.",
+                "Abraham Lincoln", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A guerra que unificou a Alemanha em 1871 foi a Guerra __________.",
+                "Franco-Prussiana", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O arquiduque cujo assassinato iniciou a Primeira Guerra foi __________.",
+                "Francisco Ferdinando", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A trincheira mais famosa da Primeira Guerra foi a Linha __________.",
+                "Maginot", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O líder soviético que derrotou os alemães em Stalingrado foi __________.",
+                "Stálin", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A batalha aérea entre Alemanha e Inglaterra em 1940 foi a Batalha da __________.",
+                "Inglaterra", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O ataque japonês que levou os EUA à Segunda Guerra foi em __________.",
+                "Pearl Harbor", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A cidade japonesa destruída pela segunda bomba atômica foi __________.",
+                "Nagasaki", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O muro que dividiu Berlim durante a Guerra Fria foi o Muro de __________.",
+                "Berlim", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O conflito entre Coreia do Norte e Coreia do Sul foi a Guerra da __________.",
+                "Coreia", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A guerra entre Irã e Iraque (1980-1988) foi a Guerra __________.",
+                "Irã-Iraque", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O líder iraquiano durante a Guerra do Golfo foi __________.",
+                "Saddam Hussein", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O militar brasileiro que foi patrono do Exército é o Duque de __________.",
+                "Caxias", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A força militar brasileira que lutou na Itália na Segunda Guerra foi a __________.",
+                "FEB", "História", 1);
     }
 
     private void carregarGuerreiroMedioMultiplaEscolha() {
@@ -2607,108 +2606,108 @@ public class BancoPerguntas {
     }
 
     private void carregarGuerreiroMedioLacuna() {
-        // COMBATE E ARTES MARCIAIS (7 perguntas)
+        // COMBATE E ARTES MARCIAIS (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A sequência de movimentos simulando combate no Caratê é chamada de __________.",
-                "Kata", "Combate", 4);
+                "A faixa vermelha no Jiu-Jitsu representa o grau de __________ dan.",
+                "nono", "Combate", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O ponto máximo (vitória) no Judô é chamado de __________.",
-                "Ippon", "Combate", 4);
+                "O estilo de Caratê fundado por Gichin Funakoshi é o __________.",
+                "Shotokan", "Combate", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A posição superior sentado no peito do oponente no Jiu-Jitsu é chamada de __________.",
-                "montada", "Combate", 4);
+                "A finalização que ataca o joelho no Jiu-Jitsu é a chave de __________.",
+                "perna", "Combate", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A arte marcial israelense de defesa pessoal é o __________.",
+                "O sistema de defesa pessoal usado pelas Forças de Defesa de Israel é o __________.",
                 "Krav Maga", "Combate", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A técnica de projeção 'grande ceifa externa' no Judô é chamada de __________.",
-                "Osoto Gari", "Combate", 4);
+                "A postura defensiva no Boxe com a mão dianteira baixa é chamada de guarda __________.",
+                "baixa", "Combate", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O chute circular no Caratê é chamado de __________.",
-                "Mawashi Geri", "Combate", 4);
+                "O fundador do Aikidô foi __________.",
+                "Morihei Ueshiba", "Combate", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O lutador canhoto no Boxe é chamado de __________.",
-                "Southpaw", "Combate", 4);
+                "O chute frontal poderoso no Muay Thai é chamado de __________.",
+                "teep", "Combate", 4);
 
-        // ESTRATÉGIA MILITAR (7 perguntas)
+        // ESTRATÉGIA MILITAR (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O conflito entre forças com capacidades muito diferentes é chamado de guerra __________.",
-                "assimétrica", "Estratégia", 4);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A área capturada em território inimigo para avançar é chamada de cabeça de __________.",
-                "ponte", "Estratégia", 4);
+                "A formação defensiva com escudos sobrepostos dos romanos era a __________.",
+                "tartaruga", "Estratégia", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A estratégia de desgastar o inimigo é chamada de guerra de __________.",
+                "O ataque coordenado por terra, mar e ar é chamado de operação __________.",
+                "conjunta", "Estratégia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A estratégia de manter o inimigo sem recursos é a guerra de __________.",
                 "atrito", "Estratégia", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O princípio da __________ é fundamental na estratégia militar para pegar o inimigo desprevenido.",
-                "surpresa", "Estratégia", 4);
+                "O bombardeio intenso antes de um ataque terrestre é chamado de fogo de __________.",
+                "preparação", "Estratégia", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A doutrina de Destruição Mútua Assegurada na Guerra Fria é conhecida pela sigla __________.",
-                "MAD", "Estratégia", 4);
+                "A falsa informação plantada para enganar o inimigo é chamada de __________.",
+                "desinformação", "Estratégia", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "Ataques a sistemas de computador e redes em conflitos é chamado de guerra __________.",
-                "cibernética", "Estratégia", 4);
+                "A manobra de atacar o inimigo por trás é chamada de ataque pela __________.",
+                "retaguarda", "Estratégia", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O ciclo de tomada de decisão em combate (Observe, Orient, Decide, Act) é o loop __________.",
-                "OODA", "Estratégia", 4);
+                "O princípio de concentrar forças no ponto decisivo é chamado de __________ de força.",
+                "concentração", "Estratégia", 4);
 
-        // HISTÓRIA DE GUERRAS (11 perguntas)
+        // HISTÓRIA DE GUERRAS (11 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A Batalha de __________ (216 a.C.) foi a vitória de Aníbal cercando o exército romano.",
-                "Cannae", "História", 4);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O livro 'Da Guerra' (Vom Kriege) foi escrito por __________.",
-                "Clausewitz", "História", 4);
+                "A falange era a formação de combate dos __________.",
+                "gregos", "História", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A mais longa guerra da história (cerca de 781 anos) foi a __________.",
-                "Reconquista Espanhola", "História", 4);
+                "A guerra entre Roma e Cartago foi chamada de Guerras __________.",
+                "Púnicas", "História", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O cerco de Júlio César a Vercingetórix foi a Batalha de __________.",
-                "Alesia", "História", 4);
+                "O líder cartaginês que usou elefantes nos Alpes foi __________.",
+                "Aníbal", "História", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A maior invasão anfíbia da história foi o Dia D na __________.",
-                "Normandia", "História", 4);
+                "A guerra civil inglesa do século XV foi a Guerra das __________.",
+                "Rosas", "História", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O plano alemão para guerra em duas frentes era o Plano __________.",
+                "A batalha naval em que Nelson derrotou Napoleão foi __________.",
+                "Trafalgar", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O plano alemão de invadir a França pela Bélgica era o Plano __________.",
                 "Schlieffen", "História", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "O comandante da 'Operação Overlord' foi o general __________.",
-                "Eisenhower", "História", 4);
+                "O dia da invasão aliada na Normandia é chamado de __________.",
+                "Dia D", "História", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A Batalha de __________ foi a maior batalha de tanques da história.",
-                "Kursk", "História", 4);
+                "A operação alemã para invadir a URSS foi a Operação __________.",
+                "Barbarossa", "História", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "Os indígenas que usaram sua língua como código na Segunda Guerra foram os __________.",
-                "Code Talkers", "História", 4);
+                "O marechal brasileiro que comandou a FEB foi __________.",
+                "Mascarenhas de Morais", "História", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A Conferência que dividiu a Europa pós-guerra foi a de __________.",
-                "Ialta", "História", 4);
+                "A guerra entre Israel e países árabes em 1973 foi a Guerra do __________.",
+                "Yom Kippur", "História", 4);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
-                "A Batalha do __________ foi a última grande ofensiva alemã na Segunda Guerra.",
-                "Bulge", "História", 4);
+                "O general alemão conhecido como 'Raposa do Deserto' foi __________.",
+                "Erwin Rommel", "História", 4);
     }
 
     private void carregarGuerreiroDificilMultiplaEscolha() {
@@ -2850,108 +2849,108 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.GUERREIRO, Dificuldade.DIFICIL, "O 'Japão' ainda mantém um exército proibido pela constituição.", true, "História", 8);
     }
     private void carregarGuerreiroDificilLacuna() {
-        // COMBATE E ARTES MARCIAIS (7 perguntas)
+        // COMBATE E ARTES MARCIAIS (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A arte dos pontos de pressão no Caratê é chamada de __________.",
-                "Kyusho", "Combate", 8);
+                "A técnica de controle da respiração no Caratê é chamada de __________.",
+                "Kokyu", "Combate", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O estrangulamento que comprime as artérias carótidas (sem comprimir a traqueia) é o rear-naked __________.",
-                "choke", "Combate", 8);
+                "O golpe de cotovelo descendente no Muay Thai é chamado de __________.",
+                "sok ti", "Combate", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A capoeira é considerada patrimônio cultural __________.",
-                "brasileiro", "Combate", 8);
+                "A posição de montada nas costas no Jiu-Jitsu é chamada de __________.",
+                "back mount", "Combate", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O 'kimura' é uma chave de __________ no Jiu-Jitsu.",
-                "ombro", "Combate", 8);
+                "O kata mais antigo do Caratê Shotokan é o __________.",
+                "Heian Shodan", "Combate", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O grito de energia no Caratê é chamado de __________.",
-                "Kiai", "Combate", 8);
+                "A finalização que comprime o pescoço com as pernas é o __________.",
+                "triângulo", "Combate", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A 'chave de calcanhar' é geralmente __________ para faixas baixas no Jiu-Jitsu.",
-                "proibida", "Combate", 8);
+                "O termo japonês para 'caminho' nas artes marciais é __________.",
+                "Dô", "Combate", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O 'guarda __________' no Jiu-Jitsu é quando o lutador de baixo envolve o oponente com as pernas.",
-                "fechada", "Combate", 8);
+                "A defesa contra agarramento no Jiu-Jitsu quando se está por baixo é chamada de __________.",
+                "guarda", "Combate", 8);
 
-        // ESTRATÉGIA MILITAR (6 perguntas)
+        // ESTRATÉGIA MILITAR (6 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A combinação de guerra convencional, irregular e cibernética é chamada de guerra __________.",
-                "híbrida", "Estratégia", 8);
-
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O ponto mais forte do inimigo (fonte de força) na estratégia de Clausewitz é o centro de __________.",
-                "gravidade", "Estratégia", 8);
+                "A estratégia chinesa de evitar combate direto e usar táticas indiretas vem de __________.",
+                "Sun Tzu", "Estratégia", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A estratégia que busca atacar os pontos fracos do inimigo em vez dos fortes é a manobra __________.",
-                "indireta", "Estratégia", 8);
+                "O conceito de 'centro de gravidade' na estratégia foi desenvolvido por __________.",
+                "Clausewitz", "Estratégia", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "Ataque atribuído falsamente a outro grupo para justificar uma invasão é uma operação de bandeira __________.",
-                "falsa", "Estratégia", 8);
+                "A tática de ataque em ondas sucessivas é chamada de ataque em __________.",
+                "escalões", "Estratégia", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A tática de distração onde se simula um ataque para desviar a atenção é chamada de __________.",
-                "diversão", "Estratégia", 8);
+                "O princípio de manter uma força reserva para momentos decisivos é a __________.",
+                "reserva estratégica", "Estratégia", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "Forças especiais geralmente operam em unidades __________.",
-                "pequenas", "Estratégia", 8);
-
-        // HISTÓRIA DE GUERRAS (12 perguntas)
-        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A doutrina que negava a humanidade de Jesus (apenas parecia humano) era o __________.",
-                "Docetismo", "História", 8);
+                "A operação militar que usa forças especiais atrás das linhas inimigas é chamada de operação __________.",
+                "de profundidade", "Estratégia", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O teólogo que cunhou o termo 'Trindade' em latim foi __________.",
-                "Tertuliano", "História", 8);
+                "O uso de drones armados em combate é parte da guerra __________.",
+                "assimétrica", "Estratégia", 8);
+
+        // HISTÓRIA DE GUERRAS (12 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A batalha onde Alexandre derrotou Dario III foi __________.",
+                "Gaugamela", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A heresia que afirmava que Cristo tinha uma única natureza divina era o __________.",
-                "Monofisismo", "História", 8);
+                "O cerco de Júlio César a Vercingetórix foi a Batalha de __________.",
+                "Alésia", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O Concílio que definiu as duas naturezas de Cristo foi o de __________.",
-                "Calcedônia", "História", 8);
+                "A batalha que deteve o avanço otomano na Europa foi a Batalha de __________.",
+                "Viena", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O líder da Reforma Protestante que foi excomungado pela Igreja Católica foi __________.",
-                "Martinho Lutero", "História", 8);
+                "O massacre que marcou a Guerra do Vietnã foi o Massacre de __________.",
+                "My Lai", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A rainha da Inglaterra que derrotou a Invencível Armada espanhola foi __________.",
-                "Elizabeth I", "História", 8);
+                "A guerra entre Etiópia e Somália em 1977 foi a Guerra de __________.",
+                "Ogaden", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O líder da Revolução Russa de 1917 que tirou a Rússia da Primeira Guerra foi __________.",
-                "Lênin", "História", 8);
+                "O general soviético que defendeu Stalingrado foi __________.",
+                "Júkov", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O primeiro-ministro britânico que disse 'sangue, suor e lágrimas' na Segunda Guerra foi __________.",
-                "Winston Churchill", "História", 8);
+                "A batalha de tanques decisiva na Segunda Guerra foi __________.",
+                "Kursk", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O general alemão conhecido como 'Raposa do Deserto' foi __________.",
-                "Rommel", "História", 8);
+                "O tratado que encerrou a Primeira Guerra Mundial foi o Tratado de __________.",
+                "Versalhes", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A batalha naval que destruiu o poder naval de Napoleão foi a Batalha de __________.",
-                "Trafalgar", "História", 8);
+                "A guerra civil espanhola foi um prelúdio para a __________ Guerra Mundial.",
+                "Segunda", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "A guerra civil inglesa entre York e Lancaster foi a Guerra das __________.",
-                "Rosas", "História", 8);
+                "O código indígena usado pelos EUA na Segunda Guerra foi dos índios __________.",
+                "Navajos", "História", 8);
 
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
-                "O líder militar brasileiro que comandou a FEB na Itália foi o Marechal __________.",
-                "Mascarenhas de Morais", "História", 8);
+                "A conferência que dividiu a Europa pós-guerra entre aliados foi a Conferência de __________.",
+                "Yalta", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A guerra de independência da Argélia foi contra a __________.",
+                "França", "História", 8);
     }
 
 
@@ -3230,210 +3229,210 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "A eletricidade pode ser gerada por energia solar.", true, "Física", 1);
     }
     private void carregarSabioFacilLacuna() {
-        // FILOSOFIA (10 perguntas)
+        // FILOSOFIA (10 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O filósofo que disse 'Penso, logo existo' foi __________.",
-                "Descartes", "Filosofia", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O filósofo grego que foi mestre de Alexandre, o Grande, foi __________.",
-                "Aristóteles", "Filosofia", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A palavra 'Filosofia' significa amor à __________.",
-                "sabedoria", "Filosofia", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O filósofo que escreveu 'A República' foi __________.",
-                "Platão", "Filosofia", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O 'pai da filosofia ocidental' que foi condenado à morte bebendo cicuta foi __________.",
+                "O filósofo que disse 'Só sei que nada sei' foi __________.",
                 "Sócrates", "Filosofia", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A corrente filosófica que acredita que o conhecimento vem da experiência é o __________.",
-                "empirismo", "Filosofia", 1);
+                "A alegoria da __________ foi escrita por Platão.",
+                "Caverna", "Filosofia", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O filósofo que escreveu 'O Príncipe' sobre política e poder foi __________.",
-                "Maquiavel", "Filosofia", 1);
+                "O filósofo que escreveu 'Leviatã' foi __________.",
+                "Thomas Hobbes", "Filosofia", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O filósofo alemão que disse 'Deus está morto' foi __________.",
-                "Nietzsche", "Filosofia", 1);
+                "A frase 'O homem é a medida de todas as coisas' é do sofista __________.",
+                "Protágoras", "Filosofia", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O método de debate e busca da verdade em Platão é chamado de __________.",
-                "dialética", "Filosofia", 1);
+                "O filósofo pré-socrático que disse que 'tudo flui' foi __________.",
+                "Heráclito", "Filosofia", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A escola filosófica que pregava a indiferença à dor e ao prazer era o __________.",
-                "estoicismo", "Filosofia", 1);
-
-        // CIÊNCIA (10 perguntas)
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O planeta conhecido como 'Estrela D'Alva' é __________.",
-                "Vênus", "Ciência", 1);
+                "A ética baseada na maior felicidade possível é o __________.",
+                "Utilitarismo", "Filosofia", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O cientista que propôs a teoria da evolução por seleção natural foi __________.",
-                "Darwin", "Ciência", 1);
+                "O fundador do Estoicismo foi __________ de Cítio.",
+                "Zenão", "Filosofia", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A unidade básica da vida é a __________.",
-                "célula", "Ciência", 1);
+                "O autor de 'O Contrato Social' foi __________.",
+                "Jean-Jacques Rousseau", "Filosofia", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O órgão responsável por bombear o sangue é o __________.",
-                "coração", "Ciência", 1);
+                "O filósofo que disse 'Penso, logo existo' foi __________.",
+                "René Descartes", "Filosofia", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O material genético dos seres vivos é o __________.",
-                "DNA", "Ciência", 1);
+                "A máxima 'Conhece-te a ti mesmo' estava inscrita no templo de __________.",
+                "Delfos", "Filosofia", 1);
+
+        // CIÊNCIA (10 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O cientista que descobriu a penicilina foi __________.",
+                "Alexander Fleming", "Ciência", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O vírus que causou a pandemia de 2020 é o __________.",
-                "COVID-19", "Ciência", 1);
+                "O planeta mais próximo do Sol é __________.",
+                "Mercúrio", "Ciência", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O maior osso do corpo humano é o __________.",
+                "O processo pelo qual as plantas fabricam seu alimento é a __________.",
+                "fotossíntese", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O osso mais longo do corpo humano é o __________.",
                 "fêmur", "Ciência", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A parte da planta que realiza a fotossíntese é a __________.",
-                "folha", "Ciência", 1);
+                "A camada mais externa da Terra é a __________.",
+                "crosta", "Ciência", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O órgão responsável pela visão é o __________.",
-                "olho", "Ciência", 1);
+                "O gás mais abundante na atmosfera é o __________.",
+                "nitrogênio", "Ciência", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O cientista que desenvolveu a teoria da relatividade foi __________.",
-                "Einstein", "Ciência", 1);
-
-        // ARTE (10 perguntas)
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O pintor do teto da Capela Sistina foi __________.",
-                "Michelangelo", "Arte", 1);
+                "O maior planeta do Sistema Solar é __________.",
+                "Júpiter", "Ciência", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O artista que cortou a própria orelha foi __________.",
-                "Van Gogh", "Arte", 1);
+                "A vitamina produzida pelo corpo com exposição solar é a vitamina __________.",
+                "D", "Ciência", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A obra mais famosa de Leonardo da Vinci é a __________.",
-                "Mona Lisa", "Arte", 1);
+                "O metal líquido à temperatura ambiente é o __________.",
+                "mercúrio", "Ciência", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O movimento artístico de Salvador Dalí é o __________.",
-                "surrealismo", "Arte", 1);
+                "O inventor da lâmpada elétrica foi __________.",
+                "Thomas Edison", "Ciência", 1);
+
+        // ARTE (10 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O pintor de 'Guernica' foi __________.",
+                "Pablo Picasso", "Arte", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O pintor de 'Os Girassóis' foi __________.",
-                "Van Gogh", "Arte", 1);
+                "A pintora mexicana conhecida por seus autorretratos foi __________.",
+                "Frida Kahlo", "Arte", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O compositor clássico surdo no final da vida foi __________.",
-                "Beethoven", "Arte", 1);
+                "O compositor de 'A Flauta Mágica' foi __________.",
+                "Wolfgang Amadeus Mozart", "Arte", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O movimento de redescoberta da arte e ciência greco-romana foi o __________.",
-                "Renascimento", "Arte", 1);
+                "O escultor de 'O Pensador' foi __________.",
+                "Auguste Rodin", "Arte", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O escultor do 'David' foi __________.",
-                "Michelangelo", "Arte", 1);
+                "A pintura 'O Grito' foi criada por __________.",
+                "Edvard Munch", "Arte", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O pintor conhecido por obras abstratas como 'Composição VIII' foi __________.",
-                "Kandinsky", "Arte", 1);
+                "O movimento artístico liderado por Andy Warhol foi a __________.",
+                "Pop Art", "Arte", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O estilo artístico caracterizado por pequenas pinceladas de cor é o __________.",
-                "impressionismo", "Arte", 1);
-
-        // MATEMÁTICA (10 perguntas)
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O resultado de 7 x 8 é __________.",
-                "56", "Matemática", 1);
+                "A famosa ópera 'Carmen' foi composta por __________.",
+                "Georges Bizet", "Arte", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A raiz quadrada de 81 é __________.",
-                "9", "Matemática", 1);
+                "O artista que pintou 'A Persistência da Memória' (relógios derretendo) foi __________.",
+                "Salvador Dalí", "Arte", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O valor de 15% de 200 é __________.",
-                "30", "Matemática", 1);
+                "A Vênus de Milo é uma famosa __________ grega.",
+                "escultura", "Arte", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O valor aproximado de π (pi) é __________.",
-                "3,14", "Matemática", 1);
+                "O pintor impressionista que pintou 'Impressão, Nascer do Sol' foi __________.",
+                "Claude Monet", "Arte", 1);
+
+        // MATEMÁTICA (10 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O resultado de 9 x 9 é __________.",
+                "81", "Matemática", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O triângulo com todos os lados iguais é chamado de __________.",
-                "equilátero", "Matemática", 1);
+                "Um ângulo de 90 graus é chamado de ângulo __________.",
+                "reto", "Matemática", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O valor de 2³ (dois ao cubo) é __________.",
-                "8", "Matemática", 1);
+                "O número 3,14 é uma aproximação do número __________.",
+                "pi", "Matemática", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A soma dos ângulos internos de um triângulo é __________ graus.",
-                "180", "Matemática", 1);
+                "Uma forma geométrica com 6 lados iguais é um __________.",
+                "hexágono", "Matemática", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O número primo entre 4, 6, 7 e 9 é o __________.",
-                "7", "Matemática", 1);
+                "O resultado de 100 dividido por 4 é __________.",
+                "25", "Matemática", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O resultado de 144 ÷ 12 é __________.",
-                "12", "Matemática", 1);
+                "Uma __________ representa uma parte de um todo em matemática.",
+                "fração", "Matemática", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "Uma dúzia representa __________ unidades.",
-                "12", "Matemática", 1);
+                "O número romano 'X' representa o número __________.",
+                "10", "Matemática", 1);
 
-        // FÍSICA (10 perguntas)
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A unidade de medida de força é o __________.",
+                "Um __________ tem todos os seus lados iguais e ângulos retos.",
+                "quadrado", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O resultado de 5 elevado ao quadrado (5²) é __________.",
+                "25", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "Uma __________ tem perímetro igual à soma de todos os seus lados.",
+                "figura geométrica", "Matemática", 1);
+
+        // FÍSICA (10 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A força que atrai os corpos para a Terra é a __________.",
+                "gravidade", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A oposição ao movimento entre superfícies é o __________.",
+                "atrito", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A unidade de medida de corrente elétrica é o __________.",
+                "ampère", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A distância percorrida pela luz em um ano é um __________.",
+                "ano-luz", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O cientista famoso pela equação E=mc² foi __________.",
+                "Albert Einstein", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O estado da água com forma e volume definidos é o estado __________.",
+                "sólido", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A unidade de força no Sistema Internacional é o __________.",
                 "newton", "Física", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "Quando aquecemos um metal, ele __________.",
-                "dilata", "Física", 1);
+                "O som é uma onda de tipo __________.",
+                "mecânica", "Física", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A velocidade aproximada da luz no vácuo é __________ mil km/s.",
-                "300", "Física", 1);
+                "A energia associada ao movimento é a energia __________.",
+                "cinética", "Física", 1);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O cientista que descobriu a gravidade com a história da maçã foi __________.",
-                "Newton", "Física", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O instrumento que mede tensão elétrica é o __________.",
-                "voltímetro", "Física", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A lei que diz 'ação e reação são iguais e opostas' é a __________ Lei de Newton.",
-                "terceira", "Física", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O som se propaga mais rápido no __________.",
-                "aço", "Física", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A unidade de potência é o __________.",
-                "watt", "Física", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "A tendência de um corpo permanecer em seu estado é chamada de __________.",
-                "inércia", "Física", 1);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
-                "O fenômeno que explica um lápis parecendo quebrado dentro da água é a __________.",
-                "refração", "Física", 1);
+                "A capacidade de realizar trabalho é chamada de __________.",
+                "energia", "Física", 1);
     }
 
 
@@ -3583,110 +3582,110 @@ public class BancoPerguntas {
     }
 
     private void carregarSabioMedioLacuna() {
-        // FILOSOFIA (5 perguntas)
+        // FILOSOFIA (5 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O conceito de Nietzsche que representa o 'super-homem' é o __________.",
-                "Übermensch", "Filosofia", 4);
+                "O conceito de 'vontade de potência' foi desenvolvido por __________.",
+                "Nietzsche", "Filosofia", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O 'imperativo categórico' é um conceito do filósofo __________.",
-                "Kant", "Filosofia", 4);
+                "A obra 'Crítica da Razão Pura' foi escrita por __________.",
+                "Immanuel Kant", "Filosofia", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O livro 'A Ética a Nicômaco' foi escrito por __________.",
-                "Aristóteles", "Filosofia", 4);
+                "O método socrático de questionamento é chamado de __________.",
+                "maiêutica", "Filosofia", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O 'materialismo histórico' de Marx afirma que a história é baseada em condições __________.",
-                "materiais", "Filosofia", 4);
+                "A filosofia que prega a busca do prazer como bem supremo é o __________.",
+                "hedonismo", "Filosofia", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O livro 'O Existencialismo é um Humanismo' foi escrito por __________.",
-                "Sartre", "Filosofia", 4);
+                "O filósofo existencialista que escreveu 'O Mito de Sísifo' foi __________.",
+                "Albert Camus", "Filosofia", 4);
 
-        // CIÊNCIA (5 perguntas)
+        // CIÊNCIA (5 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O processo de divisão celular que produz gametas é a __________.",
-                "meiose", "Ciência", 4);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O principal gás de efeito estufa emitido por humanos é o __________.",
-                "dióxido de carbono", "Ciência", 4);
+                "O processo de divisão celular para crescimento e reparo é a __________.",
+                "mitose", "Ciência", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O princípio da 'sobrevivência do mais adaptado' é chamado de seleção __________.",
-                "natural", "Ciência", 4);
+                "A parte da célula responsável pela produção de energia é a __________.",
+                "mitocôndria", "Ciência", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O tipo de célula que não possui núcleo definido é a célula __________.",
-                "procarionte", "Ciência", 4);
+                "O elemento químico mais abundante no universo é o __________.",
+                "hidrogênio", "Ciência", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "A escala que mede terremotos é a escala __________.",
-                "Richter", "Ciência", 4);
-
-        // ARTE (5 perguntas)
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O movimento artístico conhecido por formas geométricas e fragmentação é o __________.",
-                "cubismo", "Arte", 4);
+                "O hormônio produzido pelo pâncreas que regula o açúcar no sangue é a __________.",
+                "insulina", "Ciência", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O pintor de 'A Noite Estrelada' foi __________.",
-                "Van Gogh", "Arte", 4);
+                "A força responsável por manter os planetas em órbita é a força __________.",
+                "gravitacional", "Ciência", 4);
+
+        // ARTE (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O estilo arquitetônico com arcos ogivais e vitrais coloridos é o __________.",
+                "gótico", "Arte", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O movimento artístico e musical brasileiro que tem escola de samba é o __________.",
-                "samba", "Arte", 4);
+                "A técnica de pintura que usa pontos de cor pura é o __________.",
+                "pontilhismo", "Arte", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O 'pai da música clássica' (compositor barroco) é __________.",
-                "Bach", "Arte", 4);
+                "O artista holandês que pintou 'A Ronda Noturna' foi __________.",
+                "Rembrandt", "Arte", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O termo 'ready-made' na arte significa um objeto __________ elevado a arte.",
-                "comum", "Arte", 4);
-
-        // MATEMÁTICA (5 perguntas)
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O valor de x em 2x + 5 = 15 é __________.",
-                "5", "Matemática", 4);
+                "A 'Nona Sinfonia' com 'Ode à Alegria' foi composta por __________.",
+                "Beethoven", "Arte", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "A fração equivalente a 0,75 é __________.",
-                "3/4", "Matemática", 4);
+                "O movimento artístico que valoriza a luz e a cor ao ar livre é o __________.",
+                "impressionismo", "Arte", 4);
+
+        // MATEMÁTICA (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O número que é a razão entre a circunferência e o diâmetro é o __________.",
+                "pi", "Matemática", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "A raiz quadrada de 144 é __________.",
-                "12", "Matemática", 4);
+                "Um polígono com 8 lados é chamado de __________.",
+                "octógono", "Matemática", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "Um ângulo reto tem __________ graus.",
-                "90", "Matemática", 4);
+                "A fórmula para calcular a área do triângulo é base vezes altura dividido por __________.",
+                "dois", "Matemática", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "A fórmula da área do círculo é __________.",
-                "πr²", "Matemática", 4);
-
-        // FÍSICA (5 perguntas)
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "A lei da termodinâmica que diz que a entropia sempre aumenta é a __________ Lei.",
-                "segunda", "Física", 4);
+                "O teorema de Pitágoras relaciona os lados de um triângulo __________.",
+                "retângulo", "Matemática", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "A partícula com carga elétrica negativa é o __________.",
-                "elétron", "Física", 4);
+                "A sequência onde cada número é a soma dos dois anteriores é a sequência de __________.",
+                "Fibonacci", "Matemática", 4);
+
+        // FÍSICA (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A lei de Ohm relaciona tensão, corrente e __________.",
+                "resistência", "Física", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "A unidade de frequência é o __________.",
-                "hertz", "Física", 4);
+                "A unidade de medida de carga elétrica é o __________.",
+                "coulomb", "Física", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "O cientista que formulou as leis do movimento planetário foi __________.",
-                "Kepler", "Física", 4);
+                "O desvio da luz ao passar de um meio para outro é chamado de __________.",
+                "refração", "Física", 4);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
-                "A teoria de Einstein que descreve a gravidade como curvatura do espaço-tempo é a relatividade __________.",
-                "geral", "Física", 4);
+                "A força que empurra um corpo para cima em um fluido é o __________.",
+                "empuxo", "Física", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A energia armazenada em um corpo devido à sua posição é a energia __________.",
+                "potencial", "Física", 4);
     }
 
     private void carregarSabioDificilMultiplaEscolha() {
@@ -3834,110 +3833,110 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.DIFICIL, "O elétron é uma partícula elementar.", true, "Física", 8);
     }
     private void carregarSabioDificilLacuna() {
-        // FILOSOFIA (5 perguntas)
+        // FILOSOFIA (5 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O livro 'Ser e Tempo' (Sein und Zeit) foi escrito por __________.",
-                "Heidegger", "Filosofia", 8);
+                "A obra 'Assim Falou Zaratustra' foi escrita por __________.",
+                "Friedrich Nietzsche", "Filosofia", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O conceito de 'má vontade' (mauvaise foi) em Sartre significa mentir a si __________.",
-                "mesmo", "Filosofia", 8);
+                "O conceito de 'Dasein' (ser-aí) foi desenvolvido por __________.",
+                "Martin Heidegger", "Filosofia", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O filósofo que desenvolveu o Utilitarismo como sistema ético foi __________.",
-                "Bentham", "Filosofia", 8);
+                "A 'Escola de Frankfurt' desenvolveu a teoria __________.",
+                "crítica", "Filosofia", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "A 'Razão Instrumental' foi um conceito desenvolvido pela Escola de __________.",
-                "Frankfurt", "Filosofia", 8);
+                "O filósofo que escreveu 'O Ser e o Nada' foi __________.",
+                "Jean-Paul Sartre", "Filosofia", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O livro 'A Fenomenologia do Espírito' foi escrito por __________.",
-                "Hegel", "Filosofia", 8);
+                "A filosofia que afirma que a existência precede a essência é o __________.",
+                "existencialismo", "Filosofia", 8);
 
-        // CIÊNCIA (5 perguntas)
+        // CIÊNCIA (5 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O princípio da seleção natural de Darwin envolve variação hereditária e __________.",
-                "adaptação", "Ciência", 8);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O estudo de alterações na expressão genética sem mudar o DNA é a __________.",
-                "epigenética", "Ciência", 8);
+                "O processo de morte celular programada é chamado de __________.",
+                "apoptose", "Ciência", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O vírus que causa a AIDS é o __________.",
-                "HIV", "Ciência", 8);
+                "A técnica de edição genética que revolucionou a biotecnologia é o __________.",
+                "CRISPR", "Ciência", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O conjunto de ecossistemas com clima similar é chamado de __________.",
-                "bioma", "Ciência", 8);
+                "O fenômeno quântico onde partículas se comunicam instantaneamente é o __________ quântico.",
+                "emaranhamento", "Ciência", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O processo de produção de energia sem oxigênio é a __________.",
-                "fermentação", "Ciência", 8);
-
-        // ARTE (5 perguntas)
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O pintor de 'As Meninas' foi __________.",
-                "Velázquez", "Arte", 8);
+                "A menor partícula de um elemento químico que mantém suas propriedades é o __________.",
+                "átomo", "Ciência", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O movimento artístico liderado por Andy Warhol é a __________.",
-                "Pop Art", "Arte", 8);
+                "O exame de imagem que usa raios-X para criar cortes transversais é a __________.",
+                "tomografia", "Ciência", 8);
+
+        // ARTE (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O movimento artístico que pregava a destruição da arte tradicional foi o __________.",
+                "dadaísmo", "Arte", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "A técnica de pintura realista que engana o olho é chamada de __________.",
-                "trompe-l'œil", "Arte", 8);
+                "A pintora brasileira que pintou 'Abaporu' foi __________.",
+                "Tarsila do Amaral", "Arte", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O compositor de 'As Quatro Estações' foi __________.",
-                "Vivaldi", "Arte", 8);
+                "O compositor de 'O Lago dos Cisnes' foi __________.",
+                "Tchaikovsky", "Arte", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "A pintura rupestre moderna não existe, pois é uma arte __________.",
-                "pré-histórica", "Arte", 8);
+                "A 'Fonte' (urinol invertido) foi uma obra de __________.",
+                "Marcel Duchamp", "Arte", 8);
 
-        // MATEMÁTICA (5 perguntas)
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O valor aproximado do número de Euler (e) é __________.",
+                "O movimento cultural renascentista que valorizava o ser humano era o __________.",
+                "humanismo", "Arte", 8);
+
+        // MATEMÁTICA (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O conjunto dos números que inclui raiz de números negativos é o conjunto dos números __________.",
+                "complexos", "Matemática", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "A derivada de uma função que representa sua taxa de variação instantânea é estudada no __________.",
+                "cálculo diferencial", "Matemática", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O número de Euler, base dos logaritmos naturais, é aproximadamente __________.",
                 "2,718", "Matemática", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "Um número que não é raiz de polinômio com coeficientes inteiros é chamado de número __________.",
-                "transcendental", "Matemática", 8);
+                "A proporção áurea, representada pela letra grega φ (phi), é aproximadamente __________.",
+                "1,618", "Matemática", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O conjunto dos números reais é formado por números racionais e __________.",
-                "irracionais", "Matemática", 8);
+                "O último teorema de __________ foi provado por Andrew Wiles em 1994.",
+                "Fermat", "Matemática", 8);
+
+        // FÍSICA (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O princípio que afirma ser impossível medir simultaneamente posição e momento é o princípio da __________.",
+                "incerteza", "Física", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O conjunto de vetores com operações de soma e multiplicação por escalar é um espaço __________.",
-                "vetorial", "Matemática", 8);
+                "A radiação de fundo do universo é chamada de radiação cósmica de __________.",
+                "micro-ondas", "Física", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "A derivada de sen(x) é __________.",
-                "cos(x)", "Matemática", 8);
-
-        // FÍSICA (5 perguntas)
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "A lei que descreve a força entre cargas elétricas é a lei de __________.",
-                "Coulomb", "Física", 8);
+                "O fenômeno de dilatação do tempo ocorre devido à __________ restrita.",
+                "relatividade", "Física", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "A medida de desordem em um sistema termodinâmico é a __________.",
-                "entropia", "Física", 8);
+                "A partícula mediadora da força eletromagnética é o __________.",
+                "fóton", "Física", 8);
 
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "O princípio de Heisenberg afirma que não se pode medir posição e __________ com precisão simultânea.",
-                "momento", "Física", 8);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "A mudança de frequência de uma onda por movimento relativo entre fonte e observador é o efeito __________.",
-                "Doppler", "Física", 8);
-
-        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
-                "A equação fundamental da mecânica quântica é a equação de __________.",
-                "Schrödinger", "Física", 8);
+                "A teoria que unifica as quatro forças fundamentais é chamada de teoria da __________.",
+                "grande unificação", "Física", 8);
     }
 
     private void carregarPerguntasArcanista() {
