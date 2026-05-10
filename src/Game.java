@@ -45,8 +45,8 @@ public class Game {
                 personagem = new Arcanista();
                 break;
             default:
-                System.out.println("Opção inválida! Escolhendo Guerreiro.");
-                personagem = new Guerreiro();
+                System.out.println("Opção inválida! Escolhendo Arcanista.");
+                personagem = new Arcanista();
         }
 
         jogador.escolherPersonagem(personagem);

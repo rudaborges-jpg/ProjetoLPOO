@@ -3,6 +3,7 @@ package controle;
 import modelo.*;
 import modelo.Pergunta.Dificuldade;
 import dados.BancoPerguntas;
+import habilidades.*;
 import java.util.*;
 
 public class GerenciadorBatalha {
@@ -15,6 +16,8 @@ public class GerenciadorBatalha {
     private int rodadaAtual;
     private int pontuacaoTotal;
     private Scanner scanner;
+    private boolean habilidadeUsadaEstaRodada;
+    private Random random;
 
     public GerenciadorBatalha(Jogador jogador, BancoPerguntas bancoPerguntas) {
         this.jogador = jogador;
@@ -23,6 +26,33 @@ public class GerenciadorBatalha {
         this.rodadaAtual = 0;
         this.pontuacaoTotal = 0;
         this.scanner = new Scanner(System.in);
+        this.random = new Random();
+        this.habilidadeUsadaEstaRodada = false;
+
+        // INICIAR HABILIDADES DOS PERSONAGENS (Entrega 2)
+        inicializarHabilidades();
+    }
+
+    // ==================== ENTREGA 2: INICIALIZAR HABILIDADES ====================
+    private void inicializarHabilidades() {
+        Personagem p = jogador.getPersonagem();
+
+        if (p instanceof Paladino) {
+            p.setHabilidade(new HabilidadeCura(p, 40, 3));
+        } else if (p instanceof Guerreiro) {
+            p.setHabilidade(new HabilidadeDanoExtra(p, 35, 3));
+        } else if (p instanceof Cacadora) {
+            p.setHabilidade(new HabilidadeCritico(p, 50, 4));
+        } else if (p instanceof Sabio) {
+            p.setHabilidade(new HabilidadePoderMagico(p, 45, 3));
+        } else if (p instanceof Arcanista) {
+            p.setHabilidade(new HabilidadeDestruicaoTotal(p, 60, 5));
+        }
+
+        System.out.println("\n🌟 " + p.getNome() + " possui a habilidade: " +
+                p.getHabilidade().getNome());
+        System.out.println("   " + p.getHabilidade().getDescricao());
+        System.out.println("   ⏱️ Cooldown: " + p.getHabilidade().getCooldown() + " rodadas");
     }
 
     public void iniciarRota() {
@@ -51,6 +81,7 @@ public class GerenciadorBatalha {
             if (estagio.ehChefao()) {
                 inimigoAtual = estagio.getChefao();
                 System.out.println("\n⚠️ UM CHEFÃO APARECEU! ⚠️");
+                System.out.println("👑 " + inimigoAtual.getNome() + " - Vida: " + inimigoAtual.getVida());
             } else {
                 criarInimigoParaEstagio(estagio);
             }
@@ -66,6 +97,8 @@ public class GerenciadorBatalha {
 
             if (estagioIndex < rotaAtual.getTotalEstagios()) {
                 jogador.getPersonagem().curar(30);
+                // Resetar cooldown de habilidades ao passar de fase?
+                jogador.getPersonagem().resetarCooldownHabilidade();
                 System.out.println("\n✨ Você avança para o próximo estágio! +30 de vida! ✨");
                 System.out.print("\nPressione ENTER para continuar...");
                 scanner.nextLine();
@@ -85,67 +118,70 @@ public class GerenciadorBatalha {
         this.inimigoAtual = new Inimigo(nome, vidaBase, ataqueBase, estagio.getNumero());
     }
 
+    // ==================== ENTREGA 2: BATALHA COM HABILIDADES ====================
     private boolean realizarBatalha(Estagio estagio) {
+        habilidadeUsadaEstaRodada = false;
 
         while (jogador.vivo() && inimigoAtual.vivo()) {
             rodadaAtual++;
-            System.out.println("\n" + "=".repeat(50));
+            System.out.println("\n" + "=".repeat(60));
             System.out.println("⚔️ RODADA " + rodadaAtual);
             if (estagio.ehChefao()) {
                 System.out.println("👑 BATALHA CONTRA O CHEFÃO! 👑");
             }
-            System.out.println("=".repeat(50));
+            System.out.println("=".repeat(60));
 
             jogador.mostrarStatus();
             inimigoAtual.mostrarStatus();
 
-            // Determinar dificuldade baseada no estágio
-            Dificuldade dificuldade;
-            if (estagio.getDificuldade() <= 3) {
-                dificuldade = Dificuldade.FACIL;
-            } else if (estagio.getDificuldade() <= 7) {
-                dificuldade = Dificuldade.MEDIO;
-            } else {
-                dificuldade = Dificuldade.DIFICIL;
+            // Mostrar status da habilidade (Entrega 2)
+            Personagem personagem = jogador.getPersonagem();
+            if (personagem.getHabilidade() != null) {
+                if (personagem.isHabilidadePronta()) {
+                    System.out.println("✨ HABILIDADE ESPECIAL PRONTA! ✨");
+                } else {
+                    System.out.println("⏳ Habilidade em cooldown: " +
+                            personagem.getCooldownAtual() + " rodadas");
+                }
             }
 
-            Pergunta pergunta = bancoPerguntas.getPerguntaAleatoriaPorDificuldade(
-                    jogador.getPersonagem().getTipo(), dificuldade, estagio.getNumero());
+            // ==================== MENU DE AÇÃO (Entrega 2) ====================
+            int escolha = mostrarMenuAcao(personagem);
 
-            if (pergunta == null) {
-                pergunta = bancoPerguntas.getPerguntaAleatoriaParaPersonagem(
-                        jogador.getPersonagem().getTipo(), estagio.getNumero());
+            boolean combateRealizado = false;
+
+            switch (escolha) {
+                case 1:
+                    // Responder pergunta (ataque normal)
+                    combateRealizado = realizarRodadaPergunta(estagio);
+                    break;
+                case 2:
+                    // Usar habilidade especial
+                    if (personagem.getHabilidade() != null && personagem.isHabilidadePronta()) {
+                        combateRealizado = realizarRodadaHabilidade(estagio);
+                        habilidadeUsadaEstaRodada = true;
+                    } else if (personagem.getHabilidade() == null) {
+                        System.out.println("\n❌ Seu personagem não possui habilidade especial!");
+                        combateRealizado = realizarRodadaPergunta(estagio);
+                    } else {
+                        System.out.println("\n⏳ Habilidade ainda em cooldown! Usando ataque normal.");
+                        combateRealizado = realizarRodadaPergunta(estagio);
+                    }
+                    break;
+                default:
+                    System.out.println("\n❌ Opção inválida! Usando ataque normal.");
+                    combateRealizado = realizarRodadaPergunta(estagio);
             }
 
-            pergunta.exibir();
-            System.out.print("\nSua resposta: ");
-            String resposta = scanner.nextLine().toUpperCase();
+            // Reduzir cooldown da habilidade no final da rodada
+            personagem.reduzirCooldownHabilidade();
 
-            boolean correta = AvaliadorRespostas.avaliar(pergunta, resposta);
-            int dano = calcularDano(pergunta.getDificuldade(), estagio);
-
-            if (correta) {
-                System.out.println("\n✅ CORRETO!");
-                inimigoAtual.tomarDano(dano);
-
-                int pontos = calcularPontos(pergunta.getDificuldade(), estagio);
-                pontuacaoTotal += pontos;
-                jogador.addPontuacao(pontos);
-                System.out.println("🏆 +" + pontos + " pontos! Total: " + pontuacaoTotal);
-            } else {
-                System.out.println("\n❌ ERRADO! Resposta correta: " + pergunta.getRespostaCorreta());
-                int penalidade = dano ;
-                jogador.tomarDano(penalidade);
-                System.out.println("⚠️ Você sofreu " + penalidade + " de dano!");
-            }
-
+            // Verificar fim de batalha
             if (!inimigoAtual.vivo()) {
                 System.out.println("\n🎉 VITÓRIA! Estágio " + estagio.getNumero() + " concluído! 🎉");
-
                 int bonus = estagio.getNumero() * 50;
                 pontuacaoTotal += bonus;
                 System.out.println("🏆 Bônus de estágio: +" + bonus + " pontos!");
-
                 return true;
             }
 
@@ -154,9 +190,143 @@ public class GerenciadorBatalha {
                 return false;
             }
         }
-
         return inimigoAtual.vivo() ? false : true;
     }
+
+    // ==================== ENTREGA 2: MENU DE AÇÃO ====================
+    private int mostrarMenuAcao(Personagem personagem) {
+        System.out.println("\n📋 O QUE VOCÊ DESEJA FAZER?");
+        System.out.println("=".repeat(40));
+        System.out.println("1 🗡️ Responder Pergunta (Ataque Normal)");
+
+        if (personagem.getHabilidade() != null) {
+            String status = personagem.isHabilidadePronta() ? "✅ PRONTA" : "⏳ COOLDOWN";
+            System.out.println("2 🌟 Usar Habilidade Especial - " +
+                    personagem.getHabilidade().getNome() + " [" + status + "]");
+        } else {
+            System.out.println("2 ❌ Sem habilidade especial");
+        }
+        System.out.println("=".repeat(40));
+        System.out.print("Sua escolha: ");
+
+        int escolha = scanner.nextInt();
+        scanner.nextLine();
+        return escolha;
+    }
+
+    // ==================== RODADA COM PERGUNTA (ATAQUE NORMAL) ====================
+    private boolean realizarRodadaPergunta(Estagio estagio) {
+        // Determinar dificuldade baseada no estágio
+        Dificuldade dificuldade;
+        if (estagio.getDificuldade() <= 3) {
+            dificuldade = Dificuldade.FACIL;
+        } else if (estagio.getDificuldade() <= 7) {
+            dificuldade = Dificuldade.MEDIO;
+        } else {
+            dificuldade = Dificuldade.DIFICIL;
+        }
+
+        // Pegar pergunta (pode ser dos 3 tipos agora - Entrega 2)
+        Pergunta pergunta = bancoPerguntas.getPerguntaAleatoriaPorDificuldade(
+                jogador.getPersonagem().getTipo(), dificuldade, estagio.getNumero());
+
+        if (pergunta == null) {
+            pergunta = bancoPerguntas.getPerguntaAleatoriaParaPersonagem(
+                    jogador.getPersonagem().getTipo(), estagio.getNumero());
+        }
+
+        pergunta.exibir();
+
+        String resposta;
+        // Tratamento especial para perguntas de completar lacuna
+        if (pergunta instanceof PerguntaCompletarLacuna) {
+            System.out.print("\nDigite sua resposta: ");
+            resposta = scanner.nextLine().trim();
+        } else {
+            System.out.print("\nSua resposta: ");
+            resposta = scanner.nextLine().toUpperCase();
+        }
+
+        boolean correta = AvaliadorRespostas.avaliar(pergunta, resposta);
+        int dano = calcularDano(pergunta.getDificuldade(), estagio);
+
+        if (correta) {
+            System.out.println("\n✅ CORRETO!");
+            inimigoAtual.tomarDano(dano);
+
+            int pontos = calcularPontos(pergunta.getDificuldade(), estagio);
+            pontuacaoTotal += pontos;
+            jogador.addPontuacao(pontos);
+            System.out.println("🏆 +" + pontos + " pontos! Total: " + pontuacaoTotal);
+        } else {
+            System.out.println("\n❌ ERRADO!");
+            System.out.println("Resposta correta: " + pergunta.getRespostaCorreta());
+
+            // Dano do inimigo baseado no ataque dele (Entrega 2 - mais justo)
+            int danoInimigo = calcularDanoInimigo();
+            jogador.tomarDano(danoInimigo);
+            System.out.println("⚠️ " + inimigoAtual.getNome() + " contra-ataca causando " + danoInimigo + " de dano!");
+        }
+
+        return true;
+    }
+
+    // ==================== ENTREGA 2: RODADA COM HABILIDADE ====================
+    private boolean realizarRodadaHabilidade(Estagio estagio) {
+        Personagem personagem = jogador.getPersonagem();
+
+        System.out.println("\n🌟 USANDO HABILIDADE ESPECIAL! 🌟");
+        System.out.println("💪 " + personagem.getHabilidade().getNome());
+        System.out.println("📖 " + personagem.getHabilidade().getDescricao());
+
+        // Confirmar uso
+        System.out.print("\nDeseja realmente usar a habilidade? (S/N): ");
+        String confirmacao = scanner.nextLine().toUpperCase();
+
+        if (!confirmacao.equals("S")) {
+            System.out.println("\n❌ Uso cancelado! Voltando ao combate normal.");
+            return realizarRodadaPergunta(estagio);
+        }
+
+        // Executar habilidade
+        int dano = personagem.usarHabilidade(inimigoAtual);
+
+        if (dano > 0) {
+            System.out.println("\n💥 " + personagem.getNome() + " causa " + dano + " de dano com sua habilidade especial!");
+            inimigoAtual.tomarDano(dano);
+
+            // Bônus de pontos por usar habilidade
+            int bonusHabilidade = 25;
+            pontuacaoTotal += bonusHabilidade;
+            jogador.addPontuacao(bonusHabilidade);
+            System.out.println("🏆 Bônus por usar habilidade: +" + bonusHabilidade + " pontos!");
+        }
+
+        return true;
+    }
+
+    // ==================== ENTREGA 2: NOVO CÁLCULO DE DANO DO INIMIGO ====================
+    private int calcularDanoInimigo() {
+        int danoBase = inimigoAtual.getAtaque();
+
+        // Multiplicador baseado no estágio
+        int multiplicador = (estagioIndex + 1);
+
+        // Chefão causa mais dano
+        if (inimigoAtual.getNome().contains("CHEFÃO") || rotaAtual.getEstagios().get(estagioIndex).ehChefao()) {
+            multiplicador *= 2;
+        }
+
+        int dano = danoBase + (multiplicador * 2);
+
+        // Variação aleatória (±20%)
+        Random random = new Random();
+        double variacao = 0.8 + (random.nextDouble() * 0.4);
+        dano = (int)(dano * variacao);
+
+        return Math.max(5, dano);
+    }
+
     private int calcularDano(Dificuldade diff, Estagio estagio) {
         int dano = diff.getDanoBase();
         dano = dano * (estagio.getDificuldade() / 2);
