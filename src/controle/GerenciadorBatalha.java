@@ -27,11 +27,9 @@ public class GerenciadorBatalha {
         this.scanner = new Scanner(System.in);
         this.random = new Random();
 
-        // INICIAR HABILIDADES DOS PERSONAGENS (Entrega 2)
         inicializarHabilidades();
     }
 
-    // ==================== ENTREGA 2: INICIALIZAR HABILIDADES ====================
     private void inicializarHabilidades() {
         Personagem p = jogador.getPersonagem();
 
@@ -77,7 +75,6 @@ public class GerenciadorBatalha {
             Estagio estagio = rotaAtual.getEstagios().get(estagioIndex);
             estagio.mostrarInfo();
 
-            // Criar inimigo do estágio ou chefão
             if (estagio.ehChefao()) {
                 inimigoAtual = estagio.getChefao();
                 System.out.println("\n⚠️ UM CHEFÃO APARECEU! ⚠️");
@@ -97,7 +94,6 @@ public class GerenciadorBatalha {
 
             if (estagioIndex < rotaAtual.getTotalEstagios()) {
                 jogador.getPersonagem().curar(30);
-                // Resetar cooldown de habilidades ao passar de fase
                 jogador.getPersonagem().resetarCooldownHabilidade();
                 System.out.println("\n✨ Você avança para o próximo estágio! +30 de vida! ✨");
                 System.out.print("\nPressione ENTER para continuar...");
@@ -118,7 +114,6 @@ public class GerenciadorBatalha {
         this.inimigoAtual = new Inimigo(nome, vidaBase, ataqueBase, estagio.getNumero());
     }
 
-    // ==================== BATALHA COM HABILIDADES ====================
     private boolean realizarBatalha(Estagio estagio) {
         while (jogador.vivo() && inimigoAtual.vivo()) {
             rodadaAtual++;
@@ -132,7 +127,6 @@ public class GerenciadorBatalha {
             jogador.mostrarStatus();
             inimigoAtual.mostrarStatus();
 
-            // Mostrar status da habilidade (Entrega 2)
             Personagem personagem = jogador.getPersonagem();
             if (personagem.getHabilidade() != null) {
                 if (personagem.isHabilidadePronta()) {
@@ -143,16 +137,13 @@ public class GerenciadorBatalha {
                 }
             }
 
-            // ==================== MENU DE AÇÃO (Entrega 2) ====================
             int escolha = mostrarMenuAcao();
 
             switch (escolha) {
                 case 1:
-                    // Responder pergunta (ataque normal)
                     realizarRodadaPergunta(estagio);
                     break;
                 case 2:
-                    // Usar habilidade especial
                     if (personagem.getHabilidade() != null && personagem.isHabilidadePronta()) {
                         realizarRodadaHabilidade(estagio);
                     } else if (personagem.getHabilidade() == null) {
@@ -168,7 +159,6 @@ public class GerenciadorBatalha {
                     realizarRodadaPergunta(estagio);
             }
 
-            // Reduzir cooldown da habilidade no final da rodada
             personagem.reduzirCooldownHabilidade();
 
             // Verificar fim de batalha
@@ -188,7 +178,6 @@ public class GerenciadorBatalha {
         return false;
     }
 
-    // ==================== MENU DE AÇÃO ====================
     private int mostrarMenuAcao() {
         Personagem personagem = jogador.getPersonagem();
 
@@ -211,9 +200,7 @@ public class GerenciadorBatalha {
         return escolha;
     }
 
-    // ==================== RODADA COM PERGUNTA (ATAQUE NORMAL) ====================
     private void realizarRodadaPergunta(Estagio estagio) {
-        // Determinar dificuldade baseada no estágio
         Dificuldade dificuldade;
         if (estagio.getDificuldade() <= 3) {
             dificuldade = Dificuldade.FACIL;
@@ -223,7 +210,6 @@ public class GerenciadorBatalha {
             dificuldade = Dificuldade.DIFICIL;
         }
 
-        // Pegar pergunta (pode ser dos 3 tipos agora - Entrega 2)
         Pergunta pergunta = bancoPerguntas.getPerguntaAleatoriaPorDificuldade(
                 jogador.getPersonagem().getTipo(), dificuldade, estagio.getNumero());
 
@@ -235,7 +221,6 @@ public class GerenciadorBatalha {
         pergunta.exibir();
 
         String resposta;
-        // Tratamento especial para perguntas de completar lacuna
         if (pergunta instanceof PerguntaCompletarLacuna) {
             System.out.print("\nDigite sua resposta: ");
             resposta = scanner.nextLine().trim();
@@ -251,6 +236,10 @@ public class GerenciadorBatalha {
             System.out.println("\n✅ CORRETO!");
             inimigoAtual.tomarDano(dano);
 
+            int experienciaGanha = 10 + (estagio.getDificuldade() * 5);
+            jogador.getPersonagem().addExperiencia(experienciaGanha);
+            System.out.println("📚 +" + experienciaGanha + " de experiência!");
+
             int pontos = calcularPontos(pergunta.getDificuldade(), estagio);
             pontuacaoTotal += pontos;
             jogador.addPontuacao(pontos);
@@ -259,14 +248,12 @@ public class GerenciadorBatalha {
             System.out.println("\n❌ ERRADO!");
             System.out.println("Resposta correta: " + pergunta.getRespostaCorreta());
 
-            // Dano do inimigo baseado no ataque dele
             int danoInimigo = calcularDanoInimigo();
             jogador.tomarDano(danoInimigo);
             System.out.println("⚠️ " + inimigoAtual.getNome() + " contra-ataca causando " + danoInimigo + " de dano!");
         }
     }
 
-    // ==================== RODADA COM HABILIDADE ====================
     private void realizarRodadaHabilidade(Estagio estagio) {
         Personagem personagem = jogador.getPersonagem();
 
@@ -274,7 +261,6 @@ public class GerenciadorBatalha {
         System.out.println("💪 " + personagem.getHabilidade().getNome());
         System.out.println("📖 " + personagem.getHabilidade().getDescricao());
 
-        // Confirmar uso
         System.out.print("\nDeseja realmente usar a habilidade? (S/N): ");
         String confirmacao = scanner.nextLine().toUpperCase();
 
@@ -284,14 +270,16 @@ public class GerenciadorBatalha {
             return;
         }
 
-        // Executar habilidade
         int dano = personagem.usarHabilidade(inimigoAtual);
 
         if (dano > 0) {
             System.out.println("\n💥 " + personagem.getNome() + " causa " + dano + " de dano com sua habilidade especial!");
             inimigoAtual.tomarDano(dano);
 
-            // Bônus de pontos por usar habilidade
+            int experienciaGanha = 15 + (estagio.getDificuldade() * 5);
+            jogador.getPersonagem().addExperiencia(experienciaGanha);
+            System.out.println("📚 +" + experienciaGanha + " de experiência!");
+
             int bonusHabilidade = 25;
             pontuacaoTotal += bonusHabilidade;
             jogador.addPontuacao(bonusHabilidade);
@@ -299,21 +287,17 @@ public class GerenciadorBatalha {
         }
     }
 
-    // ==================== CÁLCULO DE DANO DO INIMIGO ====================
     private int calcularDanoInimigo() {
         int danoBase = inimigoAtual.getAtaque();
 
-        // Multiplicador baseado no estágio
         int multiplicador = (estagioIndex + 1);
 
-        // Chefão causa mais dano (verifica pelo estágio atual)
         if (rotaAtual.getEstagios().get(estagioIndex).ehChefao()) {
             multiplicador *= 2;
         }
 
         int dano = danoBase + (multiplicador * 2);
 
-        // Variação aleatória (±20%) - usando o random da classe
         double variacao = 0.8 + (random.nextDouble() * 0.4);
         dano = (int)(dano * variacao);
 
