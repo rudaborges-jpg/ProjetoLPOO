@@ -86,13 +86,11 @@ public class GerenciadorBatalha {
     }
 
     private boolean realizarBatalha(Estagio estagio) {
-        int acertos = 0;
-        int necessarios = estagio.getPerguntasParaPassar();
 
-        while (jogador.vivo() && inimigoAtual.vivo() && acertos < necessarios) {
+        while (jogador.vivo() && inimigoAtual.vivo()) {
             rodadaAtual++;
             System.out.println("\n" + "=".repeat(50));
-            System.out.println("⚔️ RODADA " + rodadaAtual + " | Acertos: " + acertos + "/" + necessarios);
+            System.out.println("⚔️ RODADA " + rodadaAtual);
             if (estagio.ehChefao()) {
                 System.out.println("👑 BATALHA CONTRA O CHEFÃO! 👑");
             }
@@ -127,8 +125,7 @@ public class GerenciadorBatalha {
             int dano = calcularDano(pergunta.getDificuldade(), estagio);
 
             if (correta) {
-                acertos++;
-                System.out.println("\n✅ CORRETO! (" + acertos + "/" + necessarios + ")");
+                System.out.println("\n✅ CORRETO!");
                 inimigoAtual.tomarDano(dano);
 
                 int pontos = calcularPontos(pergunta.getDificuldade(), estagio);
@@ -143,23 +140,23 @@ public class GerenciadorBatalha {
             }
 
             if (!inimigoAtual.vivo()) {
-                System.out.println("\n🎉 VITÓRIA!");
-                if (estagio.ehChefao()) {
-                    int bonus = estagio.getNumero() * 100;
-                    pontuacaoTotal += bonus;
-                    System.out.println("👑 Bônus de chefão: +" + bonus + " pontos!");
-                } else {
-                    int bonus = estagio.getNumero() * 50;
-                    pontuacaoTotal += bonus;
-                    System.out.println("🏆 Bônus de estágio: +" + bonus + " pontos!");
-                }
+                System.out.println("\n🎉 VITÓRIA! Estágio " + estagio.getNumero() + " concluído! 🎉");
+
+                int bonus = estagio.getNumero() * 50;
+                pontuacaoTotal += bonus;
+                System.out.println("🏆 Bônus de estágio: +" + bonus + " pontos!");
+
                 return true;
+            }
+
+            if (!jogador.vivo()) {
+                System.out.println("\n💀 Você foi derrotado! 💀");
+                return false;
             }
         }
 
-        return acertos >= necessarios;
+        return inimigoAtual.vivo() ? false : true;
     }
-
     private int calcularDano(Dificuldade diff, Estagio estagio) {
         int dano = diff.getDanoBase();
         dano = dano * (estagio.getDificuldade() / 2);
