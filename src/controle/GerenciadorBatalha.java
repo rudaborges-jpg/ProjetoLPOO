@@ -161,9 +161,13 @@ public class GerenciadorBatalha {
 
             personagem.reduzirCooldownHabilidade();
 
-            // Verificar fim de batalha
             if (!inimigoAtual.vivo()) {
                 System.out.println("\n🎉 VITÓRIA! Estágio " + estagio.getNumero() + " concluído! 🎉");
+
+                int experienciaInimigo = calcularExperienciaPorInimigo(estagio);
+                jogador.getPersonagem().addExperiencia(experienciaInimigo);
+                System.out.println("📚 +" + experienciaInimigo + " EXP por derrotar o inimigo!");
+
                 int bonus = estagio.getNumero() * 50;
                 pontuacaoTotal += bonus;
                 System.out.println("🏆 Bônus de estágio: +" + bonus + " pontos!");
@@ -176,6 +180,23 @@ public class GerenciadorBatalha {
             }
         }
         return false;
+    }
+
+    private int calcularExperienciaPorInimigo(Estagio estagio) {
+        int experienciaBase = 50;
+        int multiplicador = estagio.getNumero();
+
+        if (estagio.ehChefao()) {
+            multiplicador *= 2;
+        }
+
+        int experiencia = experienciaBase * multiplicador;
+
+        Random random = new Random();
+        double variacao = 0.9 + (random.nextDouble() * 0.2);
+        experiencia = (int)(experiencia * variacao);
+
+        return Math.max(20, experiencia);
     }
 
     private int mostrarMenuAcao() {
