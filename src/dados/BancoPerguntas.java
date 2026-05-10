@@ -311,210 +311,211 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.FACIL, "A deusa Lakshmi é a consorte de Brahma.", false, "Hinduísmo", 1);
     }
     private void carregarPaladinoFacilLacuna() {
-        // CRISTIANISMO (15 perguntas)
+        // CRISTIANISMO (15 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O livro sagrado do Cristianismo é a __________.",
-                "Bíblia", "Cristianismo", 1);
+                "O sacramento que simboliza a entrada na vida cristã é o __________.",
+                "batismo", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O filho de Deus para os cristãos é __________.",
-                "Jesus Cristo", "Cristianismo", 1);
+                "O símbolo máximo do Cristianismo é a __________.",
+                "cruz", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "Jesus escolheu __________ apóstolos.",
-                "12", "Cristianismo", 1);
+                "A oração ensinada por Jesus aos seus discípulos é o __________.",
+                "Pai Nosso", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O nome da mãe de Jesus é __________.",
-                "Maria", "Cristianismo", 1);
+                "O dia em que os cristãos celebram o nascimento de Jesus é o __________.",
+                "Natal", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "Jesus nasceu na cidade de __________.",
-                "Belém", "Cristianismo", 1);
+                "A cidade onde Jesus passou a maior parte de sua vida foi __________.",
+                "Nazaré", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O primeiro livro da Bíblia é __________.",
-                "Gênesis", "Cristianismo", 1);
+                "Os primeiros quatro livros do Novo Testamento são chamados de __________.",
+                "Evangelhos", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O anjo que anunciou o nascimento de Jesus a Maria chamava-se __________.",
-                "Gabriel", "Cristianismo", 1);
+                "O episódio em que o Espírito Santo desceu sobre os apóstolos é chamado de __________.",
+                "Pentecostes", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "Jesus foi crucificado no lugar chamado __________.",
-                "Calvário", "Cristianismo", 1);
+                "O mandamento que Jesus considerava o mais importante era 'Amar a __________ sobre todas as coisas'.",
+                "Deus", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O apóstolo que negou Jesus três vezes foi __________.",
-                "Pedro", "Cristianismo", 1);
+                "A refeição que Jesus compartilhou com seus discípulos antes de morrer é chamada de __________.",
+                "Santa Ceia", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O apóstolo que traiu Jesus por 30 moedas de prata foi __________.",
-                "Judas Iscariotes", "Cristianismo", 1);
+                "O jardim onde Jesus foi preso era chamado de __________.",
+                "Getsêmani", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O rio onde Jesus foi batizado por João Batista é o rio __________.",
-                "Jordão", "Cristianismo", 1);
+                "O apóstolo que duvidou da ressurreição de Jesus até ver suas feridas foi __________.",
+                "Tomé", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O dia da semana em que os cristãos celebram a ressurreição de Jesus é o __________.",
-                "Domingo", "Cristianismo", 1);
+                "O livro do Novo Testamento que descreve o fim dos tempos é o __________.",
+                "Apocalipse", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O livro da Bíblia que fala da criação do mundo é __________.",
-                "Gênesis", "Cristianismo", 1);
+                "O sacramento que consiste em ungir os enfermos com óleo sagrado é a __________.",
+                "Unção dos Enfermos", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O imperador romano que governava quando Jesus nasceu era __________.",
-                "Augusto", "Cristianismo", 1);
+                "O pão que Deus enviou do céu para os hebreus no deserto era chamado de __________.",
+                "maná", "Cristianismo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O primeiro milagre de Jesus foi transformar água em __________ na cidade de Caná.",
-                "vinho", "Cristianismo", 1);
+                "O imperador que legalizou o Cristianismo no Império Romano foi __________.",
+                "Constantino", "Cristianismo", 1);
 
-        // RELIGIÕES AFRO-BRASILEIRAS (15 perguntas)
+        // RELIGIÕES AFRO-BRASILEIRAS (15 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A principal religião de matriz africana no Brasil é o __________.",
-                "Candomblé", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "As divindades do Candomblé são chamadas de __________.",
-                "Orixás", "Afro-Brasileira", 1);
+                "O dia da semana dedicado a Iemanjá na Umbanda é __________.",
+                "sábado", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A 'Mãe das Águas' é a Orixá chamada __________.",
-                "Iemanjá", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O Orixá associado aos raios, trovões e à justiça é __________.",
-                "Xangô", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "No sincretismo brasileiro, o Orixá Ogum é associado a São __________.",
-                "Jorge", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A religião sincrética brasileira que mistura elementos africanos, indígenas e espíritas é a __________.",
-                "Umbanda", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O Orixá da paz e da criação é __________.",
-                "Oxalá", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O Orixá caçador e senhor das matas é __________.",
-                "Oxóssi", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A Orixá dos ventos e tempestades é __________.",
-                "Iansã", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "Na Umbanda, os espíritos de escravizados idosos que transmitem sabedoria são chamados de __________.",
-                "Pretos-Velhos", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O instrumento musical de percussão usado nos terreiros é o __________.",
-                "atabaque", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A energia vital ou força divina no Candomblé é chamada de __________.",
-                "Axé", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O Orixá senhor das folhas e da sabedoria vegetal é __________.",
-                "Ossain", "Afro-Brasileira", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O Orixá mensageiro, guardião dos caminhos, é __________.",
+                "A saudação 'Laroiê!' é dedicada ao Orixá __________.",
                 "Exu", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A Orixá das águas doces, fertilidade e amor é __________.",
-                "Oxum", "Afro-Brasileira", 1);
-
-        // BUDISMO (10 perguntas)
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O fundador do Budismo é __________.",
-                "Sidarta Gautama", "Budismo", 1);
+                "A cor predominante de Oxalá no Candomblé é o __________.",
+                "branco", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O estado de iluminação e libertação no Budismo é chamado de __________.",
-                "Nirvana", "Budismo", 1);
+                "O colar de contas usado pelos fiéis do Candomblé é chamado de __________.",
+                "fio de contas", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O Budismo possui __________ Nobres Verdades.",
-                "4", "Budismo", 1);
+                "A comida ritual oferecida aos Orixás é chamada de __________.",
+                "ebó", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O caminho para a iluminação no Budismo é chamado de Caminho __________.",
-                "Óctuplo", "Budismo", 1);
+                "O dia da semana dedicado a Oxalá é __________.",
+                "sexta-feira", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O princípio de que ações têm consequências no Budismo é o __________.",
-                "Karma", "Budismo", 1);
+                "A saia rodada usada pelas filhas de santo na Umbanda é chamada de __________.",
+                "baiana", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A Roda do __________ é um símbolo importante do Budismo.",
-                "Dharma", "Budismo", 1);
+                "O Pai de Santo ou sacerdote principal do terreiro é chamado de __________.",
+                "Babalorixá", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A prática de meditação sentada é chamada de __________.",
-                "Zazen", "Budismo", 1);
+                "A Mãe de Santo é chamada de __________ no Candomblé.",
+                "Ialorixá", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O sofrimento ou insatisfação existencial no Budismo é chamado de __________.",
-                "Dukkha", "Budismo", 1);
+                "A saudação 'Odoyá!' é dedicada à Orixá __________.",
+                "Iemanjá", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O ciclo de renascimentos no Budismo é chamado de __________.",
-                "Samsara", "Budismo", 1);
+                "O ritual de defumação com ervas para purificar o ambiente é chamado de __________.",
+                "defumação", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O líder espiritual do Budismo Tibetano é o __________.",
-                "Dalai Lama", "Budismo", 1);
-
-        // HINDUÍSMO (10 perguntas)
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A Trindade principal do Hinduísmo (Trimurti) é composta por Brahma, Vishnu e __________.",
-                "Shiva", "Hinduísmo", 1);
+                "A saudação 'Êpa Babá!' é dedicada ao Orixá __________.",
+                "Oxalá", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O ciclo de renascimento no Hinduísmo é chamado de __________.",
-                "Samsara", "Hinduísmo", 1);
+                "O instrumento de adivinhação mais comum no Candomblé é o jogo de __________.",
+                "búzios", "Afro-Brasileira", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O deus com cabeça de elefante é __________.",
+                "A saudação 'Okê Arô!' é dedicada ao Orixá __________.",
+                "Oxóssi", "Afro-Brasileira", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A cor de Xangô no Candomblé é o __________ e branco.",
+                "vermelho", "Afro-Brasileira", 1);
+
+        // BUDISMO (10 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O local onde Buda atingiu a iluminação foi debaixo de uma árvore __________.",
+                "Bodhi", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A flor que simboliza a pureza e a iluminação no Budismo é a __________.",
+                "lótus", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O cumprimento respeitoso no Budismo com as mãos unidas é chamado de __________.",
+                "gasshô", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O texto sagrado do Budismo Theravada é chamado de Cânone __________.",
+                "Páli", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "No Budismo, as cinco regras básicas de conduta são chamadas de __________ Preceitos.",
+                "Cinco", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O nome de nascimento de Buda era Sidarta __________.",
+                "Gautama", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O país onde o Budismo surgiu originalmente é a __________.",
+                "Índia", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A prática de recitar sons sagrados no Budismo é chamada de __________.",
+                "mantra", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O monge budista que é símbolo de felicidade e fartura é __________.",
+                "Budai", "Budismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O 'caminho do meio' no Budismo evita os extremos de __________ e indulgência.",
+                "mortificação", "Budismo", 1);
+
+        // HINDUÍSMO (10 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O símbolo sagrado 'Om' representa o __________ primordial do universo.",
+                "som", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O festival hindu das luzes é chamado de __________.",
+                "Diwali", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "A esposa de Shiva é a deusa __________.",
+                "Parvati", "Hinduísmo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
+                "O deus hindu da prosperidade e removedor de obstáculos é __________.",
                 "Ganesha", "Hinduísmo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O princípio de causa e efeito no Hinduísmo é o __________.",
-                "Karma", "Hinduísmo", 1);
+                "O festival das cores hindu é chamado de __________.",
+                "Holi", "Hinduísmo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O livro sagrado mais antigo do Hinduísmo são os __________.",
-                "Vedas", "Hinduísmo", 1);
+                "A esposa de Vishnu é a deusa da prosperidade chamada __________.",
+                "Lakshmi", "Hinduísmo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O deus preservador e protetor do universo é __________.",
-                "Vishnu", "Hinduísmo", 1);
+                "O deus macaco devoto de Rama é __________.",
+                "Hanuman", "Hinduísmo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O deus da destruição e transformação é __________.",
-                "Shiva", "Hinduísmo", 1);
+                "A montanha sagrada dos deuses hindus é o Monte __________.",
+                "Meru", "Hinduísmo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A deusa do conhecimento, música e artes é __________.",
-                "Sarasvati", "Hinduísmo", 1);
+                "O texto hindu que contém o diálogo entre Krishna e Arjuna é o __________.",
+                "Bhagavad Gita", "Hinduísmo", 1);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "A libertação do ciclo de renascimento é chamada de __________.",
-                "Moksha", "Hinduísmo", 1);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
-                "O famoso poema épico que conta a história do príncipe Rama é o __________.",
-                "Ramayana", "Hinduísmo", 1);
+                "A deusa da prosperidade no Hinduísmo é frequentemente representada sobre uma flor de __________.",
+                "lótus", "Hinduísmo", 1);
     }
+
 
     private void carregarPaladinoMedioMultiplaEscolha() {
         adicionarPerguntaMultipla(PerTipo.PALADINO, Dificuldade.MEDIO,
@@ -649,110 +650,111 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.MEDIO, "O Ganges é considerado um rio comum sem significado especial.", false, "Hinduísmo", 4);
     }
     private void carregarPaladinoMedioLacuna() {
-        // CRISTIANISMO (7 perguntas)
+        // CRISTIANISMO (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O Concílio de __________ (325 d.C.) definiu a divindade de Cristo.",
-                "Niceia", "Cristianismo", 4);
+                "O movimento protestante iniciado por Martinho Lutero no século XVI foi a __________ Protestante.",
+                "Reforma", "Cristianismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "A heresia que negava a divindade de Cristo era o __________.",
-                "Arianismo", "Cristianismo", 4);
+                "A doutrina que afirma a presença real de Cristo na Eucaristia é chamada de __________.",
+                "transubstanciação", "Cristianismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O Cisma do Oriente (1054) dividiu a Igreja em Católica e __________.",
-                "Ortodoxa", "Cristianismo", 4);
+                "O apóstolo considerado o primeiro Papa da Igreja Católica foi __________.",
+                "São Pedro", "Cristianismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O livro da Bíblia que narra a saída do povo hebreu do Egito é o __________.",
-                "Êxodo", "Cristianismo", 4);
+                "A divisão entre a Igreja Católica e a Igreja Ortodoxa em 1054 é conhecida como Cisma do __________.",
+                "Oriente", "Cristianismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O teólogo que escreveu 'A Cidade de Deus' foi Santo __________.",
-                "Agostinho", "Cristianismo", 4);
+                "As cartas escritas por Paulo às comunidades cristãs são chamadas de __________ Paulinas.",
+                "Epístolas", "Cristianismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O termo 'Cristo' significa __________ em grego.",
-                "Ungido", "Cristianismo", 4);
+                "O principal credo do Cristianismo, que afirma a crença na Trindade, é o Credo __________.",
+                "Niceno", "Cristianismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O sacramento que significa 'ação de graças' e celebra o corpo e sangue de Cristo é a __________.",
-                "Eucaristia", "Cristianismo", 4);
+                "A Igreja Católica considera __________ sacramentos ao todo.",
+                "sete", "Cristianismo", 4);
 
-        // RELIGIÕES AFRO-BRASILEIRAS (8 perguntas)
+        // RELIGIÕES AFRO-BRASILEIRAS (8 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "No Candomblé, o rito de iniciação que envolve raspar a cabeça é chamado de __________.",
-                "feitura de santo", "Afro-Brasileira", 4);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O 'jogo de __________' é usado no Candomblé para adivinhação.",
-                "búzios", "Afro-Brasileira", 4);
+                "O conjunto de rezas e cantigas em iorubá no Candomblé é chamado de __________.",
+                "orô", "Afro-Brasileira", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "A Umbanda foi fundada oficialmente no início do século XX por __________.",
-                "Zélio Fernandino de Moraes", "Afro-Brasileira", 4);
+                "A pessoa que incorpora entidades na Umbanda é chamada de __________.",
+                "médium", "Afro-Brasileira", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "A Orixá das lagoas, lama e morte (associada à velhice) é __________.",
-                "Nanã", "Afro-Brasileira", 4);
+                "O banho de ervas para purificação e proteção na Umbanda é chamado de __________.",
+                "amaci", "Afro-Brasileira", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O ritual de fortalecimento da cabeça no Candomblé é chamado de __________.",
-                "Bori", "Afro-Brasileira", 4);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "A oferenda ou ritual funerário no Candomblé é chamado de __________.",
-                "Axexê", "Afro-Brasileira", 4);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "No Candomblé Jeje, as divindades de origem fon (Daomé) são chamadas de __________.",
-                "Voduns", "Afro-Brasileira", 4);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "Na Umbanda, os espíritos infantis são chamados de __________.",
+                "Os espíritos de crianças na Umbanda são conhecidos como __________.",
                 "Erês", "Afro-Brasileira", 4);
 
-        // BUDISMO (6 perguntas)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O 'Grande Veículo' do Budismo é a escola __________.",
-                "Mahayana", "Budismo", 4);
+                "A entidade feminina que trabalha nas demandas amorosas na Umbanda é a __________.",
+                "Pombagira", "Afro-Brasileira", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O 'Veículo dos Anciãos' é a escola __________.",
-                "Theravada", "Budismo", 4);
+                "A dança ritual em círculo nos terreiros de Umbanda é chamada de __________.",
+                "gira", "Afro-Brasileira", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O princípio budista de compaixão amorosa é chamado de __________ (em páli).",
-                "Metta", "Budismo", 4);
+                "Na Umbanda, os Caboclos representam espíritos de __________.",
+                "indígenas", "Afro-Brasileira", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "A comunidade de monges budistas é chamada de __________.",
-                "Sangha", "Budismo", 4);
+                "O guia espiritual que atua como mentor dos médiuns na Umbanda é o __________ chefe.",
+                "Guia", "Afro-Brasileira", 4);
+
+        // BUDISMO (6 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O termo budista para 'compaixão ativa' é __________.",
+                "Karuna", "Budismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "A tradição do 'Veículo do Diamante' é o __________.",
-                "Vajrayana", "Budismo", 4);
+                "A tradição budista que enfatiza a meditação sentada (zazen) é o Budismo __________.",
+                "Zen", "Budismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O conceito de 'vazio' ou vacuidade no Budismo Mahayana é chamado de __________.",
-                "Sunyata", "Budismo", 4);
-
-        // HINDUÍSMO (4 perguntas)
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "Os textos filosóficos e místicos do Hinduísmo que complementam os Vedas são os __________.",
-                "Upanishads", "Hinduísmo", 4);
+                "Os três venenos no Budismo são: ignorância, apego e __________.",
+                "raiva", "Budismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O avatar de Vishnu que ensina Arjuna no campo de batalha no Bhagavad Gita é __________.",
-                "Krishna", "Hinduísmo", 4);
+                "A escola do 'Caminho do Meio' no Budismo Mahayana é a __________.",
+                "Madhyamaka", "Budismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O deus guerreiro filho de Shiva e Parvati é __________.",
-                "Karttikeya", "Hinduísmo", 4);
+                "O assistente pessoal de Buda que memorizou seus ensinamentos foi __________.",
+                "Ananda", "Budismo", 4);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
-                "O sistema de estágios da vida no Hinduísmo (estudante, chefe de família, eremita, renunciante) é chamado de __________.",
-                "Ashramas", "Hinduísmo", 4);
+                "O conceito budista de 'não eu' (ausência de alma permanente) é chamado de __________.",
+                "Anatta", "Budismo", 4);
+
+        // HINDUÍSMO (4 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "Os textos védicos que tratam de rituais e cerimônias são chamados de __________.",
+                "Brahmanas", "Hinduísmo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "A prática de devoção amorosa a Deus no Hinduísmo é chamada de __________.",
+                "Bhakti", "Hinduísmo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O quarto estágio da vida hindu, quando se renuncia ao mundo, é __________.",
+                "Sannyasa", "Hinduísmo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
+                "O deus hindu do amor e desejo é __________.",
+                "Kama", "Hinduísmo", 4);
     }
+
 
 
     private void carregarPaladinoDificilMultiplaEscolha() {
@@ -888,112 +890,111 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.DIFICIL, "O Manusmriti é um famoso código legal hindu.", true, "Hinduísmo", 8);
     }
     private void carregarPaladinoDificilLacuna() {
-        // CRISTIANISMO (7 perguntas)
+        // CRISTIANISMO (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "A heresia que afirmava que Jesus só parecia humano, mas não era, chamava-se __________.",
-                "Docetismo", "Cristianismo", 8);
+                "A doutrina que afirma que Maria foi concebida sem pecado original é chamada de Imaculada __________.",
+                "Conceição", "Cristianismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O teólogo que cunhou o termo 'Trindade' (Trinitas) em latim foi __________.",
-                "Tertuliano", "Cristianismo", 8);
+                "O Concílio que definiu o cânon definitivo da Bíblia no século IV foi o Concílio de __________.",
+                "Hipona", "Cristianismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O período da filosofia dos Padres da Igreja é chamado de __________.",
-                "Patrística", "Cristianismo", 8);
+                "A heresia que ensinava que o mundo material foi criado por um deus mau era o __________.",
+                "Gnosticismo", "Cristianismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "A doutrina da restauração universal de todos os seres é chamada de __________.",
-                "Apokatástasis", "Cristianismo", 8);
+                "O papa que convocou o Concílio Vaticano II foi __________.",
+                "João XXIII", "Cristianismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O termo 'Filioque' (que significa 'e do Filho') causou o Grande Cisma entre a Igreja do Ocidente e a Igreja do __________.",
-                "Oriente", "Cristianismo", 8);
+                "A teologia que busca reconciliar a existência de Deus com o mal é chamada de __________.",
+                "Teodiceia", "Cristianismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O Concílio que definiu as duas naturezas de Cristo (humana e divina) foi o de __________.",
-                "Calcedônia", "Cristianismo", 8);
+                "A carta de Paulo que fala sobre a superioridade do amor é __________ aos Coríntios.",
+                "Primeira", "Cristianismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O autor de 'Confissões' e 'A Trindade' foi Santo __________.",
-                "Agostinho", "Cristianismo", 8);
+                "O movimento monástico que pregava silêncio absoluto e trabalho manual foi fundado por São __________.",
+                "Bento", "Cristianismo", 8);
 
-        // RELIGIÕES AFRO-BRASILEIRAS (8 perguntas)
+        // RELIGIÕES AFRO-BRASILEIRAS (8 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "No Candomblé Bantu (Angola), os Orixás são chamados de __________ ou Minkisi.",
-                "Inquices", "Afro-Brasileira", 8);
-
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O Orixá do arco-íris e do movimento cíclico é __________.",
-                "Oxumarê", "Afro-Brasileira", 8);
+                "No Candomblé Ketu, o ritual de consulta ao oráculo de Ifá é feito pelo sacerdote __________.",
+                "Babaláwo", "Afro-Brasileira", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O 'batismo de santo' no Candomblé refere-se à entrega da cabeça ao __________.",
-                "Orixá", "Afro-Brasileira", 8);
+                "O assentamento do Orixá no terreiro é chamado de __________.",
+                "Igbá", "Afro-Brasileira", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "A entidade feminina da Umbanda que trabalha com Exu nas demandas amorosas é a __________.",
-                "Pombagira", "Afro-Brasileira", 8);
+                "A cidade iorubá sagrada onde se cultua Xangô é __________.",
+                "Oyó", "Afro-Brasileira", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O ritual conhecido como 'Padê de __________' é uma oferenda feita antes dos rituais para abrir os caminhos.",
-                "Exu", "Afro-Brasileira", 8);
+                "O festival anual de Iemanjá em Salvador acontece no dia __________ de fevereiro.",
+                "2", "Afro-Brasileira", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "A tradição da Jurema Sagrada é uma prática espiritual __________ incorporada à Umbanda.",
-                "indígena", "Afro-Brasileira", 8);
+                "Na Umbanda, a linha que trabalha com espíritos boiadeiros é a Linha de __________.",
+                "Oxóssi", "Afro-Brasileira", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O 'ponto __________' na Umbanda é um símbolo energético desenhado no chão.",
-                "riscado", "Afro-Brasileira", 8);
+                "O colar de contas que representa a iniciação e proteção no Candomblé é chamado de __________.",
+                "ilekê", "Afro-Brasileira", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "Na Quimbanda (linha de esquerda da Umbanda), os trabalhos são realizados com __________.",
-                "Exus", "Afro-Brasileira", 8);
-
-        // BUDISMO (5 perguntas)
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O filósofo budista fundador da escola Madhyamaka (caminho do meio) foi __________.",
-                "Nagarjuna", "Budismo", 8);
+                "A cidade da Bahia que é considerada um dos principais centros do Candomblé é __________.",
+                "Salvador", "Afro-Brasileira", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O ser que adia a própria iluminação para salvar todos os seres é o __________.",
-                "Bodhisattva", "Budismo", 8);
+                "O instrumento musical de metal usado nos rituais, semelhante a uma campânula, é o __________.",
+                "agogô", "Afro-Brasileira", 8);
+
+        // BUDISMO (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A coleção de escrituras budistas em sânscrito é chamada de __________.",
+                "Tripitaka", "Budismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "A prática de 'dar e receber' (Tonglen) é característica do Budismo __________.",
-                "Tibetano", "Budismo", 8);
+                "O estado de Buda onde se extingue o ciclo de renascimentos sem resquícios é chamado de __________.",
+                "Parinirvana", "Budismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O texto biográfico de Buda em versos sânscritos é o __________.",
-                "Buddhacarita", "Budismo", 8);
+                "A prática de visualização de deidades no Budismo Vajrayana é chamada de __________.",
+                "Sadhana", "Budismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "A escola budista que enfatiza a 'consciência-armazenamento' (alaya-vijnana) é a __________.",
-                "Yogacara", "Budismo", 8);
-
-        // HINDUÍSMO (5 perguntas)
-        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "Os textos 'da floresta' destinados a eremitas são chamados de __________.",
-                "Aranyakas", "Hinduísmo", 8);
+                "O diagrama circular usado como suporte para meditação no Budismo é o __________.",
+                "Mandala", "Budismo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O Bhagavad Gita ensina três yogas: jnana (conhecimento), bhakti (devoção) e __________ (ação).",
-                "karma", "Hinduísmo", 8);
+                "A 'Grande Perfeição' na tradição Nyingma do Budismo Tibetano é chamada de __________.",
+                "Dzogchen", "Budismo", 8);
+
+        // HINDUÍSMO (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A filosofia da não-dualidade no Hinduísmo, sistematizada por Shankara, é chamada de __________ Vedanta.",
+                "Advaita", "Hinduísmo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "A representação de Shiva como o dançarino cósmico é chamada de Shiva __________.",
-                "Nataraja", "Hinduísmo", 8);
+                "O conceito de dever ou conduta correta no Hinduísmo é chamado de __________.",
+                "Dharma", "Hinduísmo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "O famoso código legal hindu escrito por um sábio lendário é o __________.",
-                "Manusmriti", "Hinduísmo", 8);
+                "A energia cósmica feminina primordial no Hinduísmo é chamada de __________.",
+                "Shakti", "Hinduísmo", 8);
 
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
-                "A escola filosófica hindu que prega a não dualidade (Advaita) foi sistematizada por __________.",
-                "Shankara", "Hinduísmo", 8);
+                "O deus do fogo e mensageiro dos deuses no Hinduísmo é __________.",
+                "Agni", "Hinduísmo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
+                "A dança cósmica de Shiva que simboliza criação e destruição é chamada de __________.",
+                "Tandava", "Hinduísmo", 8);
     }
 
-    // ==================== CAÇADORA - 200 PERGUNTAS ====================
     private void carregarPerguntasCacadora() {
         carregarCacadoraFacilMultiplaEscolha();
         carregarCacadoraFacilVerdadeiroFalso();
@@ -1274,210 +1275,210 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.FACIL, "Todo rastro de pegada humana é fácil de seguir.", false, "Rastreamento", 1);
     }
     private void carregarCacadoraFacilLacuna() {
+        // ANIMAIS (15 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O animal mais rápido do mundo é o __________.",
-                "falcão-peregrino", "Animais", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O animal conhecido como o 'Rei da Selva' é o __________.",
-                "leão", "Animais", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O maior animal do mundo é a __________.",
-                "baleia-azul", "Animais", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O animal australiano que carrega seus filhotes numa bolsa é o __________.",
-                "canguru", "Animais", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "A ave símbolo da paz é a __________.",
-                "pomba", "Animais", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O animal famoso por seu pescoço longo é a __________.",
-                "girafa", "Animais", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Os pingüins vivem no Polo __________.",
-                "Sul", "Animais", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O felino conhecido por ter listras é o __________.",
+                "O maior felino do mundo é o __________.",
                 "tigre", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O animal marinho conhecido como 'cavalo-marinho' é o __________.",
-                "hipocampo", "Animais", 1);
+                "O animal símbolo da Austrália que come eucalipto é o __________.",
+                "coala", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O animal conhecido como 'melhor amigo do homem' é o __________.",
-                "cachorro", "Animais", 1);
+                "A fêmea do leão é chamada de __________.",
+                "leoa", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O animal que tem uma tromba é o __________.",
-                "elefante", "Animais", 1);
+                "O animal que hiberna durante o inverno é o __________.",
+                "urso", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O inseto que produz mel é a __________.",
-                "abelha", "Animais", 1);
+                "O maior réptil do mundo é o __________ marinho.",
+                "crocodilo", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O animal conhecido por mudar de cor para se camuflar é o __________.",
-                "camaleão", "Animais", 1);
+                "A ave que é símbolo dos Estados Unidos é a __________.",
+                "águia", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "A ave que não voa mas nada muito bem é o __________.",
-                "pinguim", "Animais", 1);
+                "O animal noturno que usa ecolocalização para se guiar é o __________.",
+                "morcego", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O animal conhecido por sua excelente memória é o __________.",
-                "elefante", "Animais", 1);
-
-        // NATUREZA (15 perguntas)
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O processo pelo qual as plantas produzem seu alimento usando luz solar é a __________.",
-                "fotossíntese", "Natureza", 1);
+                "O peixe mais temido dos oceanos, com dentes afiados, é o __________.",
+                "tubarão", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O maior bioma brasileiro é a __________.",
-                "Amazônia", "Natureza", 1);
+                "O animal que carrega sua casa nas costas é o __________.",
+                "caracol", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O menor oceano do mundo é o Oceano __________.",
-                "Ártico", "Natureza", 1);
+                "A baleia mais famosa por seu canto é a __________.",
+                "jubarte", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O gás que as plantas liberam durante a fotossíntese é o __________.",
-                "oxigênio", "Natureza", 1);
+                "O animal que se defende soltando tinta é o __________.",
+                "polvo", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "A camada da Terra onde vivemos é a __________.",
-                "crosta terrestre", "Natureza", 1);
+                "O primata que é o parente mais próximo do ser humano é o __________.",
+                "chimpanzé", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Comunidade de seres vivos e o ambiente onde vivem forma um __________.",
-                "ecossistema", "Natureza", 1);
+                "O réptil que consegue regenerar sua cauda é a __________.",
+                "lagartixa", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "A grande onda causada por terremoto no mar é chamada de __________.",
-                "tsunami", "Natureza", 1);
+                "O animal mais alto do mundo é a __________.",
+                "girafa", "Animais", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O rio mais extenso do mundo é o Rio __________.",
-                "Amazonas", "Natureza", 1);
+                "O animal que constrói diques e represas é o __________.",
+                "castor", "Animais", 1);
+
+        // NATUREZA (15 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O gás mais abundante na atmosfera terrestre é o __________.",
+                "nitrogênio", "Natureza", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "A maior floresta tropical do mundo é a __________.",
-                "Amazônia", "Natureza", 1);
+                "O ponto mais alto do Brasil é o Pico da __________.",
+                "Neblina", "Natureza", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "As estações do ano são causadas pela inclinação do __________ da Terra.",
-                "eixo", "Natureza", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Os gases que destroem a camada de ozônio são os __________.",
-                "CFCs", "Natureza", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "A variedade de espécies em um ambiente é chamada de __________.",
-                "biodiversidade", "Natureza", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O maior deserto do mundo (de gelo) é a __________.",
-                "Antártida", "Natureza", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "As plantas carnívoras capturam insetos para obter __________.",
-                "nutrientes", "Natureza", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O processo de transformação de água em vapor é a __________.",
+                "O fenômeno de mudança de água líquida para vapor é a __________.",
                 "evaporação", "Natureza", 1);
 
-        // SOBREVIVÊNCIA (10 perguntas)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Em emergência na floresta, a cor mais visível para sinalização é __________ ou laranja.",
-                "vermelho", "Sobrevivência", 1);
+                "O bioma brasileiro conhecido por suas plantas espinhosas é a __________.",
+                "Caatinga", "Natureza", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "A primeira coisa que você deve fazer ao se perder na mata é __________, respirar e pensar (regra S.T.O.P.).",
-                "parar", "Sobrevivência", 1);
+                "A flor que gira acompanhando o movimento do sol é o __________.",
+                "girassol", "Natureza", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O método mais seguro para purificar água sem equipamento é __________.",
-                "ferver", "Sobrevivência", 1);
+                "A maior ilha de água doce do mundo é a Ilha do __________.",
+                "Bananal", "Natureza", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Em situação de sobrevivência, a pior coisa que se pode fazer é entrar em __________.",
-                "pânico", "Sobrevivência", 1);
+                "O metal líquido à temperatura ambiente é o __________.",
+                "mercúrio", "Natureza", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O sol nasce no direção __________.",
-                "leste", "Sobrevivência", 1);
+                "A lua cheia que aparece mais próxima da Terra é chamada de __________.",
+                "superlua", "Natureza", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "No hemisfério sul, para encontrar o Norte à noite, usa-se a constelação do __________.",
-                "Cruzeiro do Sul", "Sobrevivência", 1);
+                "O fenômeno de luzes coloridas nos polos é chamado de __________.",
+                "aurora", "Natureza", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Em sobrevivência, NUNCA se deve beber água __________ do mar.",
-                "salgada", "Sobrevivência", 1);
+                "O tipo de chuva que contém ácidos poluentes é a chuva __________.",
+                "ácida", "Natureza", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "A regra de __________ em sobrevivência diz: 3 minutos sem ar, 3 horas sem abrigo, 3 dias sem água, 3 semanas sem comida.",
+                "A rocha derretida no interior da Terra é chamada de __________.",
+                "magma", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O bioma alagado no centro-oeste brasileiro é o __________.",
+                "Pantanal", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A maior árvore do mundo (em volume) é a __________ gigante.",
+                "sequoia", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O oceano que banha o litoral brasileiro é o __________.",
+                "Atlântico", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A galáxia onde fica o Sistema Solar é a __________ Láctea.",
+                "Via", "Natureza", 1);
+
+        // SOBREVIVÊNCIA (10 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O sinal universal de socorro com as mãos é um __________ levantado.",
+                "polegar", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O musgo geralmente cresce no lado __________ das árvores no hemisfério sul.",
+                "sul", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O melhor material para isolar o corpo do chão frio é uma camada de __________.",
+                "folhas", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O pedaço de pano ou bandana para múltiplos usos em sobrevivência é chamado de __________.",
+                "shemagh", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A constelação usada para encontrar o sul no hemisfério sul é o Cruzeiro do __________.",
+                "Sul", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O sinal de fumaça para pedir socorro deve ser de cor __________ para contraste.",
+                "preta", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O tipo de fogueira ideal para cozinhar é a fogueira em formato de __________.",
+                "cone", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O sinal de socorro internacional com apito é tocar __________ vezes.",
+                "seis", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O fruto do cacto que pode ser comido no deserto é o __________.",
+                "figo-da-índia", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O padrão de marcação no chão para sinalização aérea deve ter pelo menos __________ metros.",
                 "três", "Sobrevivência", 1);
 
+        // RASTREAMENTO (10 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "O melhor tipo de madeira para acender fogo por atrito é madeira __________ seca.",
-                "mole", "Sobrevivência", 1);
+                "O rastro que mostra a largura do passo do animal é chamado de __________.",
+                "passada", "Rastreamento", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "No frio extremo, o mais importante é isolar-se do __________.",
-                "chão", "Sobrevivência", 1);
-
-        // RASTREAMENTO (10 perguntas)
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Uma pegada com marcas de unhas (garras) visíveis provavelmente é de um __________.",
-                "canídeo", "Rastreamento", 1);
+                "Pegadas mais profundas na ponta indicam que o animal estava __________.",
+                "acelerando", "Rastreamento", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Pegada arredondada sem marcas de unha é característica de __________.",
-                "felino", "Rastreamento", 1);
+                "O cheiro de almíscar no ar pode indicar a presença de um __________.",
+                "carnívoro", "Rastreamento", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Fezes com sementes e fibras indicam animal __________.",
-                "herbívoro", "Rastreamento", 1);
+                "Fezes esbranquiçadas e secas indicam que o animal passou há __________ tempo.",
+                "muito", "Rastreamento", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Buracos no chão usados por animais são chamados de __________.",
-                "tocas", "Rastreamento", 1);
+                "A trilha que vários animais usam regularmente é chamada de __________ de uso.",
+                "trilha", "Rastreamento", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Pegadas com bordas nítidas e fundo fresco indicam passagem __________.",
-                "recente", "Rastreamento", 1);
+                "O som de galhos quebrando à distância pode indicar a presença de um animal __________.",
+                "grande", "Rastreamento", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Restos de presas parcialmente comidas indicam a presença de um __________.",
-                "predador", "Rastreamento", 1);
+                "Marcas de garras em árvores com casca arrancada indicam presença de __________.",
+                "urso", "Rastreamento", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Arranhões em árvores geralmente indicam __________ de território.",
-                "marcação", "Rastreamento", 1);
+                "O rastro de um animal que acabou de beber água geralmente leva para perto de um __________.",
+                "curso d'água", "Rastreamento", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Rastros arrastados no chão (como de cobra) são chamados de rastros de __________.",
-                "deslocamento", "Rastreamento", 1);
+                "O formato arredondado da pegada de um felino é diferente do formato __________ de um canídeo.",
+                "oval", "Rastreamento", 1);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Pelos presos em galhos ou cercas indicam a passagem de um __________.",
-                "mamífero", "Rastreamento", 1);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
-                "Ao observar uma pegada humana, os principais fatores a anotar são tamanho e __________.",
-                "direção", "Rastreamento", 1);
+                "A presença de moscas sobre uma área específica pode indicar __________ fresca.",
+                "carcaça", "Rastreamento", 1);
     }
-
 
     // 25 questões de MÚLTIPLA ESCOLHA - MÉDIO
     private void carregarCacadoraMedioMultiplaEscolha() {
@@ -1621,110 +1622,111 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Pegadas humanas apontam calcanhar mais profundo em descida.", true, "Rastreamento", 4);
     }
     private void carregarCacadoraMedioLacuna() {
-        // ANIMAIS (7 perguntas)
+        // ANIMAIS (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O animal que pode regenerar seu próprio cérebro é a __________.",
-                "planária", "Animais", 4);
+                "O maior roedor do mundo, encontrado no Brasil, é a __________.",
+                "capivara", "Animais", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "A maior ave do mundo, que não voa mas corre muito rápido, é o __________.",
-                "avestruz", "Animais", 4);
+                "O felino brasileiro que é o terceiro maior do mundo é a __________.",
+                "onça-pintada", "Animais", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O animal com o maior coração entre os seres vivos é a __________.",
-                "baleia-azul", "Animais", 4);
+                "O lobo brasileiro de pernas longas que vive no Cerrado é o __________.",
+                "lobo-guará", "Animais", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O animal que hiberna por mais tempo (até 8 meses) é o __________ terrestre.",
-                "esquilo", "Animais", 4);
+                "A ave brasileira de plumagem azul, ameaçada de extinção, é a __________.",
+                "arara-azul", "Animais", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O animal que tem três corações é o __________.",
-                "polvo", "Animais", 4);
+                "O primata brasileiro de pelagem dourada que vive na Mata Atlântica é o __________.",
+                "mico-leão-dourado", "Animais", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O mamífero que bota ovos (monotremado) é o __________.",
-                "ornitorrinco", "Animais", 4);
+                "A maior tartaruga marinha, que pode pesar 700 kg, é a tartaruga-de-__________.",
+                "couro", "Animais", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "A serpente mais venenosa do mundo é a __________.",
-                "taipan-do-interior", "Animais", 4);
+                "O mamífero brasileiro que se alimenta exclusivamente de formigas e cupins é o __________.",
+                "tamanduá-bandeira", "Animais", 4);
 
-        // NATUREZA (7 perguntas)
+        // NATUREZA (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "Comunidade de plantas e animais com clima similar forma um __________.",
-                "bioma", "Natureza", 4);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O fenômeno de mudança gradual na comunidade de espécies ao longo do tempo é a __________.",
-                "sucessão ecológica", "Natureza", 4);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O pH da chuva normal (levemente ácido) é aproximadamente __________.",
-                "5,6", "Natureza", 4);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O fenômeno de aquecimento do Pacífico equatorial é chamado de __________.",
-                "El Niño", "Natureza", 4);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O maior produtor de oxigênio do planeta é o __________ oceânico.",
-                "fitoplâncton", "Natureza", 4);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "A quebra de matéria morta por fungos e bactérias é chamada de __________.",
-                "decomposição", "Natureza", 4);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O bioma brasileiro conhecido como 'berço das águas' e com árvores de casca grossa é o __________.",
+                "O bioma brasileiro com vegetação adaptada ao fogo é o __________.",
                 "Cerrado", "Natureza", 4);
 
-        // SOBREVIVÊNCIA (6 perguntas)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O nó mais seguro para amarrar uma corda em uma árvore é a volta do __________.",
-                "fiador", "Sobrevivência", 4);
+                "O fenômeno de resfriamento das águas do Pacífico, oposto ao El Niño, é chamado de __________.",
+                "La Niña", "Natureza", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "No deserto, o melhor horário para caminhar é a __________ (mais frio).",
-                "madrugada", "Sobrevivência", 4);
+                "O tipo de floresta caracterizada por pinheiros em regiões frias é a floresta de __________.",
+                "coníferas", "Natureza", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "A sigla S.T.O.P. em sobrevivência significa: Sentar, Pensar, Observar e __________.",
-                "Planejar", "Sobrevivência", 4);
+                "O fenômeno em que o solo fértil se transforma em deserto é chamado de __________.",
+                "desertificação", "Natureza", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "Uma planta tóxica comum que NÃO deve ser consumida é a __________.",
-                "comigo-ninguém-pode", "Sobrevivência", 4);
+                "O aquífero que abrange Brasil, Argentina, Paraguai e Uruguai é o Aquífero __________.",
+                "Guarani", "Natureza", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "O método SODIS de purificação de água usa garrafa PET e __________.",
-                "sol", "Sobrevivência", 4);
+                "O ecossistema brasileiro de transição entre Cerrado e Caatinga é a __________.",
+                "Mata Seca", "Natureza", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "Ao encontrar um animal selvagem grande, você NUNCA deve __________.",
-                "correr", "Sobrevivência", 4);
+                "A camada da atmosfera onde se concentra o ozônio é a __________.",
+                "estratosfera", "Natureza", 4);
 
-        // RASTREAMENTO (5 perguntas)
+        // SOBREVIVÊNCIA (6 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "Pegadas muito afastadas umas das outras indicam que o animal estava em __________.",
-                "velocidade", "Rastreamento", 4);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "Fezes deixadas em locais estratégicos para demarcar território são chamadas de fezes de __________.",
-                "contato", "Rastreamento", 4);
+                "O tipo de abrigo construído com galhos inclinados contra um tronco é chamado de abrigo __________.",
+                "inclinado", "Sobrevivência", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "A área de descanso de um animal é chamada de __________.",
-                "cama", "Rastreamento", 4);
+                "A planta aquática que pode fornecer água potável no pantanal é o __________.",
+                "aguapé", "Sobrevivência", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "A pegada do javali é caracterizada por dois cascos e __________ (arrasto da cauda ou patas).",
-                "arrasto", "Rastreamento", 4);
+                "O sinal de socorro com três fogueiras deve ser disposto em formato de __________.",
+                "triângulo", "Sobrevivência", 4);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
-                "Uma trilha bem marcada na mata indica passagem __________ de animais.",
-                "frequente", "Rastreamento", 4);
+                "A técnica de respiração para acalmar em situação de pânico é a respiração __________.",
+                "diafragmática", "Sobrevivência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O melhor nó para unir duas cordas de mesma espessura é o nó __________.",
+                "direito", "Sobrevivência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "A técnica de cozinhar alimentos embrulhados em folhas sobre brasas é chamada de __________.",
+                "papillote", "Sobrevivência", 4);
+
+        // RASTREAMENTO (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O conjunto de marcas que um animal deixa ao se alimentar é chamado de rastro de __________.",
+                "alimentação", "Rastreamento", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O padrão de desgaste dos dentes de um animal pode indicar sua __________.",
+                "idade", "Rastreamento", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "A presença de ossos roídos em uma trilha indica atividade de __________.",
+                "roedores", "Rastreamento", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "Pegadas sobrepostas exatamente indicam que o animal estava __________.",
+                "caminhando", "Rastreamento", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "A distância entre as pegadas dianteiras e traseiras do mesmo animal é chamada de __________.",
+                "intervalo", "Rastreamento", 4);
     }
+
 
 
 
@@ -1870,109 +1872,109 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.DIFICIL, "Rastros sobrepostos de felino indicam que ele estava caçando.", true, "Rastreamento", 8);
     }
     private void carregarCacadoraDificilLacuna() {
-        // ANIMAIS (7 perguntas)
+        // ANIMAIS (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O princípio ecológico onde um animal inofensivo imita um animal perigoso é chamado de mimetismo __________.",
+                "O fenômeno em que um animal inofensivo imita as cores de um animal perigoso é chamado de mimetismo __________.",
                 "batesiano", "Animais", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O animal que tem o maior cérebro em relação ao corpo (proporcionalmente) é a __________.",
-                "formiga", "Animais", 8);
+                "O mamífero australiano que bota ovos e tem esporão venenoso é o __________.",
+                "ornitorrinco", "Animais", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O fenômeno onde um animal vive dentro do outro sem prejudicar é o __________.",
-                "inquilinismo", "Animais", 8);
+                "O peixe mais venenoso do mundo, que se camufla entre pedras, é o peixe-__________.",
+                "pedra", "Animais", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "A única ave que consegue voar para trás é o __________.",
+                "A maior serpente do Brasil, que pode ultrapassar 8 metros, é a __________.",
+                "sucuri", "Animais", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O fenômeno de alguns animais manterem características juvenis na fase adulta é chamado de __________.",
+                "neotenia", "Animais", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A única ave conhecida que consegue voar para trás é o __________.",
                 "beija-flor", "Animais", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O mamífero que pode viver mais de 200 anos é a baleia-__________.",
-                "da-groenlândia", "Animais", 8);
+                "O maior invertebrado do mundo, que vive nas profundezas oceânicas, é a lula-__________.",
+                "gigante", "Animais", 8);
 
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O animal que tem sangue azul (devido à hemocianina) é o __________ (dentre outros).",
-                "polvo", "Animais", 8);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O axolote é um anfíbio que mantém características larvais na fase adulta, fenômeno chamado de __________.",
-                "neotenia", "Animais", 8);
-
-        // NATUREZA (7 perguntas)
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O estudo dos ciclos de elementos químicos entre seres vivos e ambiente é a __________.",
-                "biogeoquímica", "Natureza", 8);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O enriquecimento excessivo de nutrientes em corpos d'água é chamado de __________.",
-                "eutrofização", "Natureza", 8);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "A coluna d'água aberta no oceano (longe do fundo e da costa) é a zona __________.",
-                "pelágica", "Natureza", 8);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "A subida de águas profundas ricas em nutrientes no oceano é chamada de zona de __________.",
-                "ressurgência", "Natureza", 8);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O gás do efeito estufa que é cerca de 25 vezes mais potente que o CO₂ é o __________.",
-                "metano", "Natureza", 8);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O solo rico em alumínio e ferro, comum em regiões tropicais, é o solo __________.",
-                "laterítico", "Natureza", 8);
-
+        // NATUREZA (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
                 "O único bioma exclusivamente brasileiro é a __________.",
                 "Caatinga", "Natureza", 8);
 
-        // SOBREVIVÊNCIA (6 perguntas)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "A técnica de fricção de madeira mais eficiente para fazer fogo é o __________ de fogo.",
-                "arco", "Sobrevivência", 8);
+                "O fenômeno de inversão térmica que retém poluentes próximo ao solo ocorre principalmente no __________.",
+                "inverno", "Natureza", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "Em um abrigo, a abertura deve ficar __________ ao vento (contra o vento).",
-                "oposta", "Sobrevivência", 8);
+                "O tipo de vegetação adaptada a solos pobres em nutrientes e ricos em alumínio é chamada de vegetação __________.",
+                "oligotrófica", "Natureza", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "A planta conhecida por acumular água em suas folhas-reservatório é a __________.",
-                "bromélia", "Sobrevivência", 8);
+                "O fenômeno de acidificação dos oceanos é causado pelo aumento da absorção de __________.",
+                "CO2", "Natureza", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "A perda perigosa de calor corporal é chamada de __________.",
-                "hipotermia", "Sobrevivência", 8);
+                "A região oceânica onde há maior biodiversidade devido à subida de nutrientes é a zona de __________.",
+                "ressurgência", "Natureza", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "Beber de __________ a __________ litros de água do mar em pouco tempo pode ser fatal.",
-                "2 a 3", "Sobrevivência", 8);
+                "O gás de efeito estufa liberado pelo degelo do permafrost é o __________.",
+                "metano", "Natureza", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "A técnica de produzir água potável a partir de água salgada usando o sol é a destilação __________.",
-                "solar", "Sobrevivência", 8);
+                "O tipo de relação ecológica onde um organismo se beneficia sem prejudicar o outro é o __________.",
+                "comensalismo", "Natureza", 8);
 
-        // RASTREAMENTO (5 perguntas)
+        // SOBREVIVÊNCIA (6 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O sulco central presente em algumas pegadas de animais é chamado de __________.",
-                "linea alba", "Rastreamento", 8);
-
-        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "A técnica de rastreamento que se baseia em alterações do ambiente (galhos quebrados, folhas viradas) é o rastreamento por __________.",
-                "pressão", "Rastreamento", 8);
+                "A técnica de produzir água potável a partir da água do mar usando evaporação é a __________ solar.",
+                "destilação", "Sobrevivência", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O animal que deixa a maior pegada entre os mamíferos terrestres é o __________.",
-                "elefante", "Rastreamento", 8);
+                "O fungo que cresce em troncos e pode ser usado como isca para fogo é o __________.",
+                "pólvoro", "Sobrevivência", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O rastro deixado por um animal que está carregando uma presa é chamado de rastro de __________.",
-                "arrasto", "Rastreamento", 8);
+                "A técnica de orientação que usa a bissetriz do ângulo entre o sol e o ponteiro das horas é o método do __________.",
+                "relógio", "Sobrevivência", 8);
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
-                "O padrão de pegadas onde um animal manca é chamado de passo __________.",
-                "quebrado", "Rastreamento", 8);
+                "O tipo de hipotermia que ocorre por imersão em água fria é chamada de hipotermia por __________.",
+                "condução", "Sobrevivência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A planta do cerrado que armazena água em seu caule e é conhecida como 'garrafa d'água' é a __________.",
+                "barriguda", "Sobrevivência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O método de navegação natural que usa a posição das estrelas é chamado de navegação __________.",
+                "astronômica", "Sobrevivência", 8);
+
+        // RASTREAMENTO (5 perguntas NOVAS)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O estudo científico das pegadas e rastros de animais é chamado de __________.",
+                "icnologia", "Rastreamento", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A marca deixada pelo arrasto da cauda de um réptil é chamada de __________ caudal.",
+                "sulco", "Rastreamento", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O padrão de movimento de um animal que está caçando, com paradas frequentes, é chamado de marcha __________.",
+                "furtiva", "Rastreamento", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A técnica de identificar animais pelo som de seus passos é chamada de __________ acústico.",
+                "rastreamento", "Rastreamento", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O padrão de desgaste assimétrico nas pegadas de um quadrúpede indica que o animal está __________.",
+                "mancando", "Rastreamento", 8);
     }
 
 
