@@ -236,7 +236,7 @@ public class GerenciadorBatalha {
             System.out.println("\n✅ CORRETO!");
             inimigoAtual.tomarDano(dano);
 
-            int experienciaGanha = 10 + (estagio.getDificuldade() * 5);
+            int experienciaGanha =  (estagio.getDificuldade() * 5);
             jogador.getPersonagem().addExperiencia(experienciaGanha);
             System.out.println("📚 +" + experienciaGanha + " de experiência!");
 
@@ -276,7 +276,7 @@ public class GerenciadorBatalha {
             System.out.println("\n💥 " + personagem.getNome() + " causa " + dano + " de dano com sua habilidade especial!");
             inimigoAtual.tomarDano(dano);
 
-            int experienciaGanha = 15 + (estagio.getDificuldade() * 5);
+            int experienciaGanha = 10 + (estagio.getDificuldade() * 5);
             jogador.getPersonagem().addExperiencia(experienciaGanha);
             System.out.println("📚 +" + experienciaGanha + " de experiência!");
 
