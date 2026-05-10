@@ -995,19 +995,21 @@ public class BancoPerguntas {
 
     // ==================== CAÇADORA - 200 PERGUNTAS ====================
     private void carregarPerguntasCacadora() {
-        carregarCacadoraFacilMultiplaEscolha();  // 50 questões
-        carregarCacadoraFacilVerdadeiroFalso();  // 50 questões
-        carregarCacadoraMedioMultiplaEscolha();  // 25 questões
-        carregarCacadoraMedioVerdadeiroFalso();  // 25 questões
-        carregarCacadoraDificilMultiplaEscolha(); // 25 questões
-        carregarCacadoraDificilVerdadeiroFalso(); // 25 questões
+        carregarCacadoraFacilMultiplaEscolha();
+        carregarCacadoraFacilVerdadeiroFalso();
+        carregarCacadoraFacilLacuna();
+
+        carregarCacadoraMedioMultiplaEscolha();
+        carregarCacadoraMedioVerdadeiroFalso();
+        carregarCacadoraMedioLacuna();
+
+        carregarCacadoraDificilMultiplaEscolha();
+        carregarCacadoraDificilVerdadeiroFalso();
+        carregarCacadoraDificilLacuna();
     }
 
-    // ==================== PERGUNTAS FÁCEIS (100) ====================
 
-    // 50 questões de MÚLTIPLA ESCOLHA - FÁCIL
     private void carregarCacadoraFacilMultiplaEscolha() {
-        // ANIMAIS (15 perguntas)
         adicionarPerguntaMultipla(PerTipo.CACADORA, Dificuldade.FACIL,
                 "Qual é o animal mais rápido do mundo?",
                 Arrays.asList("Leão", "Guepardo", "Falcão-peregrino", "Cavalo"), "C", "Animais", 1);
@@ -1212,8 +1214,6 @@ public class BancoPerguntas {
                 "Pegada humana em solo macio: o que observar?",
                 Arrays.asList("Tamanho e direção", "Cor da pele", "Idade", "Peso aproximado"), "A", "Rastreamento", 1);
     }
-
-    // 50 questões de VERDADEIRO OU FALSO - FÁCIL
     private void carregarCacadoraFacilVerdadeiroFalso() {
         // ANIMAIS (15 perguntas)
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.FACIL, "O urso panda é nativo da Austrália.", false, "Animais", 1);
@@ -1273,8 +1273,211 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.FACIL, "Pelos enroscados indicam passagem recente de mamífero.", true, "Rastreamento", 1);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.FACIL, "Todo rastro de pegada humana é fácil de seguir.", false, "Rastreamento", 1);
     }
+    private void carregarCacadoraFacilLacuna() {
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O animal mais rápido do mundo é o __________.",
+                "falcão-peregrino", "Animais", 1);
 
-    // ==================== PERGUNTAS MÉDIAS (50) ====================
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O animal conhecido como o 'Rei da Selva' é o __________.",
+                "leão", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O maior animal do mundo é a __________.",
+                "baleia-azul", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O animal australiano que carrega seus filhotes numa bolsa é o __________.",
+                "canguru", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A ave símbolo da paz é a __________.",
+                "pomba", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O animal famoso por seu pescoço longo é a __________.",
+                "girafa", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Os pingüins vivem no Polo __________.",
+                "Sul", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O felino conhecido por ter listras é o __________.",
+                "tigre", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O animal marinho conhecido como 'cavalo-marinho' é o __________.",
+                "hipocampo", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O animal conhecido como 'melhor amigo do homem' é o __________.",
+                "cachorro", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O animal que tem uma tromba é o __________.",
+                "elefante", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O inseto que produz mel é a __________.",
+                "abelha", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O animal conhecido por mudar de cor para se camuflar é o __________.",
+                "camaleão", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A ave que não voa mas nada muito bem é o __________.",
+                "pinguim", "Animais", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O animal conhecido por sua excelente memória é o __________.",
+                "elefante", "Animais", 1);
+
+        // NATUREZA (15 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O processo pelo qual as plantas produzem seu alimento usando luz solar é a __________.",
+                "fotossíntese", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O maior bioma brasileiro é a __________.",
+                "Amazônia", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O menor oceano do mundo é o Oceano __________.",
+                "Ártico", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O gás que as plantas liberam durante a fotossíntese é o __________.",
+                "oxigênio", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A camada da Terra onde vivemos é a __________.",
+                "crosta terrestre", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Comunidade de seres vivos e o ambiente onde vivem forma um __________.",
+                "ecossistema", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A grande onda causada por terremoto no mar é chamada de __________.",
+                "tsunami", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O rio mais extenso do mundo é o Rio __________.",
+                "Amazonas", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A maior floresta tropical do mundo é a __________.",
+                "Amazônia", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "As estações do ano são causadas pela inclinação do __________ da Terra.",
+                "eixo", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Os gases que destroem a camada de ozônio são os __________.",
+                "CFCs", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A variedade de espécies em um ambiente é chamada de __________.",
+                "biodiversidade", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O maior deserto do mundo (de gelo) é a __________.",
+                "Antártida", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "As plantas carnívoras capturam insetos para obter __________.",
+                "nutrientes", "Natureza", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O processo de transformação de água em vapor é a __________.",
+                "evaporação", "Natureza", 1);
+
+        // SOBREVIVÊNCIA (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Em emergência na floresta, a cor mais visível para sinalização é __________ ou laranja.",
+                "vermelho", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A primeira coisa que você deve fazer ao se perder na mata é __________, respirar e pensar (regra S.T.O.P.).",
+                "parar", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O método mais seguro para purificar água sem equipamento é __________.",
+                "ferver", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Em situação de sobrevivência, a pior coisa que se pode fazer é entrar em __________.",
+                "pânico", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O sol nasce no direção __________.",
+                "leste", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "No hemisfério sul, para encontrar o Norte à noite, usa-se a constelação do __________.",
+                "Cruzeiro do Sul", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Em sobrevivência, NUNCA se deve beber água __________ do mar.",
+                "salgada", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "A regra de __________ em sobrevivência diz: 3 minutos sem ar, 3 horas sem abrigo, 3 dias sem água, 3 semanas sem comida.",
+                "três", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "O melhor tipo de madeira para acender fogo por atrito é madeira __________ seca.",
+                "mole", "Sobrevivência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "No frio extremo, o mais importante é isolar-se do __________.",
+                "chão", "Sobrevivência", 1);
+
+        // RASTREAMENTO (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Uma pegada com marcas de unhas (garras) visíveis provavelmente é de um __________.",
+                "canídeo", "Rastreamento", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Pegada arredondada sem marcas de unha é característica de __________.",
+                "felino", "Rastreamento", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Fezes com sementes e fibras indicam animal __________.",
+                "herbívoro", "Rastreamento", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Buracos no chão usados por animais são chamados de __________.",
+                "tocas", "Rastreamento", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Pegadas com bordas nítidas e fundo fresco indicam passagem __________.",
+                "recente", "Rastreamento", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Restos de presas parcialmente comidas indicam a presença de um __________.",
+                "predador", "Rastreamento", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Arranhões em árvores geralmente indicam __________ de território.",
+                "marcação", "Rastreamento", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Rastros arrastados no chão (como de cobra) são chamados de rastros de __________.",
+                "deslocamento", "Rastreamento", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Pelos presos em galhos ou cercas indicam a passagem de um __________.",
+                "mamífero", "Rastreamento", 1);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
+                "Ao observar uma pegada humana, os principais fatores a anotar são tamanho e __________.",
+                "direção", "Rastreamento", 1);
+    }
+
 
     // 25 questões de MÚLTIPLA ESCOLHA - MÉDIO
     private void carregarCacadoraMedioMultiplaEscolha() {
@@ -1383,7 +1586,6 @@ public class BancoPerguntas {
                 Arrays.asList("Animal de passagem única", "Passagem frequente de animais", "Corrida", "Queda de árvore"), "B", "Rastreamento", 4);
     }
 
-    // 25 questões de VERDADEIRO OU FALSO - MÉDIO
     private void carregarCacadoraMedioVerdadeiroFalso() {
         // ANIMAIS (7 perguntas)
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O lobo-guará é um canídeo sul-americano de patas longas.", true, "Animais", 4);
@@ -1418,10 +1620,114 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Rastros em zigue-zague indicam animal fugindo.", true, "Rastreamento", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Pegadas humanas apontam calcanhar mais profundo em descida.", true, "Rastreamento", 4);
     }
+    private void carregarCacadoraMedioLacuna() {
+        // ANIMAIS (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O animal que pode regenerar seu próprio cérebro é a __________.",
+                "planária", "Animais", 4);
 
-    // ==================== PERGUNTAS DIFÍCEIS (50) ====================
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "A maior ave do mundo, que não voa mas corre muito rápido, é o __________.",
+                "avestruz", "Animais", 4);
 
-    // 25 questões de MÚLTIPLA ESCOLHA - DIFÍCIL
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O animal com o maior coração entre os seres vivos é a __________.",
+                "baleia-azul", "Animais", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O animal que hiberna por mais tempo (até 8 meses) é o __________ terrestre.",
+                "esquilo", "Animais", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O animal que tem três corações é o __________.",
+                "polvo", "Animais", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O mamífero que bota ovos (monotremado) é o __________.",
+                "ornitorrinco", "Animais", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "A serpente mais venenosa do mundo é a __________.",
+                "taipan-do-interior", "Animais", 4);
+
+        // NATUREZA (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "Comunidade de plantas e animais com clima similar forma um __________.",
+                "bioma", "Natureza", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O fenômeno de mudança gradual na comunidade de espécies ao longo do tempo é a __________.",
+                "sucessão ecológica", "Natureza", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O pH da chuva normal (levemente ácido) é aproximadamente __________.",
+                "5,6", "Natureza", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O fenômeno de aquecimento do Pacífico equatorial é chamado de __________.",
+                "El Niño", "Natureza", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O maior produtor de oxigênio do planeta é o __________ oceânico.",
+                "fitoplâncton", "Natureza", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "A quebra de matéria morta por fungos e bactérias é chamada de __________.",
+                "decomposição", "Natureza", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O bioma brasileiro conhecido como 'berço das águas' e com árvores de casca grossa é o __________.",
+                "Cerrado", "Natureza", 4);
+
+        // SOBREVIVÊNCIA (6 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O nó mais seguro para amarrar uma corda em uma árvore é a volta do __________.",
+                "fiador", "Sobrevivência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "No deserto, o melhor horário para caminhar é a __________ (mais frio).",
+                "madrugada", "Sobrevivência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "A sigla S.T.O.P. em sobrevivência significa: Sentar, Pensar, Observar e __________.",
+                "Planejar", "Sobrevivência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "Uma planta tóxica comum que NÃO deve ser consumida é a __________.",
+                "comigo-ninguém-pode", "Sobrevivência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "O método SODIS de purificação de água usa garrafa PET e __________.",
+                "sol", "Sobrevivência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "Ao encontrar um animal selvagem grande, você NUNCA deve __________.",
+                "correr", "Sobrevivência", 4);
+
+        // RASTREAMENTO (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "Pegadas muito afastadas umas das outras indicam que o animal estava em __________.",
+                "velocidade", "Rastreamento", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "Fezes deixadas em locais estratégicos para demarcar território são chamadas de fezes de __________.",
+                "contato", "Rastreamento", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "A área de descanso de um animal é chamada de __________.",
+                "cama", "Rastreamento", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "A pegada do javali é caracterizada por dois cascos e __________ (arrasto da cauda ou patas).",
+                "arrasto", "Rastreamento", 4);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
+                "Uma trilha bem marcada na mata indica passagem __________ de animais.",
+                "frequente", "Rastreamento", 4);
+    }
+
+
+
     private void carregarCacadoraDificilMultiplaEscolha() {
         // ANIMAIS (7 perguntas)
         adicionarPerguntaMultipla(PerTipo.CACADORA, Dificuldade.DIFICIL,
@@ -1563,14 +1869,125 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.DIFICIL, "O 'teste da folha' pode ajudar a encontrar direção do vento.", true, "Rastreamento", 8);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.DIFICIL, "Rastros sobrepostos de felino indicam que ele estava caçando.", true, "Rastreamento", 8);
     }
-    // ==================== GUERREIRO - 200 PERGUNTAS ====================
+    private void carregarCacadoraDificilLacuna() {
+        // ANIMAIS (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O princípio ecológico onde um animal inofensivo imita um animal perigoso é chamado de mimetismo __________.",
+                "batesiano", "Animais", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O animal que tem o maior cérebro em relação ao corpo (proporcionalmente) é a __________.",
+                "formiga", "Animais", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O fenômeno onde um animal vive dentro do outro sem prejudicar é o __________.",
+                "inquilinismo", "Animais", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A única ave que consegue voar para trás é o __________.",
+                "beija-flor", "Animais", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O mamífero que pode viver mais de 200 anos é a baleia-__________.",
+                "da-groenlândia", "Animais", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O animal que tem sangue azul (devido à hemocianina) é o __________ (dentre outros).",
+                "polvo", "Animais", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O axolote é um anfíbio que mantém características larvais na fase adulta, fenômeno chamado de __________.",
+                "neotenia", "Animais", 8);
+
+        // NATUREZA (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O estudo dos ciclos de elementos químicos entre seres vivos e ambiente é a __________.",
+                "biogeoquímica", "Natureza", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O enriquecimento excessivo de nutrientes em corpos d'água é chamado de __________.",
+                "eutrofização", "Natureza", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A coluna d'água aberta no oceano (longe do fundo e da costa) é a zona __________.",
+                "pelágica", "Natureza", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A subida de águas profundas ricas em nutrientes no oceano é chamada de zona de __________.",
+                "ressurgência", "Natureza", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O gás do efeito estufa que é cerca de 25 vezes mais potente que o CO₂ é o __________.",
+                "metano", "Natureza", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O solo rico em alumínio e ferro, comum em regiões tropicais, é o solo __________.",
+                "laterítico", "Natureza", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O único bioma exclusivamente brasileiro é a __________.",
+                "Caatinga", "Natureza", 8);
+
+        // SOBREVIVÊNCIA (6 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A técnica de fricção de madeira mais eficiente para fazer fogo é o __________ de fogo.",
+                "arco", "Sobrevivência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "Em um abrigo, a abertura deve ficar __________ ao vento (contra o vento).",
+                "oposta", "Sobrevivência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A planta conhecida por acumular água em suas folhas-reservatório é a __________.",
+                "bromélia", "Sobrevivência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A perda perigosa de calor corporal é chamada de __________.",
+                "hipotermia", "Sobrevivência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "Beber de __________ a __________ litros de água do mar em pouco tempo pode ser fatal.",
+                "2 a 3", "Sobrevivência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A técnica de produzir água potável a partir de água salgada usando o sol é a destilação __________.",
+                "solar", "Sobrevivência", 8);
+
+        // RASTREAMENTO (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O sulco central presente em algumas pegadas de animais é chamado de __________.",
+                "linea alba", "Rastreamento", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "A técnica de rastreamento que se baseia em alterações do ambiente (galhos quebrados, folhas viradas) é o rastreamento por __________.",
+                "pressão", "Rastreamento", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O animal que deixa a maior pegada entre os mamíferos terrestres é o __________.",
+                "elefante", "Rastreamento", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O rastro deixado por um animal que está carregando uma presa é chamado de rastro de __________.",
+                "arrasto", "Rastreamento", 8);
+
+        adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
+                "O padrão de pegadas onde um animal manca é chamado de passo __________.",
+                "quebrado", "Rastreamento", 8);
+    }
+
+
     private void carregarPerguntasGuerreiro() {
-        carregarGuerreiroFacilMultiplaEscolha();  // 50 questões
-        carregarGuerreiroFacilVerdadeiroFalso();  // 50 questões
-        carregarGuerreiroMedioMultiplaEscolha();  // 25 questões
-        carregarGuerreiroMedioVerdadeiroFalso();  // 25 questões
-        carregarGuerreiroDificilMultiplaEscolha(); // 25 questões
-        carregarGuerreiroDificilVerdadeiroFalso(); // 25 questões
+        carregarGuerreiroFacilMultiplaEscolha();
+        carregarGuerreiroFacilVerdadeiroFalso();
+        carregarGuerreiroFacilLacuna();
+
+        carregarGuerreiroMedioMultiplaEscolha();
+        carregarGuerreiroMedioVerdadeiroFalso();
+        carregarGuerreiroMedioLacuna();
+
+        carregarGuerreiroDificilMultiplaEscolha();
+        carregarGuerreiroDificilVerdadeiroFalso();
+        carregarGuerreiroDificilLacuna();
     }
 
     // ==================== PERGUNTAS FÁCEIS (100) ====================
@@ -1844,9 +2261,211 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.GUERREIRO, Dificuldade.FACIL, "Sun Tzu escreveu 'A Arte da Guerra'.", true, "História", 1);
     }
 
-    // ==================== PERGUNTAS MÉDIAS (50) ====================
+    private void carregarGuerreiroFacilLacuna() {
+        // COMBATE E ARTES MARCIAIS (15 perguntas)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A arte marcial japonesa que significa 'caminho suave' é o __________.",
+                "Judô", "Combate", 1);
 
-    // 25 questões de MÚLTIPLA ESCOLHA - MÉDIO
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A arma tradicionalmente usada por samurais é a __________.",
+                "Katana", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O país berço do Taekwondo é a __________.",
+                "Coreia do Sul", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A luta conhecida como 'a arte suave' originária do Japão é o __________.",
+                "Jiu-Jitsu", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "No Boxe, o golpe desferido com a mão da frente em linha reta é o __________.",
+                "Jab", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A arte marcial tailandesa conhecida como 'arte das oito armas' é o __________.",
+                "Muay Thai", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O golpe do Boxe desferido com a mão traseira em movimento semicircular é o __________.",
+                "Gancho", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O Caratê se originou na ilha japonesa de __________.",
+                "Okinawa", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A técnica de finalização que hiperextende o cotovelo no Jiu-Jitsu é a __________ de braço.",
+                "chave", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O capacete é equipamento de proteção obrigatório no Boxe __________.",
+                "olímpico", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O fundador do Judô foi __________.",
+                "Jigoro Kano", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A palavra 'Caratê' significa __________ vazias.",
+                "mãos", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "No MMA, as luvas são __________.",
+                "abertas", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A armadura de placas surgiu na Idade __________.",
+                "Média", "Combate", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O 'cinturão preto' no Jiu-Jitsu é precedido pelo cinturão __________.",
+                "marrom", "Combate", 1);
+
+        // ESTRATÉGIA MILITAR (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A manobra de cercar o inimigo por todos os lados é chamada de __________.",
+                "cerco", "Estratégia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "Atacar o inimigo pelos lados é chamado de __________.",
+                "flanquear", "Estratégia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O combate em valas escavadas é chamado de guerra de __________.",
+                "trincheiras", "Estratégia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O ataque surpresa ao inimigo é chamado de __________.",
+                "emboscada", "Estratégia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A estratégia alemã de 'guerra relâmpago' é chamada de __________.",
+                "Blitzkrieg", "Estratégia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A unidade militar de aproximadamente 30-40 soldados é o __________.",
+                "pelotão", "Estratégia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O planejamento de suprimentos e movimentação de tropas é a __________ militar.",
+                "logística", "Estratégia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O recuo planejado para obter vantagem futura é chamado de retirada __________.",
+                "estratégica", "Estratégia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O soldado que coleta informações sobre o inimigo é o __________.",
+                "batedor", "Estratégia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "As armas de longo alcance como canhões e obuses são chamadas de __________.",
+                "artilharia", "Estratégia", 1);
+
+        // HISTÓRIA DE GUERRAS (25 perguntas)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A guerra entre Esparta e Atenas foi a Guerra do __________.",
+                "Peloponeso", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O general cartaginês que cruzou os Alpes com elefantes foi __________.",
+                "Aníbal", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A maior batalha de Alexandre, o Grande, foi a Batalha de __________.",
+                "Gaugamela", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O líder inglês na Batalha de Hastings (1066) foi Guilherme, o __________.",
+                "Conquistador", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "As Cruzadas foram guerras entre cristãos e __________.",
+                "muçulmanos", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A heroína francesa que liderou exércitos na Guerra dos Cem Anos foi __________.",
+                "Joana d'Arc", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O imperador mongol que criou um dos maiores impérios da história foi __________.",
+                "Gengis Khan", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A causa imediata da Primeira Guerra Mundial foi o assassinato de Francisco __________.",
+                "Ferdinando", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A Segunda Guerra Mundial terminou no ano de __________.",
+                "1945", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O 'Dia D' (6 de junho de 1944) foi o desembarque na __________.",
+                "Normandia", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A primeira cidade a receber a bomba atômica foi __________.",
+                "Hiroshima", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A Guerra do __________ durou de 1955 a 1975 e envolveu EUA e Vietnã.",
+                "Vietnã", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O conflito ideológico entre EUA e URSS sem confronto direto foi a Guerra __________.",
+                "Fria", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A guerra entre Argentina e Reino Unido em 1982 foi a Guerra das __________.",
+                "Malvinas", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O imperador e general francês derrotado em Waterloo foi __________.",
+                "Napoleão Bonaparte", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O general americano que comandou as forças aliadas na Segunda Guerra foi __________.",
+                "Eisenhower", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O filósofo e estrategista militar chinês que escreveu 'A Arte da Guerra' foi __________.",
+                "Sun Tzu", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O líder brasileiro que lutou na Guerra do Paraguai foi o Duque de __________.",
+                "Caxias", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A 'Dama de Ferro' que liderou a Inglaterra na Guerra das Malvinas foi __________.",
+                "Margaret Thatcher", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A Batalha de __________ foi uma vitória naval grega sobre os persas.",
+                "Salamina", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "O Tratado de __________ (1919) impôs duras condições à Alemanha.",
+                "Versalhes", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A maior batalha da Segunda Guerra em número de baixas foi a de __________.",
+                "Stalingrado", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A 'Operação Barbarossa' foi a invasão alemã da __________.",
+                "URSS", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A Força Expedicionária Brasileira (FEB) lutou na __________.",
+                "Itália", "História", 1);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.FACIL,
+                "A guerra entre Israel e países árabes em 1967 foi a Guerra dos __________ Dias.",
+                "Seis", "História", 1);
+    }
+
     private void carregarGuerreiroMedioMultiplaEscolha() {
         // COMBATE E ARTES MARCIAIS (7 perguntas)
         adicionarPerguntaMultipla(PerTipo.GUERREIRO, Dificuldade.MEDIO,
@@ -1952,7 +2571,6 @@ public class BancoPerguntas {
                 Arrays.asList("Augusto", "Trajano", "Adriano", "Constantino"), "C", "História", 4);
     }
 
-    // 25 questões de VERDADEIRO OU FALSO - MÉDIO
     private void carregarGuerreiroMedioVerdadeiroFalso() {
         // COMBATE (7 perguntas)
         adicionarPerguntaVF(PerTipo.GUERREIRO, Dificuldade.MEDIO, "No Boxe, o 'jab' é geralmente o golpe mais rápido.", true, "Combate", 4);
@@ -1986,9 +2604,111 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.GUERREIRO, Dificuldade.MEDIO, "A 'Tríplice Aliança' na Primeira Guerra era Alemanha, Áustria-Hungria e Itália.", true, "História", 4);
     }
 
-    // ==================== PERGUNTAS DIFÍCEIS (50) ====================
+    private void carregarGuerreiroMedioLacuna() {
+        // COMBATE E ARTES MARCIAIS (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A sequência de movimentos simulando combate no Caratê é chamada de __________.",
+                "Kata", "Combate", 4);
 
-    // 25 questões de MÚLTIPLA ESCOLHA - DIFÍCIL
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O ponto máximo (vitória) no Judô é chamado de __________.",
+                "Ippon", "Combate", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A posição superior sentado no peito do oponente no Jiu-Jitsu é chamada de __________.",
+                "montada", "Combate", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A arte marcial israelense de defesa pessoal é o __________.",
+                "Krav Maga", "Combate", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A técnica de projeção 'grande ceifa externa' no Judô é chamada de __________.",
+                "Osoto Gari", "Combate", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O chute circular no Caratê é chamado de __________.",
+                "Mawashi Geri", "Combate", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O lutador canhoto no Boxe é chamado de __________.",
+                "Southpaw", "Combate", 4);
+
+        // ESTRATÉGIA MILITAR (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O conflito entre forças com capacidades muito diferentes é chamado de guerra __________.",
+                "assimétrica", "Estratégia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A área capturada em território inimigo para avançar é chamada de cabeça de __________.",
+                "ponte", "Estratégia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A estratégia de desgastar o inimigo é chamada de guerra de __________.",
+                "atrito", "Estratégia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O princípio da __________ é fundamental na estratégia militar para pegar o inimigo desprevenido.",
+                "surpresa", "Estratégia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A doutrina de Destruição Mútua Assegurada na Guerra Fria é conhecida pela sigla __________.",
+                "MAD", "Estratégia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "Ataques a sistemas de computador e redes em conflitos é chamado de guerra __________.",
+                "cibernética", "Estratégia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O ciclo de tomada de decisão em combate (Observe, Orient, Decide, Act) é o loop __________.",
+                "OODA", "Estratégia", 4);
+
+        // HISTÓRIA DE GUERRAS (11 perguntas)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A Batalha de __________ (216 a.C.) foi a vitória de Aníbal cercando o exército romano.",
+                "Cannae", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O livro 'Da Guerra' (Vom Kriege) foi escrito por __________.",
+                "Clausewitz", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A mais longa guerra da história (cerca de 781 anos) foi a __________.",
+                "Reconquista Espanhola", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O cerco de Júlio César a Vercingetórix foi a Batalha de __________.",
+                "Alesia", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A maior invasão anfíbia da história foi o Dia D na __________.",
+                "Normandia", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O plano alemão para guerra em duas frentes era o Plano __________.",
+                "Schlieffen", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "O comandante da 'Operação Overlord' foi o general __________.",
+                "Eisenhower", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A Batalha de __________ foi a maior batalha de tanques da história.",
+                "Kursk", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "Os indígenas que usaram sua língua como código na Segunda Guerra foram os __________.",
+                "Code Talkers", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A Conferência que dividiu a Europa pós-guerra foi a de __________.",
+                "Ialta", "História", 4);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.MEDIO,
+                "A Batalha do __________ foi a última grande ofensiva alemã na Segunda Guerra.",
+                "Bulge", "História", 4);
+    }
+
     private void carregarGuerreiroDificilMultiplaEscolha() {
         // COMBATE (7 perguntas)
         adicionarPerguntaMultipla(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
@@ -2127,22 +2847,128 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.GUERREIRO, Dificuldade.DIFICIL, "A 'Páscoa Sangrenta' (1916) foi uma revolta na Irlanda.", true, "História", 8);
         adicionarPerguntaVF(PerTipo.GUERREIRO, Dificuldade.DIFICIL, "O 'Japão' ainda mantém um exército proibido pela constituição.", true, "História", 8);
     }
+    private void carregarGuerreiroDificilLacuna() {
+        // COMBATE E ARTES MARCIAIS (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A arte dos pontos de pressão no Caratê é chamada de __________.",
+                "Kyusho", "Combate", 8);
 
-    // ==================== SÁBIO - 200 PERGUNTAS ====================
-    private void carregarPerguntasSabio() {
-        carregarSabioFacilMultiplaEscolha();  // 50 questões
-        carregarSabioFacilVerdadeiroFalso();  // 50 questões
-        carregarSabioMedioMultiplaEscolha();  // 25 questões
-        carregarSabioMedioVerdadeiroFalso();  // 25 questões
-        carregarSabioDificilMultiplaEscolha(); // 25 questões
-        carregarSabioDificilVerdadeiroFalso(); // 25 questões
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O estrangulamento que comprime as artérias carótidas (sem comprimir a traqueia) é o rear-naked __________.",
+                "choke", "Combate", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A capoeira é considerada patrimônio cultural __________.",
+                "brasileiro", "Combate", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O 'kimura' é uma chave de __________ no Jiu-Jitsu.",
+                "ombro", "Combate", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O grito de energia no Caratê é chamado de __________.",
+                "Kiai", "Combate", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A 'chave de calcanhar' é geralmente __________ para faixas baixas no Jiu-Jitsu.",
+                "proibida", "Combate", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O 'guarda __________' no Jiu-Jitsu é quando o lutador de baixo envolve o oponente com as pernas.",
+                "fechada", "Combate", 8);
+
+        // ESTRATÉGIA MILITAR (6 perguntas)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A combinação de guerra convencional, irregular e cibernética é chamada de guerra __________.",
+                "híbrida", "Estratégia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O ponto mais forte do inimigo (fonte de força) na estratégia de Clausewitz é o centro de __________.",
+                "gravidade", "Estratégia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A estratégia que busca atacar os pontos fracos do inimigo em vez dos fortes é a manobra __________.",
+                "indireta", "Estratégia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "Ataque atribuído falsamente a outro grupo para justificar uma invasão é uma operação de bandeira __________.",
+                "falsa", "Estratégia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A tática de distração onde se simula um ataque para desviar a atenção é chamada de __________.",
+                "diversão", "Estratégia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "Forças especiais geralmente operam em unidades __________.",
+                "pequenas", "Estratégia", 8);
+
+        // HISTÓRIA DE GUERRAS (12 perguntas)
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A doutrina que negava a humanidade de Jesus (apenas parecia humano) era o __________.",
+                "Docetismo", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O teólogo que cunhou o termo 'Trindade' em latim foi __________.",
+                "Tertuliano", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A heresia que afirmava que Cristo tinha uma única natureza divina era o __________.",
+                "Monofisismo", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O Concílio que definiu as duas naturezas de Cristo foi o de __________.",
+                "Calcedônia", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O líder da Reforma Protestante que foi excomungado pela Igreja Católica foi __________.",
+                "Martinho Lutero", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A rainha da Inglaterra que derrotou a Invencível Armada espanhola foi __________.",
+                "Elizabeth I", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O líder da Revolução Russa de 1917 que tirou a Rússia da Primeira Guerra foi __________.",
+                "Lênin", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O primeiro-ministro britânico que disse 'sangue, suor e lágrimas' na Segunda Guerra foi __________.",
+                "Winston Churchill", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O general alemão conhecido como 'Raposa do Deserto' foi __________.",
+                "Rommel", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A batalha naval que destruiu o poder naval de Napoleão foi a Batalha de __________.",
+                "Trafalgar", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "A guerra civil inglesa entre York e Lancaster foi a Guerra das __________.",
+                "Rosas", "História", 8);
+
+        adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
+                "O líder militar brasileiro que comandou a FEB na Itália foi o Marechal __________.",
+                "Mascarenhas de Morais", "História", 8);
     }
 
-    // ==================== PERGUNTAS FÁCEIS (100) ====================
 
-    // 50 questões de MÚLTIPLA ESCOLHA - FÁCIL
+    private void carregarPerguntasSabio() {
+        carregarSabioFacilMultiplaEscolha();
+        carregarSabioFacilVerdadeiroFalso();
+        carregarSabioFacilLacuna();
+
+        carregarSabioMedioMultiplaEscolha();
+        carregarSabioMedioVerdadeiroFalso();
+        carregarSabioMedioLacuna();
+
+        carregarSabioDificilMultiplaEscolha();
+        carregarSabioDificilVerdadeiroFalso();
+        carregarSabioDificilLacuna();
+    }
+
+
     private void carregarSabioFacilMultiplaEscolha() {
-        // FILOSOFIA (10 perguntas)
         adicionarPerguntaMultipla(PerTipo.SABIO, Dificuldade.FACIL,
                 "Quem disse 'Penso, logo existo'?",
                 Arrays.asList("Platão", "Aristóteles", "Descartes", "Sócrates"), "C", "Filosofia", 1);
@@ -2224,7 +3050,6 @@ public class BancoPerguntas {
                 "Qual cientista desenvolveu a teoria da relatividade?",
                 Arrays.asList("Newton", "Galileu", "Einstein", "Bohr"), "C", "Ciência", 1);
 
-        // ARTE (10 perguntas)
         adicionarPerguntaMultipla(PerTipo.SABIO, Dificuldade.FACIL,
                 "Quem pintou o teto da Capela Sistina?",
                 Arrays.asList("Da Vinci", "Michelangelo", "Rafael", "Donatello"), "B", "Arte", 1);
@@ -2265,7 +3090,6 @@ public class BancoPerguntas {
                 "Qual estilo artístico é caracterizado por pequenas pinceladas de cor?",
                 Arrays.asList("Cubismo", "Impressionismo", "Expressionismo", "Realismo"), "B", "Arte", 1);
 
-        // MATEMÁTICA (10 perguntas)
         adicionarPerguntaMultipla(PerTipo.SABIO, Dificuldade.FACIL,
                 "Quanto é 7 x 8?",
                 Arrays.asList("48", "54", "56", "63"), "C", "Matemática", 1);
@@ -2306,7 +3130,6 @@ public class BancoPerguntas {
                 "Uma dúzia representa quantas unidades?",
                 Arrays.asList("10", "11", "12", "13"), "C", "Matemática", 1);
 
-        // FÍSICA (10 perguntas)
         adicionarPerguntaMultipla(PerTipo.SABIO, Dificuldade.FACIL,
                 "Qual é a unidade de medida de força?",
                 Arrays.asList("Watt", "Joule", "Newton", "Pascal"), "C", "Física", 1);
@@ -2348,9 +3171,7 @@ public class BancoPerguntas {
                 Arrays.asList("Reflexão", "Refração", "Difração", "Dispersão"), "B", "Física", 1);
     }
 
-    // 50 questões de VERDADEIRO OU FALSO - FÁCIL
     private void carregarSabioFacilVerdadeiroFalso() {
-        // FILOSOFIA (10 perguntas)
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Sócrates foi condenado à morte bebendo veneno.", true, "Filosofia", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Platão foi discípulo de Aristóteles.", false, "Filosofia", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "'Conhece-te a ti mesmo' é uma frase atribuída a Sócrates.", true, "Filosofia", 1);
@@ -2362,7 +3183,6 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Immanuel Kant escreveu 'Crítica da Razão Pura'.", true, "Filosofia", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "O Hedonismo prega que o prazer é o único bem.", true, "Filosofia", 1);
 
-        // CIÊNCIA (10 perguntas)
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "A água ferve a 100°C ao nível do mar.", true, "Ciência", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "O coração humano tem 4 câmaras.", true, "Ciência", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "A Terra é o centro do universo.", false, "Ciência", 1);
@@ -2374,7 +3194,6 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "O cérebro humano tem cerca de 86 bilhões de neurônios.", true, "Ciência", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Darwin viajou no navio Beagle.", true, "Ciência", 1);
 
-        // ARTE (10 perguntas)
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Michelangelo foi pintor, escultor e arquiteto.", true, "Arte", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "A obra 'Guernica' é de Pablo Picasso.", true, "Arte", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Van Gogh vendeu muitas obras em vida.", false, "Arte", 1);
@@ -2386,7 +3205,6 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Claude Monet foi um pintor impressionista.", true, "Arte", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "A escultura 'O Pensador' é de Rodin.", true, "Arte", 1);
 
-        // MATEMÁTICA (10 perguntas)
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "1 km equivale a 1000 metros.", true, "Matemática", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "0,5 é maior que 1/3.", true, "Matemática", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Todo número par é divisível por 4.", false, "Matemática", 1);
@@ -2398,7 +3216,6 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "7 x 6 = 42.", true, "Matemática", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "O círculo tem 360 graus.", true, "Matemática", 1);
 
-        // FÍSICA (10 perguntas)
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "A energia não se cria nem se destrói, apenas se transforma.", true, "Física", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Quanto maior a massa, maior a inércia.", true, "Física", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "O gelo é mais denso que a água líquida.", false, "Física", 1);
@@ -2410,10 +3227,214 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Quanto maior a altura, maior a pressão atmosférica.", false, "Física", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "A eletricidade pode ser gerada por energia solar.", true, "Física", 1);
     }
+    private void carregarSabioFacilLacuna() {
+        // FILOSOFIA (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O filósofo que disse 'Penso, logo existo' foi __________.",
+                "Descartes", "Filosofia", 1);
 
-    // ==================== PERGUNTAS MÉDIAS (50) ====================
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O filósofo grego que foi mestre de Alexandre, o Grande, foi __________.",
+                "Aristóteles", "Filosofia", 1);
 
-    // 25 questões de MÚLTIPLA ESCOLHA - MÉDIO
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A palavra 'Filosofia' significa amor à __________.",
+                "sabedoria", "Filosofia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O filósofo que escreveu 'A República' foi __________.",
+                "Platão", "Filosofia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O 'pai da filosofia ocidental' que foi condenado à morte bebendo cicuta foi __________.",
+                "Sócrates", "Filosofia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A corrente filosófica que acredita que o conhecimento vem da experiência é o __________.",
+                "empirismo", "Filosofia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O filósofo que escreveu 'O Príncipe' sobre política e poder foi __________.",
+                "Maquiavel", "Filosofia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O filósofo alemão que disse 'Deus está morto' foi __________.",
+                "Nietzsche", "Filosofia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O método de debate e busca da verdade em Platão é chamado de __________.",
+                "dialética", "Filosofia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A escola filosófica que pregava a indiferença à dor e ao prazer era o __________.",
+                "estoicismo", "Filosofia", 1);
+
+        // CIÊNCIA (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O planeta conhecido como 'Estrela D'Alva' é __________.",
+                "Vênus", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O cientista que propôs a teoria da evolução por seleção natural foi __________.",
+                "Darwin", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A unidade básica da vida é a __________.",
+                "célula", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O órgão responsável por bombear o sangue é o __________.",
+                "coração", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O material genético dos seres vivos é o __________.",
+                "DNA", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O vírus que causou a pandemia de 2020 é o __________.",
+                "COVID-19", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O maior osso do corpo humano é o __________.",
+                "fêmur", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A parte da planta que realiza a fotossíntese é a __________.",
+                "folha", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O órgão responsável pela visão é o __________.",
+                "olho", "Ciência", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O cientista que desenvolveu a teoria da relatividade foi __________.",
+                "Einstein", "Ciência", 1);
+
+        // ARTE (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O pintor do teto da Capela Sistina foi __________.",
+                "Michelangelo", "Arte", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O artista que cortou a própria orelha foi __________.",
+                "Van Gogh", "Arte", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A obra mais famosa de Leonardo da Vinci é a __________.",
+                "Mona Lisa", "Arte", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O movimento artístico de Salvador Dalí é o __________.",
+                "surrealismo", "Arte", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O pintor de 'Os Girassóis' foi __________.",
+                "Van Gogh", "Arte", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O compositor clássico surdo no final da vida foi __________.",
+                "Beethoven", "Arte", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O movimento de redescoberta da arte e ciência greco-romana foi o __________.",
+                "Renascimento", "Arte", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O escultor do 'David' foi __________.",
+                "Michelangelo", "Arte", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O pintor conhecido por obras abstratas como 'Composição VIII' foi __________.",
+                "Kandinsky", "Arte", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O estilo artístico caracterizado por pequenas pinceladas de cor é o __________.",
+                "impressionismo", "Arte", 1);
+
+        // MATEMÁTICA (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O resultado de 7 x 8 é __________.",
+                "56", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A raiz quadrada de 81 é __________.",
+                "9", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O valor de 15% de 200 é __________.",
+                "30", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O valor aproximado de π (pi) é __________.",
+                "3,14", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O triângulo com todos os lados iguais é chamado de __________.",
+                "equilátero", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O valor de 2³ (dois ao cubo) é __________.",
+                "8", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A soma dos ângulos internos de um triângulo é __________ graus.",
+                "180", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O número primo entre 4, 6, 7 e 9 é o __________.",
+                "7", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O resultado de 144 ÷ 12 é __________.",
+                "12", "Matemática", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "Uma dúzia representa __________ unidades.",
+                "12", "Matemática", 1);
+
+        // FÍSICA (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A unidade de medida de força é o __________.",
+                "newton", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "Quando aquecemos um metal, ele __________.",
+                "dilata", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A velocidade aproximada da luz no vácuo é __________ mil km/s.",
+                "300", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O cientista que descobriu a gravidade com a história da maçã foi __________.",
+                "Newton", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O instrumento que mede tensão elétrica é o __________.",
+                "voltímetro", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A lei que diz 'ação e reação são iguais e opostas' é a __________ Lei de Newton.",
+                "terceira", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O som se propaga mais rápido no __________.",
+                "aço", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A unidade de potência é o __________.",
+                "watt", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "A tendência de um corpo permanecer em seu estado é chamada de __________.",
+                "inércia", "Física", 1);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
+                "O fenômeno que explica um lápis parecendo quebrado dentro da água é a __________.",
+                "refração", "Física", 1);
+    }
+
+
     private void carregarSabioMedioMultiplaEscolha() {
         // FILOSOFIA (5 perguntas)
         adicionarPerguntaMultipla(PerTipo.SABIO, Dificuldade.MEDIO,
@@ -2559,9 +3580,113 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.MEDIO, "O trabalho é força vezes distância.", true, "Física", 4);
     }
 
-    // ==================== PERGUNTAS DIFÍCEIS (50) ====================
+    private void carregarSabioMedioLacuna() {
+        // FILOSOFIA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O conceito de Nietzsche que representa o 'super-homem' é o __________.",
+                "Übermensch", "Filosofia", 4);
 
-    // 25 questões de MÚLTIPLA ESCOLHA - DIFÍCIL
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O 'imperativo categórico' é um conceito do filósofo __________.",
+                "Kant", "Filosofia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O livro 'A Ética a Nicômaco' foi escrito por __________.",
+                "Aristóteles", "Filosofia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O 'materialismo histórico' de Marx afirma que a história é baseada em condições __________.",
+                "materiais", "Filosofia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O livro 'O Existencialismo é um Humanismo' foi escrito por __________.",
+                "Sartre", "Filosofia", 4);
+
+        // CIÊNCIA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O processo de divisão celular que produz gametas é a __________.",
+                "meiose", "Ciência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O principal gás de efeito estufa emitido por humanos é o __________.",
+                "dióxido de carbono", "Ciência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O princípio da 'sobrevivência do mais adaptado' é chamado de seleção __________.",
+                "natural", "Ciência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O tipo de célula que não possui núcleo definido é a célula __________.",
+                "procarionte", "Ciência", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A escala que mede terremotos é a escala __________.",
+                "Richter", "Ciência", 4);
+
+        // ARTE (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O movimento artístico conhecido por formas geométricas e fragmentação é o __________.",
+                "cubismo", "Arte", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O pintor de 'A Noite Estrelada' foi __________.",
+                "Van Gogh", "Arte", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O movimento artístico e musical brasileiro que tem escola de samba é o __________.",
+                "samba", "Arte", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O 'pai da música clássica' (compositor barroco) é __________.",
+                "Bach", "Arte", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O termo 'ready-made' na arte significa um objeto __________ elevado a arte.",
+                "comum", "Arte", 4);
+
+        // MATEMÁTICA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O valor de x em 2x + 5 = 15 é __________.",
+                "5", "Matemática", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A fração equivalente a 0,75 é __________.",
+                "3/4", "Matemática", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A raiz quadrada de 144 é __________.",
+                "12", "Matemática", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "Um ângulo reto tem __________ graus.",
+                "90", "Matemática", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A fórmula da área do círculo é __________.",
+                "πr²", "Matemática", 4);
+
+        // FÍSICA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A lei da termodinâmica que diz que a entropia sempre aumenta é a __________ Lei.",
+                "segunda", "Física", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A partícula com carga elétrica negativa é o __________.",
+                "elétron", "Física", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A unidade de frequência é o __________.",
+                "hertz", "Física", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "O cientista que formulou as leis do movimento planetário foi __________.",
+                "Kepler", "Física", 4);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.MEDIO,
+                "A teoria de Einstein que descreve a gravidade como curvatura do espaço-tempo é a relatividade __________.",
+                "geral", "Física", 4);
+    }
+
     private void carregarSabioDificilMultiplaEscolha() {
         // FILOSOFIA (5 perguntas)
         adicionarPerguntaMultipla(PerTipo.SABIO, Dificuldade.DIFICIL,
@@ -2706,21 +3831,129 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.DIFICIL, "A velocidade da luz é constante em todos os referenciais inerciais.", true, "Física", 8);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.DIFICIL, "O elétron é uma partícula elementar.", true, "Física", 8);
     }
-    // ==================== ARCANISTA - 200 PERGUNTAS ====================
-    private void carregarPerguntasArcanista() {
-        carregarArcanistaFacilMultiplaEscolha();  // 50 questões
-        carregarArcanistaFacilVerdadeiroFalso();  // 50 questões
-        carregarArcanistaMedioMultiplaEscolha();  // 25 questões
-        carregarArcanistaMedioVerdadeiroFalso();  // 25 questões
-        carregarArcanistaDificilMultiplaEscolha(); // 25 questões
-        carregarArcanistaDificilVerdadeiroFalso(); // 25 questões
+    private void carregarSabioDificilLacuna() {
+        // FILOSOFIA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O livro 'Ser e Tempo' (Sein und Zeit) foi escrito por __________.",
+                "Heidegger", "Filosofia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O conceito de 'má vontade' (mauvaise foi) em Sartre significa mentir a si __________.",
+                "mesmo", "Filosofia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O filósofo que desenvolveu o Utilitarismo como sistema ético foi __________.",
+                "Bentham", "Filosofia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "A 'Razão Instrumental' foi um conceito desenvolvido pela Escola de __________.",
+                "Frankfurt", "Filosofia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O livro 'A Fenomenologia do Espírito' foi escrito por __________.",
+                "Hegel", "Filosofia", 8);
+
+        // CIÊNCIA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O princípio da seleção natural de Darwin envolve variação hereditária e __________.",
+                "adaptação", "Ciência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O estudo de alterações na expressão genética sem mudar o DNA é a __________.",
+                "epigenética", "Ciência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O vírus que causa a AIDS é o __________.",
+                "HIV", "Ciência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O conjunto de ecossistemas com clima similar é chamado de __________.",
+                "bioma", "Ciência", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O processo de produção de energia sem oxigênio é a __________.",
+                "fermentação", "Ciência", 8);
+
+        // ARTE (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O pintor de 'As Meninas' foi __________.",
+                "Velázquez", "Arte", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O movimento artístico liderado por Andy Warhol é a __________.",
+                "Pop Art", "Arte", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "A técnica de pintura realista que engana o olho é chamada de __________.",
+                "trompe-l'œil", "Arte", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O compositor de 'As Quatro Estações' foi __________.",
+                "Vivaldi", "Arte", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "A pintura rupestre moderna não existe, pois é uma arte __________.",
+                "pré-histórica", "Arte", 8);
+
+        // MATEMÁTICA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O valor aproximado do número de Euler (e) é __________.",
+                "2,718", "Matemática", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "Um número que não é raiz de polinômio com coeficientes inteiros é chamado de número __________.",
+                "transcendental", "Matemática", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O conjunto dos números reais é formado por números racionais e __________.",
+                "irracionais", "Matemática", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O conjunto de vetores com operações de soma e multiplicação por escalar é um espaço __________.",
+                "vetorial", "Matemática", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "A derivada de sen(x) é __________.",
+                "cos(x)", "Matemática", 8);
+
+        // FÍSICA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "A lei que descreve a força entre cargas elétricas é a lei de __________.",
+                "Coulomb", "Física", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "A medida de desordem em um sistema termodinâmico é a __________.",
+                "entropia", "Física", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "O princípio de Heisenberg afirma que não se pode medir posição e __________ com precisão simultânea.",
+                "momento", "Física", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "A mudança de frequência de uma onda por movimento relativo entre fonte e observador é o efeito __________.",
+                "Doppler", "Física", 8);
+
+        adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
+                "A equação fundamental da mecânica quântica é a equação de __________.",
+                "Schrödinger", "Física", 8);
     }
 
-    // ==================== PERGUNTAS FÁCEIS (100) ====================
+    private void carregarPerguntasArcanista() {
+        carregarArcanistaFacilMultiplaEscolha();
+        carregarArcanistaFacilVerdadeiroFalso();
+        carregarArcanistaFacilLacuna();
 
-    // 50 questões de MÚLTIPLA ESCOLHA - FÁCIL
+        carregarArcanistaMedioMultiplaEscolha();
+        carregarArcanistaMedioVerdadeiroFalso();
+        carregarArcanistaMedioLacuna();
+
+        carregarArcanistaDificilMultiplaEscolha();
+        carregarArcanistaDificilVerdadeiroFalso();
+        carregarArcanistaDificilLacuna();
+    }
+
+
     private void carregarArcanistaFacilMultiplaEscolha() {
-        // MITOLOGIA (15 perguntas)
         adicionarPerguntaMultipla(PerTipo.ARCANISTA, Dificuldade.FACIL,
                 "Na mitologia grega, quem é o rei dos deuses?",
                 Arrays.asList("Poseidon", "Hades", "Zeus", "Ares"), "C", "Mitologia", 1);
@@ -2781,7 +4014,6 @@ public class BancoPerguntas {
                 "Qual monstro grego tem cabeça de touro e corpo de homem?",
                 Arrays.asList("Ciclope", "Centauro", "Minotauro", "Hidra"), "C", "Mitologia", 1);
 
-        // MAGIA (10 perguntas)
         adicionarPerguntaMultipla(PerTipo.ARCANISTA, Dificuldade.FACIL,
                 "O que é um 'grimório'?",
                 Arrays.asList("Poção mágica", "Livro de magia", "Varinha", "Cristal"), "B", "Magia", 1);
@@ -2822,7 +4054,6 @@ public class BancoPerguntas {
                 "O que representa o pentagrama na magia?",
                 Arrays.asList("Maldade", "Proteção e os quatro elementos + espírito", "Demônio", "Lua"), "B", "Magia", 1);
 
-        // ELEMENTOS (10 perguntas)
         adicionarPerguntaMultipla(PerTipo.ARCANISTA, Dificuldade.FACIL,
                 "Quais são os quatro elementos clássicos da natureza?",
                 Arrays.asList("Fogo, água, terra, madeira", "Fogo, água, terra, ar", "Terra, ar, metal, madeira", "Água, fogo, metal, ar"), "B", "Elementos", 1);
@@ -2863,7 +4094,6 @@ public class BancoPerguntas {
                 "O cálice (taça) na wicca representa qual elemento?",
                 Arrays.asList("Terra", "Ar", "Fogo", "Água"), "D", "Elementos", 1);
 
-        // OCULTISMO (15 perguntas)
         adicionarPerguntaMultipla(PerTipo.ARCANISTA, Dificuldade.FACIL,
                 "O que é o 'Tarô'?",
                 Arrays.asList("Jogo de cartas comum", "Sistema de adivinhação e autoconhecimento", "Livro sagrado", "Amuleto"), "B", "Ocultismo", 1);
@@ -2925,9 +4155,7 @@ public class BancoPerguntas {
                 Arrays.asList("Campo energético ao redor dos seres vivos", "Barulho", "Luz física", "Cor"), "A", "Ocultismo", 1);
     }
 
-    // 50 questões de VERDADEIRO OU FALSO - FÁCIL
     private void carregarArcanistaFacilVerdadeiroFalso() {
-        // MITOLOGIA (15 perguntas)
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Zeus é o deus do trovão na mitologia grega.", true, "Mitologia", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Thor é filho de Odin na mitologia nórdica.", true, "Mitologia", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Hades é o deus do mar.", false, "Mitologia", 1);
@@ -2944,7 +4172,6 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "O Ciclope tem um olho só.", true, "Mitologia", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Prometeu roubou o fogo dos deuses para dar aos humanos.", true, "Mitologia", 1);
 
-        // MAGIA (10 perguntas)
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Merlin é um mago lendário das lendas arturianas.", true, "Magia", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Harry Potter é um personagem real histórico.", false, "Magia", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Poções mágicas existem na vida real.", false, "Magia", 1);
@@ -2956,7 +4183,6 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "O 'Oculus Reparo' é um feitiço de Harry Potter.", true, "Magia", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Toda magia é demoníaca.", false, "Magia", 1);
 
-        // ELEMENTOS (10 perguntas)
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Existem apenas 4 elementos na natureza.", false, "Elementos", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "O fogo é um elemento transformador.", true, "Elementos", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "A água pode existir em 3 estados: sólido, líquido, gasoso.", true, "Elementos", 1);
@@ -2968,7 +4194,6 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "O elemento água é associado ao leste.", false, "Elementos", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "Cada elemento tem direções e símbolos específicos.", true, "Elementos", 1);
 
-        // OCULTISMO (15 perguntas)
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "O Tarô tem 78 cartas.", true, "Ocultismo", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "A astrologia é uma ciência exata.", false, "Ocultismo", 1);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "O signo de Áries é o primeiro do zodíaco.", true, "Ocultismo", 1);
@@ -2986,7 +4211,211 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.FACIL, "O 'triplo deus' na wicca representa o sol.", false, "Ocultismo", 1);
     }
 
-    // ==================== PERGUNTAS MÉDIAS (50) ====================
+    private void carregarArcanistaFacilLacuna() {
+        // MITOLOGIA (15 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na mitologia grega, o rei dos deuses é __________.",
+                "Zeus", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O deus do mar na mitologia grega é __________.",
+                "Poseidon", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na mitologia nórdica, o deus que empunha o martelo Mjolnir é __________.",
+                "Thor", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A deusa do amor e da beleza na mitologia romana é __________.",
+                "Vênus", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O deus do submundo na mitologia grega é __________.",
+                "Hades", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na mitologia egípcia, o deus do sol é __________.",
+                "Rá", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O herói grego que matou a Medusa foi __________.",
+                "Perseu", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na mitologia nórdica, os heróis mortos em batalha vivem no __________.",
+                "Valhala", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A deusa da sabedoria na mitologia grega é __________.",
+                "Atena", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A criatura mitológica com torso de homem e corpo de cavalo é o __________.",
+                "centauro", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O herói grego que voou perto demais do sol foi __________.",
+                "Ícaro", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na mitologia nórdica, o deus do trovão é __________.",
+                "Thor", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A deusa da caça na mitologia grega é __________.",
+                "Artemisa", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na mitologia egípcia, o deus dos mortos que reina no submundo é __________.",
+                "Osíris", "Mitologia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O monstro grego com cabeça de touro e corpo de homem é o __________.",
+                "minotauro", "Mitologia", 1);
+
+        // MAGIA (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O livro de magia é chamado de __________.",
+                "grimório", "Magia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na série Harry Potter, a varinha de Harry tem pena da cauda da __________.",
+                "fênix", "Magia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O círculo mágico serve para __________ e concentração de energia.",
+                "proteção", "Magia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A prática de transformar metais em ouro é chamada de __________.",
+                "alquimia", "Magia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A pedra lendária que transforma metais em ouro é a Pedra __________.",
+                "Filosofal", "Magia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O feitiço lançado em objetos é chamado de __________.",
+                "encantamento", "Magia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A feiticeira da Ilha de Eéia que transformou homens em porcos foi __________.",
+                "Circe", "Magia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A arte de prever o futuro é chamada de __________.",
+                "adivinhação", "Magia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A proteção contra energia negativa mais comum é o __________ grosso.",
+                "sal", "Magia", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O pentagrama representa os quatro elementos mais o __________.",
+                "espírito", "Magia", 1);
+
+        // ELEMENTOS (10 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Os quatro elementos clássicos da natureza são: fogo, água, terra e __________.",
+                "ar", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O elemento associado ao calor e à transformação é o __________.",
+                "fogo", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O elemento associado às emoções e à intuição é a __________.",
+                "água", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O elemento associado à razão e à comunicação é o __________.",
+                "ar", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O elemento associado à estabilidade e ao físico é a __________.",
+                "terra", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O 'quinto elemento' em algumas tradições é o __________.",
+                "éter", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na alquimia, o princípio ativo/combustível (alma) é o __________.",
+                "enxofre", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na alquimia, o espírito volátil é representado pelo __________.",
+                "mercúrio", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na Wicca, o athame (adaga) representa o elemento __________.",
+                "fogo", "Elementos", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "Na Wicca, o cálice (taça) representa o elemento __________.",
+                "água", "Elementos", 1);
+
+        // OCULTISMO (15 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O sistema de adivinhação com 78 cartas é o __________.",
+                "Tarô", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O Tarô tradicional tem __________ arcanos maiores.",
+                "22", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A lei de causa e efeito é chamada de __________.",
+                "karma", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O estudo da influência dos astros nos humanos é a __________.",
+                "astrologia", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O zodíaco tem __________ signos.",
+                "12", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O objeto carregado com energia para um fim específico é o __________.",
+                "talismã", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A pedra associada ao chakra coronário é a __________.",
+                "ametista", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A leitura das mãos é chamada de __________.",
+                "quiromancia", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O símbolo do infinito (oito deitado) é associado à magia do __________.",
+                "amor", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A religião pagã moderna é a __________.",
+                "Wicca", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O ano novo celta é chamado de __________.",
+                "Samhain", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O oráculo chinês baseado em 64 hexagramas é o __________.",
+                "I Ching", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "A leitura com bola de cristal é chamada de __________.",
+                "cristalomancia", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O campo energético ao redor dos seres vivos é chamado de __________.",
+                "aura", "Ocultismo", 1);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.FACIL,
+                "O amuleto contra o mau-olhado mais conhecido é o olho __________.",
+                "grego", "Ocultismo", 1);
+    }
 
     // 25 questões de MÚLTIPLA ESCOLHA - MÉDIO
     private void carregarArcanistaMedioMultiplaEscolha() {
@@ -3131,11 +4560,113 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.MEDIO, "Oráculo de Delfos era um local de adivinhação grego.", true, "Ocultismo", 4);
     }
 
-    // ==================== PERGUNTAS DIFÍCEIS (50) ====================
-
-    // 25 questões de MÚLTIPLA ESCOLHA - DIFÍCIL
-    private void carregarArcanistaDificilMultiplaEscolha() {
+    private void carregarArcanistaMedioLacuna() {
         // MITOLOGIA (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O deus nórdico da guerra e da poesia é __________.",
+                "Odin", "Mitologia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O herói grego punido a rolar uma pedra montanha acima eternamente foi __________.",
+                "Sísifo", "Mitologia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A criatura com corpo de leão, cabeça de mulher e asas de águia é a __________.",
+                "esfinge", "Mitologia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "Na mitologia egípcia, Anúbis tem cabeça de __________.",
+                "chacal", "Mitologia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O herói grego que liderou os Argonautas foi __________.",
+                "Jasão", "Mitologia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O fim do mundo na mitologia nórdica é chamado de __________.",
+                "Ragnarök", "Mitologia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A deusa do amor na mitologia nórdica é __________.",
+                "Freya", "Mitologia", 4);
+
+        // MAGIA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A magia baseada em semelhança ou contato é chamada de magia __________.",
+                "simpática", "Magia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O mago e conselheiro da rainha Elizabeth I foi __________.",
+                "John Dee", "Magia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "Chamar um espírito para fora de si é chamado de __________.",
+                "evocação", "Magia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "Na Wicca, o 'Triplo Deusa' representa: Donzela, Mãe e __________.",
+                "Anciã", "Magia", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O diário e livro de feitiços de um bruxo/wiccano é o Livro das __________.",
+                "Sombras", "Magia", 4);
+
+        // ELEMENTOS (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "Na tradição ocidental, o ponto cardeal do fogo é o __________.",
+                "Sul", "Elementos", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O elemento água corresponde à estação do __________.",
+                "outono", "Elementos", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A transformação espiritual do praticante na alquimia é chamada de alquimia __________.",
+                "interna", "Elementos", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O símbolo alquímico do enxofre é um triângulo com __________.",
+                "traço", "Elementos", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "No sistema dos 5 elementos chinês (Wu Xing), a ordem de geração é: Madeira → Fogo → Terra → Metal → __________.",
+                "Água", "Elementos", 4);
+
+        // OCULTISMO (8 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O alfabeto rúnico antigo (24 runas) é chamado de Elder __________.",
+                "Futhark", "Ocultismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A mistura de diferentes crenças religiosas é chamada de __________.",
+                "sincretismo", "Ocultismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A cor do chakra raiz (Muladhara) é o __________.",
+                "vermelho", "Ocultismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A comunicação com os mortos é chamada de __________.",
+                "necromancia", "Ocultismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A planta associada à proteção contra energia negativa é a __________.",
+                "arruda", "Ocultismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "Remover energia negativa na magia é chamado de __________.",
+                "banimento", "Ocultismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "O 'Olho da Providência' no dólar americano é um símbolo da __________.",
+                "Maçonaria", "Ocultismo", 4);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.MEDIO,
+                "A filosofia esotérica de Rudolf Steiner é a __________.",
+                "antroposofia", "Ocultismo", 4);
+    }
+
+    private void carregarArcanistaDificilMultiplaEscolha() {
         adicionarPerguntaMultipla(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
                 "Quem é o deus egípcio do caos e da noite?",
                 Arrays.asList("Rá", "Apófis (Apep)", "Set", "Toth"), "B", "Mitologia", 8);
@@ -3275,8 +4806,112 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.DIFICIL, "A 'Academia Platônica' de Florença estudava hermetismo.", true, "Ocultismo", 8);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.DIFICIL, "Eliphas Levi escreveu 'Dogma e Ritual da Alta Magia'.", true, "Ocultismo", 8);
     }
+    private void carregarArcanistaDificilLacuna() {
+        // MITOLOGIA (7 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O deus egípcio do caos e da noite (serpente) é __________.",
+                "Apófis", "Mitologia", 8);
 
-    // ==================== MÉTODOS AUXILIARES ====================
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "Na mitologia grega, o titã que criou os humanos foi __________.",
+                "Prometeu", "Mitologia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O deus nórdico cego que matou Balder com um galho de visco foi __________.",
+                "Hödr", "Mitologia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "Na mitologia hindu, o veículo (vahana) de Ganesha é o __________.",
+                "rato", "Mitologia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A deusa nórdica do submundo (Helheim) é __________.",
+                "Hel", "Mitologia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O monstro grego com cabelos de serpente e olhar petrificante é a __________.",
+                "Medusa", "Mitologia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "Na mitologia japonesa, a deusa do sol é __________.",
+                "Amaterasu", "Mitologia", 8);
+
+        // MAGIA (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A evocação de demônios (parte do grimório Lemegeton) é chamada de __________.",
+                "goécia", "Magia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O grimório 'A Chave de Salomão' (Clavicula Salomonis) é uma obra __________.",
+                "pseudoepígrafe", "Magia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A magia divina/evocação de deuses é chamada de __________.",
+                "theurgia", "Magia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A magia enoquiana foi recebida por John Dee e __________.",
+                "Edward Kelley", "Magia", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O sistema ocidental de magia baseado na Árvore da Vida é a Cábala __________.",
+                "Hermética", "Magia", 8);
+
+        // ELEMENTOS (5 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "Na visão aristotélica, os elementos são movidos pelas qualidades: quente/frio e __________.",
+                "seco/úmido", "Elementos", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O ser humano criado artificialmente na alquimia é chamado de __________.",
+                "homúnculo", "Elementos", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O elemento associado ao 'Mago' no Tarô (em alguns sistemas) é o __________.",
+                "ar", "Elementos", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A 'Quinta Essência' (quintessência) é o __________.",
+                "éter", "Elementos", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "No Wu Xing (cinco elementos chinês), a ordem de controle é: Madeira → Terra → Água → Fogo → __________.",
+                "Metal", "Elementos", 8);
+
+        // OCULTISMO (8 perguntas)
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O conhecimento espiritual direto no Gnosticismo é chamado de __________.",
+                "gnose", "Ocultismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O demônio da goécia nº 1 (rei do oriente) é __________.",
+                "Baal", "Ocultismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O conceito de 'nada/vazio' no caminho espiritual (Ayin) vem da __________.",
+                "Cabala", "Ocultismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A Ordem Hermética da Aurora Dourada (Golden Dawn) foi fundada em __________.",
+                "1888", "Ocultismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O livro 'O Livro da Lei' (Liber AL vel Legis) foi escrito por __________.",
+                "Aleister Crowley", "Ocultismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A filosofia de Crowley ('Faze o que tu queres') é chamada de __________.",
+                "Thelema", "Ocultismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "O mantra associado ao chakra do coração (Anahata) é __________.",
+                "Yam", "Ocultismo", 8);
+
+        adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
+                "A biblioteca espiritual/registro de todas as almas é chamada de Arquivos __________.",
+                "Akashicos", "Ocultismo", 8);
+    }
+
 
     private void adicionarPerguntaMultipla(PerTipo tipo, Dificuldade diff, String texto,
                                            List<String> opcoes, String letraCorreta,
