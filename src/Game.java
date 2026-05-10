@@ -56,7 +56,6 @@ public class Game {
         BancoPerguntas banco = new BancoPerguntas();
         GerenciadorBatalha batalha = new GerenciadorBatalha(jogador, banco);
 
-        // Iniciar a rota específica do personagem escolhido
         batalha.iniciarRota();
 
         scanner.close();
