@@ -1,6 +1,6 @@
 package modelo;
 
-public abstract class Paladino extends Personagem {
+public  class Paladino extends Personagem {
 
     public Paladino() {
         super(PerTipo.PALADINO, "Paladino", 150, 22, 18);
@@ -13,6 +13,11 @@ public abstract class Paladino extends Personagem {
         int dano = 25 + (nivel * 3);
         System.out.println("⚡ Luz divina atinge " + alvo.getNome() + " causando " + dano + " de dano!");
         alvo.tomarDano(dano);
+    }
+
+    @Override
+    public String getNomeHabilididade() {
+        return "";
     }
 
     public String getNomeHabilidade() {

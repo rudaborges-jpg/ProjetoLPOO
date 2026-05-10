@@ -1,6 +1,6 @@
 package modelo;
 
-public abstract class Guerreiro extends Personagem {
+public class Guerreiro extends Personagem {
 
     public Guerreiro() {
         super(PerTipo.GUERREIRO, "Guerreiro", 140, 28, 14);
@@ -15,6 +15,11 @@ public abstract class Guerreiro extends Personagem {
         int reducaoDefesa = 3;
         alvo.defesa = Math.max(0, alvo.defesa - reducaoDefesa);
         System.out.println("🗣️ Grito de guerra! A defesa de " + alvo.getNome() + " foi reduzida em " + reducaoDefesa + "!");
+    }
+
+    @Override
+    public String getNomeHabilididade() {
+        return "";
     }
 
     public String getNomeHabilidade() {

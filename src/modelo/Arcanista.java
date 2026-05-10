@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.Random;
 
-public abstract class Arcanista extends Personagem {
+public  class Arcanista extends Personagem {
     private int poderArcano;
     private int poderMaximo;
     private Random random;
@@ -38,5 +38,20 @@ public abstract class Arcanista extends Personagem {
         alvo.tomarDano(dano);
 
         acumularPoder();
+    }
+
+    @Override
+    public void usarHabilidadeEspecial(Personagem alvo) {
+
+    }
+
+    @Override
+    public String getNomeHabilididade() {
+        return "";
+    }
+
+    @Override
+    public String getDescricaoHabilidade() {
+        return "";
     }
 }

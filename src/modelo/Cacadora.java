@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.Random;
 
-public abstract class Cacadora extends Personagem {
+public  class Cacadora extends Personagem {
     private Random random;
     private double chanceCritico;
 
@@ -33,6 +33,11 @@ public abstract class Cacadora extends Personagem {
 
         System.out.println("🩸 O inimigo está sangrando!");
         alvo.tomarDano(10);
+    }
+
+    @Override
+    public String getNomeHabilididade() {
+        return "";
     }
 
     public String getNomeHabilidade() {
