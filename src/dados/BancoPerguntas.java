@@ -33,6 +33,7 @@ public class BancoPerguntas {
         System.out.println("✅ Banco carregado com " + getTotalPerguntas() + " perguntas!");
         mostrarEstatisticas();
     }
+
     private void carregarPerguntasPaladino() {
         carregarPaladinoFacilMultiplaEscolha();
         carregarPaladinoFacilVerdadeiroFalso();
@@ -308,6 +309,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.FACIL, "O Mahabharata é um dos principais épicos do Hinduísmo.", true, "Hinduísmo", 1);
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.FACIL, "A deusa Lakshmi é a consorte de Brahma.", false, "Hinduísmo", 1);
     }
+
     private void carregarPaladinoFacilLacuna() {
         // CRISTIANISMO (15 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.FACIL,
@@ -647,6 +649,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.MEDIO, "A vaca é sagrada porque representa a generosidade da terra.", true, "Hinduísmo", 4);
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.MEDIO, "O Ganges é considerado um rio comum sem significado especial.", false, "Hinduísmo", 4);
     }
+
     private void carregarPaladinoMedioLacuna() {
         // CRISTIANISMO (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.MEDIO,
@@ -752,7 +755,6 @@ public class BancoPerguntas {
                 "O deus hindu do amor e desejo é __________.",
                 "Kama", "Hinduísmo", 4);
     }
-
 
 
     private void carregarPaladinoDificilMultiplaEscolha() {
@@ -887,6 +889,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.DIFICIL, "A deusa Kali é consorte de Vishnu.", false, "Hinduísmo", 8);
         adicionarPerguntaVF(PerTipo.PALADINO, Dificuldade.DIFICIL, "O Manusmriti é um famoso código legal hindu.", true, "Hinduísmo", 8);
     }
+
     private void carregarPaladinoDificilLacuna() {
         // CRISTIANISMO (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.PALADINO, Dificuldade.DIFICIL,
@@ -1213,6 +1216,7 @@ public class BancoPerguntas {
                 "Pegada humana em solo macio: o que observar?",
                 Arrays.asList("Tamanho e direção", "Cor da pele", "Idade", "Peso aproximado"), "A", "Rastreamento", 1);
     }
+
     private void carregarCacadoraFacilVerdadeiroFalso() {
         // ANIMAIS (15 perguntas)
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.FACIL, "O urso panda é nativo da Austrália.", false, "Animais", 1);
@@ -1272,6 +1276,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.FACIL, "Pelos enroscados indicam passagem recente de mamífero.", true, "Rastreamento", 1);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.FACIL, "Todo rastro de pegada humana é fácil de seguir.", false, "Rastreamento", 1);
     }
+
     private void carregarCacadoraFacilLacuna() {
         // ANIMAIS (15 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.FACIL,
@@ -1619,6 +1624,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Rastros em zigue-zague indicam animal fugindo.", true, "Rastreamento", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Pegadas humanas apontam calcanhar mais profundo em descida.", true, "Rastreamento", 4);
     }
+
     private void carregarCacadoraMedioLacuna() {
         // ANIMAIS (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
@@ -1724,8 +1730,6 @@ public class BancoPerguntas {
                 "A distância entre as pegadas dianteiras e traseiras do mesmo animal é chamada de __________.",
                 "intervalo", "Rastreamento", 4);
     }
-
-
 
 
     private void carregarCacadoraDificilMultiplaEscolha() {
@@ -1869,6 +1873,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.DIFICIL, "O 'teste da folha' pode ajudar a encontrar direção do vento.", true, "Rastreamento", 8);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.DIFICIL, "Rastros sobrepostos de felino indicam que ele estava caçando.", true, "Rastreamento", 8);
     }
+
     private void carregarCacadoraDificilLacuna() {
         // ANIMAIS (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.DIFICIL,
@@ -2846,6 +2851,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.GUERREIRO, Dificuldade.DIFICIL, "A 'Páscoa Sangrenta' (1916) foi uma revolta na Irlanda.", true, "História", 8);
         adicionarPerguntaVF(PerTipo.GUERREIRO, Dificuldade.DIFICIL, "O 'Japão' ainda mantém um exército proibido pela constituição.", true, "História", 8);
     }
+
     private void carregarGuerreiroDificilLacuna() {
         // COMBATE E ARTES MARCIAIS (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.GUERREIRO, Dificuldade.DIFICIL,
@@ -3226,6 +3232,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "Quanto maior a altura, maior a pressão atmosférica.", false, "Física", 1);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.FACIL, "A eletricidade pode ser gerada por energia solar.", true, "Física", 1);
     }
+
     private void carregarSabioFacilLacuna() {
         // FILOSOFIA (10 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.FACIL,
@@ -3830,6 +3837,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.DIFICIL, "A velocidade da luz é constante em todos os referenciais inerciais.", true, "Física", 8);
         adicionarPerguntaVF(PerTipo.SABIO, Dificuldade.DIFICIL, "O elétron é uma partícula elementar.", true, "Física", 8);
     }
+
     private void carregarSabioDificilLacuna() {
         // FILOSOFIA (5 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.SABIO, Dificuldade.DIFICIL,
@@ -4805,6 +4813,7 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.DIFICIL, "A 'Academia Platônica' de Florença estudava hermetismo.", true, "Ocultismo", 8);
         adicionarPerguntaVF(PerTipo.ARCANISTA, Dificuldade.DIFICIL, "Eliphas Levi escreveu 'Dogma e Ritual da Alta Magia'.", true, "Ocultismo", 8);
     }
+
     private void carregarArcanistaDificilLacuna() {
         // MITOLOGIA (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
@@ -4912,17 +4921,14 @@ public class BancoPerguntas {
     }
 
 
-
     private void adicionarPerguntaMultipla(PerTipo tipo, Dificuldade diff,
-                                       String texto, List<String> opcoes,
-                                       String letraCorreta, String categoria, int estagioMinimo) {
+                                           String texto, List<String> opcoes,
+                                           String letraCorreta, String categoria, int estagioMinimo) {
         Pergunta p = new PerguntaMultiplaEscolha(proximoId++, texto, opcoes, letraCorreta,
                 diff, tipo, categoria, estagioMinimo);
         perguntasPorPersonagem.get(tipo).add(p);
         perguntasPorDificuldade.get(tipo).get(diff).add(p);
     }
-
-
 
 
     private void adicionarPerguntaVF(PerTipo tipo, Dificuldade diff, String texto,
@@ -4932,15 +4938,16 @@ public class BancoPerguntas {
         perguntasPorPersonagem.get(tipo).add(p);
         perguntasPorDificuldade.get(tipo).get(diff).add(p);
     }
-        private void adicionarPerguntaLacuna(PerTipo tipo, Dificuldade diff, String texto,
-                                     String respostaCorreta, String categoria, int estagioMinimo) {
-            // Usa o estagioMaximo da dificuldade
-            int estagioMaximo = diff.getEstagioMaximo();
-            Pergunta p = new PerguntaCompletarLacuna(proximoId++, texto, respostaCorreta,
-            diff, tipo, categoria, estagioMinimo, estagioMaximo);
-            perguntasPorPersonagem.get(tipo).add(p);
-            perguntasPorDificuldade.get(tipo).get(diff).add(p);
-}
+
+    private void adicionarPerguntaLacuna(PerTipo tipo, Dificuldade diff, String texto,
+                                         String respostaCorreta, String categoria, int estagioMinimo) {
+        // Usa o estagioMaximo da dificuldade
+        int estagioMaximo = diff.getEstagioMaximo();
+        Pergunta p = new PerguntaCompletarLacuna(proximoId++, texto, respostaCorreta,
+                diff, tipo, categoria, estagioMinimo, estagioMaximo);
+        perguntasPorPersonagem.get(tipo).add(p);
+        perguntasPorDificuldade.get(tipo).get(diff).add(p);
+    }
 
     public List<Pergunta> getPerguntasParaPersonagem(PerTipo tipo) {
         return new ArrayList<>(perguntasPorPersonagem.get(tipo));
@@ -4956,29 +4963,29 @@ public class BancoPerguntas {
         return adequadas.get(random.nextInt(adequadas.size()));
     }
 
-public Pergunta getPerguntaAleatoriaPorDificuldade(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
-    List<Pergunta> perguntas = perguntasPorDificuldade.get(tipo).get(dificuldade);
+    public Pergunta getPerguntaAleatoriaPorDificuldade(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
+        List<Pergunta> perguntas = perguntasPorDificuldade.get(tipo).get(dificuldade);
 
-    if (perguntas == null || perguntas.isEmpty()) {
-        return null;
-    }
-
-    // Filtra perguntas adequadas para o estágio (agora respeita min e max)
-    List<Pergunta> adequadas = new ArrayList<>();
-    for (Pergunta p : perguntas) {
-        if (p.isAdequadaParaEstagio(estagioNumero)) {
-            adequadas.add(p);
+        if (perguntas == null || perguntas.isEmpty()) {
+            return null;
         }
-    }
 
-    if (adequadas.isEmpty()) {
-        return null;
-    }
+        // Filtra perguntas adequadas para o estágio (agora respeita min e max)
+        List<Pergunta> adequadas = new ArrayList<>();
+        for (Pergunta p : perguntas) {
+            if (p.isAdequadaParaEstagio(estagioNumero)) {
+                adequadas.add(p);
+            }
+        }
 
-    // ⭐ Embaralha para maior aleatoriedade
-    Collections.shuffle(adequadas, random);
-    return adequadas.get(0);
-}
+        if (adequadas.isEmpty()) {
+            return null;
+        }
+
+        // ⭐ Embaralha para maior aleatoriedade
+        Collections.shuffle(adequadas, random);
+        return adequadas.get(0);
+    }
 
     public int getTotalPerguntas() {
         return perguntasPorPersonagem.values().stream().mapToInt(List::size).sum();
@@ -5000,6 +5007,28 @@ public Pergunta getPerguntaAleatoriaPorDificuldade(PerTipo tipo, Dificuldade dif
     }
 
     public List<Pergunta> getPerguntasPorDificuldade(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
-        return List.of();
+        // Pega a lista de perguntas da dificuldade específica
+        List<Pergunta> perguntas = perguntasPorDificuldade.get(tipo).get(dificuldade);
+
+        if (perguntas == null || perguntas.isEmpty()) {
+            System.out.println("⚠️ Nenhuma pergunta encontrada para " + tipo.getNome() + " - " + dificuldade.getNome());
+            return new ArrayList<>();
+        }
+
+        // Filtra apenas as perguntas adequadas para o estágio atual
+        List<Pergunta> adequadas = new ArrayList<>();
+        for (Pergunta p : perguntas) {
+            if (p.isAdequadaParaEstagio(estagioNumero)) {
+                adequadas.add(p);
+            }
+        }
+
+        if (adequadas.isEmpty()) {
+            System.out.println("⚠️ Nenhuma pergunta adequada para estágio " + estagioNumero +
+                    " na dificuldade " + dificuldade.getNome());
+        }
+
+        return adequadas;
     }
+
 }

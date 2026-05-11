@@ -117,6 +117,7 @@ public class GerenciadorBatalha {
         }
     }
 
+    // ⭐ NOVO: Reseta o registro de perguntas usadas
     private void resetarPerguntasUsadas() {
         perguntasUsadas.clear();
         perguntasUsadasCount = 0;
@@ -130,10 +131,17 @@ public class GerenciadorBatalha {
         this.inimigoAtual = new Inimigo(nome, vidaBase, ataqueBase, estagio.getNumero());
     }
 
+    // ⭐ NOVO: Método para buscar pergunta sem repetição
     private Pergunta getPerguntaSemRepeticao(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
+        // Busca todas as perguntas disponíveis para esta dificuldade e estágio
         List<Pergunta> todasPerguntas = bancoPerguntas.getPerguntasPorDificuldade(tipo, dificuldade, estagioNumero);
 
+        if (todasPerguntas == null || todasPerguntas.isEmpty()) {
+            System.out.println("⚠️ Nenhuma pergunta disponível para " + dificuldade.getNome());
+            return null;
+        }
 
+        // Filtra perguntas que NÃO foram usadas ainda
         List<Pergunta> perguntasNaoUsadas = new ArrayList<>();
         for (Pergunta p : todasPerguntas) {
             if (!perguntasUsadas.contains(p.getId())) {
@@ -141,14 +149,17 @@ public class GerenciadorBatalha {
             }
         }
 
+        // Se todas as perguntas já foram usadas, reseta o ciclo
         if (perguntasNaoUsadas.isEmpty()) {
             System.out.println("🔄 Todas as " + todasPerguntas.size() + " perguntas já foram usadas! Reiniciando ciclo...");
             perguntasUsadas.clear();
             perguntasNaoUsadas = todasPerguntas;
         }
 
+        // Escolhe uma pergunta aleatória das não usadas
         Pergunta escolhida = perguntasNaoUsadas.get(random.nextInt(perguntasNaoUsadas.size()));
 
+        // Marca como usada
         perguntasUsadas.add(escolhida.getId());
         perguntasUsadasCount++;
 
