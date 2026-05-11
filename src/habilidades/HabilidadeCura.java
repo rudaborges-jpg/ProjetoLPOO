@@ -42,10 +42,8 @@ public class HabilidadeCura implements HabilidadeEspecial {
             return 0;
         }
 
-        // Cura o usuário
         usuario.curar(curaBase);
 
-        // Causa dano ao alvo
         int dano = curaBase / 2;
         System.out.println("💚 " + usuario.getNome() + " usa " + nome + " curando " + curaBase + " e causando " + dano + " de dano!");
         alvo.tomarDano(dano);

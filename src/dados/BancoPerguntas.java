@@ -1591,7 +1591,6 @@ public class BancoPerguntas {
     }
 
     private void carregarCacadoraMedioVerdadeiroFalso() {
-        // ANIMAIS (7 perguntas)
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O lobo-guará é um canídeo sul-americano de patas longas.", true, "Animais", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "A capivara é o maior roedor do mundo.", true, "Animais", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O ornitorrinco é mamífero, mas não tem glândulas mamárias.", false, "Animais", 4);
@@ -1599,8 +1598,6 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "A tartaruga-de-couro é a maior tartaruga marinha.", true, "Animais", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O mico-leão-dourado é encontrado apenas na Mata Atlântica.", true, "Animais", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O tamanduá-bandeira come formigas usando sua língua longa e pegajosa.", true, "Animais", 4);
-
-        // NATUREZA (7 perguntas)
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O Cerrado brasileiro é considerado um hotspot de biodiversidade.", true, "Natureza", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "A Mata de Araucárias é um bioma exclusivo do sul do Brasil e Argentina.", true, "Natureza", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O fenômeno 'florescimento de algas' (maré vermelha) é inofensivo.", false, "Natureza", 4);
@@ -1608,16 +1605,12 @@ public class BancoPerguntas {
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O processo de desertificação é irreversível na maioria dos casos.", true, "Natureza", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "As epífitas são plantas que parasitam outras plantas.", false, "Natureza", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O carvão vegetal é produzido pela queima incompleta de madeira.", true, "Natureza", 4);
-
-        // SOBREVIVÊNCIA (6 perguntas)
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "A urina humana é segura para beber em emergência.", false, "Sobrevivência", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Se seu abrigo improvisado tiver entrada na direção do vento, o vento vai entrar.", true, "Sobrevivência", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "O musgo em árvores cresce preferencialmente no lado norte (Hemisfério Norte).", true, "Sobrevivência", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Comer neve hidrata sem perda de energia.", false, "Sobrevivência", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Quanto mais fina a madeira, mais rápido queima.", true, "Sobrevivência", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Em uma picada de cobra, deve-se sugar o veneno com a boca.", false, "Sobrevivência", 4);
-
-        // RASTREAMENTO (5 perguntas)
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Pelos com pontas brancas e base escura indicam animal velho.", false, "Rastreamento", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "A posição da lua pode ajudar a encontrar direção noturna.", true, "Rastreamento", 4);
         adicionarPerguntaVF(PerTipo.CACADORA, Dificuldade.MEDIO, "Marcas de dentes em galhos indicam passagem de herbívoro.", true, "Rastreamento", 4);
@@ -5015,7 +5008,6 @@ public class BancoPerguntas {
             return new ArrayList<>();
         }
 
-        // Filtra apenas as perguntas adequadas para o estágio atual
         List<Pergunta> adequadas = new ArrayList<>();
         for (Pergunta p : perguntas) {
             if (p.isAdequadaParaEstagio(estagioNumero)) {
