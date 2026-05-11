@@ -14,8 +14,8 @@ public abstract class Pergunta {
 
     public enum Dificuldade {
         FACIL("Fácil", 10, 1, 4),
-        MEDIO("Médio", 20, 4, 7),
-        DIFICIL("Difícil", 35, 8, -1);
+        MEDIO("Médio", 10, 4, 7),
+        DIFICIL("Difícil", 10, 8, -1);
 
         private String nome;
         private int danoBase;
@@ -63,10 +63,8 @@ public abstract class Pergunta {
     public int getEstagioMaximo() { return estagioMaximo; }
 
     public boolean isAdequadaParaEstagio(int estagioNumero) {
-        // Verifica estágio mínimo
         if (estagioNumero < estagioMinimo) return false;
 
-        // Verifica estágio máximo (se não for -1)
         if (estagioMaximo != -1 && estagioNumero > estagioMaximo) return false;
 
         return true;

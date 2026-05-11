@@ -29,12 +29,6 @@ public class Inimigo {
 
     public boolean vivo() { return vida > 0; }
 
-    public void atacar(Jogador jogador) {
-        int dano = ataque + (nivel * 3);
-        System.out.println("👾 " + nome + " ataca causando " + dano + " de dano!");
-        jogador.tomarDano(dano);
-    }
-
     public void mostrarStatus() {
         System.out.println("👾 " + nome + " | ❤️ " + vida + "/" + vidaMax + " | ⚔️ " + ataque);
     }

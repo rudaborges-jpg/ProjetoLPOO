@@ -31,7 +31,6 @@ public class GerenciadorBatalha {
         this.scanner = new Scanner(System.in);
         this.random = new Random();
 
-        // ⭐ Inicializar controle de perguntas
         this.perguntasUsadas = new HashSet<>();
         this.resetsPorDificuldade = new HashMap<>();
         for (Dificuldade diff : Dificuldade.values()) {
@@ -86,7 +85,6 @@ public class GerenciadorBatalha {
             Estagio estagio = rotaAtual.getEstagios().get(estagioIndex);
             estagio.mostrarInfo();
 
-            // ⭐ NÃO reseta as perguntas entre estágios! Mantém o histórico da jornada
 
             if (estagio.ehChefao()) {
                 inimigoAtual = estagio.getChefao();
@@ -117,7 +115,6 @@ public class GerenciadorBatalha {
             System.out.println("\n🏆 PARABÉNS! VOCÊ COMPLETOU A ROTA " + rotaAtual.getNomeRota() + "! 🏆");
             System.out.println("🏆 Pontuação final: " + pontuacaoTotal);
 
-            // ⭐ Mostra estatísticas de quantas perguntas foram usadas
             System.out.println("\n📊 ESTATÍSTICAS DE PERGUNTAS:");
             System.out.println("   Total de perguntas únicas usadas: " + perguntasUsadas.size());
             for (Dificuldade diff : Dificuldade.values()) {
@@ -126,10 +123,7 @@ public class GerenciadorBatalha {
         }
     }
 
-    // ⭐ Reset apenas para uma dificuldade específica (quando esgotar as perguntas)
     private void resetarPerguntasPorDificuldade(Dificuldade dificuldade) {
-        // Remove apenas as perguntas daquela dificuldade do Set
-        // Ou simplesmente limpa tudo e avisa
         perguntasUsadas.clear();
         int totalResets = resetsPorDificuldade.get(dificuldade) + 1;
         resetsPorDificuldade.put(dificuldade, totalResets);
@@ -144,9 +138,7 @@ public class GerenciadorBatalha {
         this.inimigoAtual = new Inimigo(nome, vidaBase, ataqueBase, estagio.getNumero());
     }
 
-    // ⭐ Método para buscar pergunta sem repetição (GLOBAL - não reinicia entre estágios)
     private Pergunta getPerguntaSemRepeticao(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
-        // Busca todas as perguntas disponíveis para esta dificuldade e estágio
         List<Pergunta> todasPerguntas = bancoPerguntas.getPerguntasPorDificuldade(tipo, dificuldade, estagioNumero);
 
         if (todasPerguntas == null || todasPerguntas.isEmpty()) {
@@ -154,7 +146,6 @@ public class GerenciadorBatalha {
             return null;
         }
 
-        // Filtra perguntas que NÃO foram usadas ainda (globalmente)
         List<Pergunta> perguntasNaoUsadas = new ArrayList<>();
         for (Pergunta p : todasPerguntas) {
             if (!perguntasUsadas.contains(p.getId())) {
@@ -162,7 +153,6 @@ public class GerenciadorBatalha {
             }
         }
 
-        // Se todas as perguntas já foram usadas, reseta o ciclo (apenas para esta dificuldade)
         if (perguntasNaoUsadas.isEmpty()) {
             System.out.println("\n🔄 Todas as " + todasPerguntas.size() +
                     " perguntas de dificuldade " + dificuldade.getNome() +
@@ -170,17 +160,13 @@ public class GerenciadorBatalha {
             System.out.println("   Reiniciando ciclo para esta dificuldade...");
             resetarPerguntasPorDificuldade(dificuldade);
 
-            // Após reset, todas as perguntas voltam a estar disponíveis
             perguntasNaoUsadas = todasPerguntas;
         }
 
-        // Escolhe uma pergunta aleatória das não usadas
         Pergunta escolhida = perguntasNaoUsadas.get(random.nextInt(perguntasNaoUsadas.size()));
 
-        // Marca como usada
         perguntasUsadas.add(escolhida.getId());
 
-        // Mostra quantas perguntas restam nesta dificuldade
         int usadasNestaDificuldade = 0;
         for (Pergunta p : todasPerguntas) {
             if (perguntasUsadas.contains(p.getId())) {
@@ -324,12 +310,10 @@ public class GerenciadorBatalha {
             dificuldade = Dificuldade.DIFICIL;
         }
 
-        // ⭐ Usa o método que evita repetição de perguntas
         Pergunta pergunta = getPerguntaSemRepeticao(
                 jogador.getPersonagem().getTipo(), dificuldade, estagio.getNumero());
 
         if (pergunta == null) {
-            // Fallback: tenta pegar qualquer pergunta (sem filtro de dificuldade)
             pergunta = bancoPerguntas.getPerguntaAleatoriaParaPersonagem(
                     jogador.getPersonagem().getTipo(), estagio.getNumero());
         }
@@ -395,15 +379,6 @@ public class GerenciadorBatalha {
 
         if (dano > 0) {
             System.out.println("\n💥 " + personagem.getNome() + " causa " + dano + " de dano com sua habilidade especial!");
-
-            int experienciaGanha = 10 + (estagio.getDificuldade() * 5);
-            jogador.getPersonagem().addExperiencia(experienciaGanha);
-            System.out.println("📚 +" + experienciaGanha + " de experiência!");
-
-            int bonusHabilidade = 25;
-            pontuacaoTotal += bonusHabilidade;
-            jogador.addPontuacao(bonusHabilidade);
-            System.out.println("🏆 Bônus por usar habilidade: +" + bonusHabilidade + " pontos!");
         }
     }
 

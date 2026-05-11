@@ -5000,7 +5000,6 @@ public class BancoPerguntas {
     }
 
     public List<Pergunta> getPerguntasPorDificuldade(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
-        // Pega a lista de perguntas da dificuldade específica
         List<Pergunta> perguntas = perguntasPorDificuldade.get(tipo).get(dificuldade);
 
         if (perguntas == null || perguntas.isEmpty()) {

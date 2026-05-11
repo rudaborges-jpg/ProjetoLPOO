@@ -27,13 +27,11 @@ public class GerenciadorRotas {
         rotaPaladino.adicionarEstagio(new Estagio(8, "Trono Celestial", 8));
         rotaPaladino.adicionarEstagio(new Estagio(9, "Arcanjo Miguel", 9));
 
-        // ⭐ CHEFÃO (4 parâmetros, último é Inimigo)
         Inimigo chefaoPaladino = new Inimigo("👑 METATRON - O Anjo Supremo 👑", 300, 45, 10);
         rotaPaladino.adicionarEstagio(new Estagio(10, "METATRON", 10, chefaoPaladino));
 
         rotas.put(PerTipo.PALADINO, rotaPaladino);
 
-        // ==================== CAÇADORA ====================
         Rota rotaCacadora = new Rota(PerTipo.CACADORA, "Caminho da Predadora");
 
         rotaCacadora.adicionarEstagio(new Estagio(1, "Floresta dos Sussurros", 1));
@@ -51,7 +49,6 @@ public class GerenciadorRotas {
 
         rotas.put(PerTipo.CACADORA, rotaCacadora);
 
-        // ==================== GUERREIRO ====================
         Rota rotaGuerreiro = new Rota(PerTipo.GUERREIRO, "Caminho da Glória");
 
         rotaGuerreiro.adicionarEstagio(new Estagio(1, "Campo de Treinamento", 1));
@@ -69,7 +66,6 @@ public class GerenciadorRotas {
 
         rotas.put(PerTipo.GUERREIRO, rotaGuerreiro);
 
-        // ==================== SÁBIO ====================
         Rota rotaSabio = new Rota(PerTipo.SABIO, "Caminho do Conhecimento");
 
         rotaSabio.adicionarEstagio(new Estagio(1, "Biblioteca Antiga", 1));
@@ -87,7 +83,6 @@ public class GerenciadorRotas {
 
         rotas.put(PerTipo.SABIO, rotaSabio);
 
-        // ==================== ARCANISTA ====================
         Rota rotaArcanista = new Rota(PerTipo.ARCANISTA, "Caminho Místico");
 
         rotaArcanista.adicionarEstagio(new Estagio(1, "Torre de Marfim", 1));
