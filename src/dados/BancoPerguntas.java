@@ -4998,4 +4998,8 @@ public Pergunta getPerguntaAleatoriaPorDificuldade(PerTipo tipo, Dificuldade dif
         System.out.println("=".repeat(60));
         System.out.println("🎯 TOTAL GERAL: " + getTotalPerguntas() + " perguntas");
     }
+
+    public List<Pergunta> getPerguntasPorDificuldade(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
+        return List.of();
+    }
 }
