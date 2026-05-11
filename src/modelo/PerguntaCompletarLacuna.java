@@ -5,7 +5,6 @@ import java.util.List;
 public class PerguntaCompletarLacuna extends Pergunta {
     private String dica;
 
-    // Construtor completo com estagioMaximo (sem dica)
     public PerguntaCompletarLacuna(int id, String texto, String respostaCorreta,
                                    Dificuldade dificuldade, PerTipo tipoPersonagem,
                                    String categoria, int estagioMinimo, int estagioMaximo) {
@@ -14,7 +13,6 @@ public class PerguntaCompletarLacuna extends Pergunta {
         this.dica = null;
     }
 
-    // Construtor simplificado (usa estagioMaximo = -1)
     public PerguntaCompletarLacuna(int id, String texto, String respostaCorreta,
                                    Dificuldade dificuldade, PerTipo tipoPersonagem,
                                    String categoria, int estagioMinimo) {
@@ -22,7 +20,6 @@ public class PerguntaCompletarLacuna extends Pergunta {
                 categoria, estagioMinimo, -1);
     }
 
-    // Construtor com dica
     public PerguntaCompletarLacuna(int id, String texto, String respostaCorreta, String dica,
                                    Dificuldade dificuldade, PerTipo tipoPersonagem,
                                    String categoria, int estagioMinimo, int estagioMaximo) {

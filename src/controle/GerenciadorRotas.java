@@ -13,10 +13,8 @@ public class GerenciadorRotas {
     }
 
     private void criarTodasRotas() {
-        // ==================== PALADINO ====================
         Rota rotaPaladino = new Rota(PerTipo.PALADINO, "Caminho da Iluminação");
 
-        // ⭐ ESTÁGIOS NORMAIS (3 parâmetros)
         rotaPaladino.adicionarEstagio(new Estagio(1, "Iniciação da Fé", 1));
         rotaPaladino.adicionarEstagio(new Estagio(2, "Prova da Devoção", 2));
         rotaPaladino.adicionarEstagio(new Estagio(3, "Julgamento Divino", 3));

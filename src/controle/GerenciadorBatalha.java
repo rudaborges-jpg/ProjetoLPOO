@@ -400,10 +400,33 @@ public class GerenciadorBatalha {
     }
 
     private int calcularDano(Dificuldade diff, Estagio estagio) {
-        int dano = diff.getDanoBase();
-        dano = dano * (estagio.getDificuldade() / 2);
-        if (dano < 5) dano = 5;
-        return dano;
+        Personagem personagem = jogador.getPersonagem();
+
+        int danoBase = personagem.getAtaque();
+
+        int multiplicadorDificuldade;
+        switch (diff) {
+            case FACIL:
+                multiplicadorDificuldade = 1;
+                break;
+            case MEDIO:
+                multiplicadorDificuldade = 2;
+                break;
+            case DIFICIL:
+                multiplicadorDificuldade = 3;
+                break;
+            default:
+                multiplicadorDificuldade = 1;
+        }
+
+        int multiplicadorEstagio = estagio.getDificuldade() / 2;
+
+        int dano = danoBase * multiplicadorDificuldade * multiplicadorEstagio;
+
+        double variacao = 0.85 + (random.nextDouble() * 0.3);
+        dano = (int)(dano * variacao);
+
+        return Math.max(5, dano);
     }
 
     private int calcularPontos(Dificuldade diff, Estagio estagio) {

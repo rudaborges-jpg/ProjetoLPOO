@@ -4695,7 +4695,6 @@ public class BancoPerguntas {
                 "Na mitologia japonesa, qual é a deusa do sol?",
                 Arrays.asList("Tsukuyomi", "Amaterasu", "Susanoo", "Izanami"), "B", "Mitologia", 8);
 
-        // MAGIA (5 perguntas)
         adicionarPerguntaMultipla(PerTipo.ARCANISTA, Dificuldade.DIFICIL,
                 "O que é 'goécia'?",
                 Arrays.asList("Magia branca", "Evocação de demônios", "Magia natural", "Alquimia"), "B", "Magia", 8);
