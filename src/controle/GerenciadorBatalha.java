@@ -104,7 +104,7 @@ public class GerenciadorBatalha {
             estagioIndex++;
 
             if (estagioIndex < rotaAtual.getTotalEstagios()) {
-                jogador.getPersonagem().curar(30);
+                jogador.getPersonagem().curar(50);
                 System.out.println("\n✨ Você avança para o próximo estágio! +30 de vida! ✨");
                 System.out.print("\nPressione ENTER para continuar...");
                 scanner.nextLine();

@@ -115,7 +115,7 @@ public abstract class Personagem {
         nivel++;
         experiencia = 0;
 
-        int aumentoVida = 20;
+        int aumentoVida = 40;
         vidaMax += aumentoVida;
         vida += aumentoVida;
 
