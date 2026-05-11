@@ -427,7 +427,12 @@ public class GerenciadorBatalha {
         double variacao = 0.85 + (random.nextDouble() * 0.3);
         dano = (int)(dano * variacao);
 
-        return Math.max(5, dano);
+        dano = Math.max(5, dano);
+
+        dano = Math.min(50, dano);
+
+    return dano;
+
     }
 
     private int calcularPontos(Dificuldade diff, Estagio estagio) {

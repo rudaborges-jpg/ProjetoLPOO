@@ -114,8 +114,11 @@ public abstract class Personagem {
     protected void levelUp() {
         nivel++;
         experiencia = 0;
-        vidaMax += 20;
-       // vida = vidaMax;
+
+        int aumentoVida = 20;
+        vidaMax += aumentoVida;
+        vida += aumentoVida;
+
         ataque += 5;
         defesa += 3;
         System.out.println("\n🎉 " + nome + " subiu para o NÍVEL " + nivel + "!");

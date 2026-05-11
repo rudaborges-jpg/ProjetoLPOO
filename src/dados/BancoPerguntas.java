@@ -1646,7 +1646,7 @@ public class BancoPerguntas {
 
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,
                 "O mamífero brasileiro que se alimenta exclusivamente de formigas e cupins é o __________.",
-                "tamanduá-bandeira", "Animais", 4);
+                "tamanduá", "Animais", 4);
 
         // NATUREZA (7 perguntas NOVAS)
         adicionarPerguntaLacuna(PerTipo.CACADORA, Dificuldade.MEDIO,

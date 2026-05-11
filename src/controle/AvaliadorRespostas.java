@@ -39,10 +39,13 @@ public class AvaliadorRespostas {
 
         String minusculas = semAcentos.toLowerCase();
 
-        String trimmed = minusculas.trim();
+        String semHifen = minusculas.replace("-", " ")
+                .replace("–", " ")
+                .replace("—", " ")
+                .replaceAll("\\s+", " ")
+                .trim();
 
-
-        return trimmed;
+        return semHifen;
     }
 
     public static String getRespostaCorretaFormatada(Pergunta pergunta) {
