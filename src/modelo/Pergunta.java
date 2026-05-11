@@ -13,9 +13,9 @@ public abstract class Pergunta {
     protected int estagioMaximo;  // ← NOVO: estágio máximo (se -1, vai até o fim)
 
     public enum Dificuldade {
-        FACIL("Fácil", 10, 1, 4),      // só até estágio 4
-        MEDIO("Médio", 20, 4, 7),      // estágios 4 a 7
-        DIFICIL("Difícil", 35, 8, -1); // estágio 8 em diante
+        FACIL("Fácil", 10, 1, 4),
+        MEDIO("Médio", 20, 4, 7),
+        DIFICIL("Difícil", 35, 8, -1);
 
         private String nome;
         private int danoBase;
@@ -47,7 +47,6 @@ public abstract class Pergunta {
         this.estagioMaximo = estagioMaximo;
     }
 
-    // Construtor para compatibilidade (usa -1 para maximo)
     public Pergunta(int id, String texto, String respostaCorreta, Dificuldade dificuldade,
                     PerTipo tipoPersonagem, String categoria, int estagioMinimo) {
         this(id, texto, respostaCorreta, dificuldade, tipoPersonagem, categoria,

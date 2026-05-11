@@ -56,11 +56,11 @@ public abstract class Personagem {
         return habilidade != null ? habilidade.getCooldownAtual() : 0;
     }
 
-   // public void reduzirCooldownHabilidade() {
-   //     if (habilidade != null) {
-   //         habilidade.reduzirCooldown();
-   //     }
-   // }
+    public void reduzirCooldownHabilidade() {
+        if (habilidade != null) {
+            habilidade.reduzirCooldown();
+        }
+    }
 
     public void resetarCooldownHabilidade() {
         if (habilidade != null) {
@@ -140,7 +140,5 @@ public abstract class Personagem {
         return nome + " (Nv." + nivel + " - " + tipo.getNome() + ")";
     }
 
-    public void reduzirCooldownHabilidade() {
-        if (atualCooldown > 0) atualCooldown--;
-    }
+
 }

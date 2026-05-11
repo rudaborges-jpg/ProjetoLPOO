@@ -41,7 +41,6 @@ public class AvaliadorRespostas {
 
         String trimmed = minusculas.trim();
 
-        // String semPontuacao = trimmed.replaceAll("[.,!?;:]", "");
 
         return trimmed;
     }

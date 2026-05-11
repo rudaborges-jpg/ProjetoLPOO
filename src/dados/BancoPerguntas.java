@@ -16,7 +16,6 @@ public class BancoPerguntas {
         this.random = new Random();
         this.proximoId = 1;
 
-        // Inicializar estruturas
         for (PerTipo tipo : PerTipo.values()) {
             perguntasPorPersonagem.put(tipo, new ArrayList<>());
             perguntasPorDificuldade.put(tipo, new HashMap<>());
@@ -25,7 +24,6 @@ public class BancoPerguntas {
             }
         }
 
-        // CARREGAR PERGUNTAS DO PALADINO
         carregarPerguntasPaladino();
         carregarPerguntasCacadora();
         carregarPerguntasGuerreiro();
