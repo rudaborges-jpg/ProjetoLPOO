@@ -42,15 +42,15 @@ public class GerenciadorBatalha {
         Personagem p = jogador.getPersonagem();
 
         if (p instanceof Paladino) {
-            p.setHabilidade(new HabilidadeCura(p, 40, 3));
+            p.setHabilidade(new HabilidadeCura(p, 30, 8));
         } else if (p instanceof Guerreiro) {
-            p.setHabilidade(new HabilidadeDanoExtra(p, 35, 3));
+            p.setHabilidade(new HabilidadeDanoExtra(p, 20, 8));
         } else if (p instanceof Cacadora) {
-            p.setHabilidade(new HabilidadeCritico(p, 20, 4));
+            p.setHabilidade(new HabilidadeCritico(p, 20, 8));
         } else if (p instanceof Sabio) {
-            p.setHabilidade(new HabilidadePoderMagico(p, 45, 3));
+            p.setHabilidade(new HabilidadePoderMagico(p, 30, 8));
         } else if (p instanceof Arcanista) {
-            p.setHabilidade(new HabilidadeDestruicaoTotal(p, 40, 5));
+            p.setHabilidade(new HabilidadeDestruicaoTotal(p, 35, 8));
         }
 
         if (p.getHabilidade() != null) {
