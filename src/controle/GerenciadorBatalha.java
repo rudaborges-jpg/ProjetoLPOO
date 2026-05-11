@@ -132,8 +132,8 @@ public class GerenciadorBatalha {
     }
 
     private void criarInimigoParaEstagio(Estagio estagio) {
-        int vidaBase = 60 + (estagio.getNumero() * 10);
-        int ataqueBase = 15 + (estagio.getNumero() * 5);
+        int vidaBase = 60 + (estagio.getNumero() * 100);
+        int ataqueBase = 25 + (estagio.getNumero() * 5);
         String nome = "🗡️ Guardião do " + estagio.getNome() + " 🗡️";
         this.inimigoAtual = new Inimigo(nome, vidaBase, ataqueBase, estagio.getNumero());
     }
@@ -420,6 +420,7 @@ public class GerenciadorBatalha {
         }
 
         int multiplicadorEstagio = estagio.getDificuldade() / 2;
+        if (multiplicadorEstagio < 1) multiplicadorEstagio = 1;
 
         int dano = danoBase * multiplicadorDificuldade * multiplicadorEstagio;
 

@@ -25,7 +25,7 @@ public class GerenciadorRotas {
         rotaPaladino.adicionarEstagio(new Estagio(8, "Trono Celestial", 8));
         rotaPaladino.adicionarEstagio(new Estagio(9, "Arcanjo Miguel", 9));
 
-        Inimigo chefaoPaladino = new Inimigo("👑 METATRON - O Anjo Supremo 👑", 300, 45, 10);
+        Inimigo chefaoPaladino = new Inimigo("👑 METATRON - O Anjo Supremo 👑", 1300, 45, 10);
         rotaPaladino.adicionarEstagio(new Estagio(10, "METATRON", 10, chefaoPaladino));
 
         rotas.put(PerTipo.PALADINO, rotaPaladino);
@@ -42,7 +42,7 @@ public class GerenciadorRotas {
         rotaCacadora.adicionarEstagio(new Estagio(8, "Espírito da Floresta", 8));
         rotaCacadora.adicionarEstagio(new Estagio(9, "Guardião dos Animais", 9));
 
-        Inimigo chefaoCacadora = new Inimigo("👑 FENRIR - O Lobo Gigante 👑", 280, 50, 10);
+        Inimigo chefaoCacadora = new Inimigo("👑 FENRIR - O Lobo Gigante 👑", 1280, 50, 10);
         rotaCacadora.adicionarEstagio(new Estagio(10, "FENRIR", 10, chefaoCacadora));
 
         rotas.put(PerTipo.CACADORA, rotaCacadora);
@@ -59,7 +59,7 @@ public class GerenciadorRotas {
         rotaGuerreiro.adicionarEstagio(new Estagio(8, "Monte dos Gigantes", 8));
         rotaGuerreiro.adicionarEstagio(new Estagio(9, "Exército das Trevas", 9));
 
-        Inimigo chefaoGuerreiro = new Inimigo("👑 ODIN - O Pai de Todos 👑", 350, 55, 10);
+        Inimigo chefaoGuerreiro = new Inimigo("👑 ODIN - O Pai de Todos 👑", 1350, 55, 10);
         rotaGuerreiro.adicionarEstagio(new Estagio(10, "ODIN", 10, chefaoGuerreiro));
 
         rotas.put(PerTipo.GUERREIRO, rotaGuerreiro);
@@ -76,7 +76,7 @@ public class GerenciadorRotas {
         rotaSabio.adicionarEstagio(new Estagio(8, "Teatro Grego", 8));
         rotaSabio.adicionarEstagio(new Estagio(9, "Oráculo de Delfos", 9));
 
-        Inimigo chefaoSabio = new Inimigo("👑 ATHENA - Deusa da Sabedoria 👑", 260, 48, 10);
+        Inimigo chefaoSabio = new Inimigo("👑 ATHENA - Deusa da Sabedoria 👑", 1260, 48, 10);
         rotaSabio.adicionarEstagio(new Estagio(10, "ATHENA", 10, chefaoSabio));
 
         rotas.put(PerTipo.SABIO, rotaSabio);
@@ -93,7 +93,7 @@ public class GerenciadorRotas {
         rotaArcanista.adicionarEstagio(new Estagio(8, "Caverna da Magia", 8));
         rotaArcanista.adicionarEstagio(new Estagio(9, "Portal Dimensional", 9));
 
-        Inimigo chefaoArcanista = new Inimigo("👑 LOKI - O Deus da Trapaça 👑", 290, 52, 10);
+        Inimigo chefaoArcanista = new Inimigo("👑 LOKI - O Deus da Trapaça 👑", 1290, 52, 10);
         rotaArcanista.adicionarEstagio(new Estagio(10, "LOKI", 10, chefaoArcanista));
 
         rotas.put(PerTipo.ARCANISTA, rotaArcanista);
