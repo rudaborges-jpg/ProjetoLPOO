@@ -8,7 +8,7 @@ public class Game {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("\n🎮 CODEARENA: BATALHA DO CONHECIMENTO 🎮");
+        System.out.println("\n🎮 BAQUARA : BATALHA DO SABER 🎮");
         System.out.println("=".repeat(60));
 
         System.out.print("\nDigite seu nome: ");
