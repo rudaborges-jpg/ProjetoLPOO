@@ -76,11 +76,24 @@ public abstract class Personagem {
         return 0;
     }
 
-    public void tomarDano(int dano) {
-        int danoAtual = Math.max(1, dano - defesa);
-        this.vida -= danoAtual;
+
+    public void tomarDano(int danoBruto) {
+        double reducao = (double) defesa / (defesa + 50);
+        int danoMitigado = (int) (danoBruto * reducao);
+        int danoFinal = danoBruto - danoMitigado;
+
+        if (danoFinal < 1) danoFinal = 1;
+
+        this.vida -= danoFinal;
         if (this.vida < 0) this.vida = 0;
-        System.out.println("⚔️ " + nome + " sofreu " + danoAtual + " de dano! (❤️ " + vida + "/" + vidaMax + ")");
+
+        System.out.println("⚔️ " + nome + " sofreu " + danoFinal + " de dano! (❤️ " + vida + "/" + vidaMax + ")");
+
+        if (danoMitigado > 0) {
+            int percentualReducao = (int)(reducao * 100);
+            System.out.println("   🛡️ Defesa " + defesa + " mitigou " + danoMitigado +
+                    " de dano (" + percentualReducao + "% de redução)");
+        }
     }
 
     public void curar(int quanto) {
@@ -99,8 +112,10 @@ public abstract class Personagem {
     public boolean vivo() { return vida > 0; }
 
     public abstract void usarHabilidadeEspecial(Personagem alvo);
-    public abstract String getNomeHabilididade();
+    public abstract String getNomeHabilidade();
     public abstract String getDescricaoHabilidade();
+    public abstract void recarregarPorEstagio(int estagioNumero);
+    public abstract void recarregarPorNivel(int novoNivel);
 
     public void addExperiencia(int exp) {
         this.experiencia += exp;
@@ -122,18 +137,27 @@ public abstract class Personagem {
         ataque += 5;
         defesa += 3;
         System.out.println("\n🎉 " + nome + " subiu para o NÍVEL " + nivel + "!");
+        System.out.println("   ❤️ Vida +" + aumentoVida + " | ⚔️ Ataque +5 | 🛡️ Defesa +3 (Total: " + defesa + ")");
+
+
+        recarregarPorNivel(nivel);
     }
 
     public void mostrarStatus() {
-        System.out.println("\n👤 " + nome + " (Nv." + nivel + ") - ❤️ " + vida + "/" + vidaMax + " | ⚔️ " + ataque + " | 🛡️ " + defesa);
-        if (atualCooldown > 0) {
-            System.out.println("   ⏳ Cooldown: " + atualCooldown + " rodadas");
-        }
+        double reducao = (double) defesa / (defesa + 50);
+        int percentualReducao = (int)(reducao * 100);
+
+        System.out.println("\n👤 " + nome + " (Nv." + nivel + ")");
+        System.out.println("   ❤️ Vida: " + vida + "/" + vidaMax);
+        System.out.println("   ⚔️ Ataque: " + ataque);
+        System.out.println("   🛡️ Defesa: " + defesa + " (reduz " + percentualReducao + "% do dano)");
+
         if (habilidade != null) {
             if (habilidade.estaPronta()) {
                 System.out.println("   ✨ Habilidade: " + habilidade.getNome() + " [PRONTA]");
             } else {
-                System.out.println("   ⏳ Habilidade: " + habilidade.getNome() + " [Cooldown: " + habilidade.getCooldownAtual() + "]");
+                System.out.println("   ⏳ Habilidade: " + habilidade.getNome() +
+                        " [Cooldown: " + habilidade.getCooldownAtual() + "]");
             }
         }
     }
@@ -142,6 +166,4 @@ public abstract class Personagem {
     public String toString() {
         return nome + " (Nv." + nivel + " - " + tipo.getNome() + ")";
     }
-
-
 }

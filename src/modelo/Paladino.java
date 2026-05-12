@@ -1,16 +1,16 @@
+// 📁 modelo/Paladino.java
 package modelo;
 
-public  class Paladino extends Personagem {
+public class Paladino extends Personagem {
     private int poderDivino;
     private int poderDivinoMaximo;
     private int feAbencoada;
 
     public Paladino() {
-        super(PerTipo.PALADINO, "Paladino", 150, 22, 18);
+        super(PerTipo.PALADINO, "Paladino", 150, 22, 25);  // Defesa alta: 25
         this.poderDivinoMaximo = 100;
         this.poderDivino = 100;
         this.feAbencoada = 0;
-
     }
 
     public int getPoderDivino() { return poderDivino; }
@@ -29,38 +29,73 @@ public  class Paladino extends Personagem {
         return false;
     }
 
-    public void recarregarPorEstagio(int estagioNumero) {
-        int recarga = estagioNumero * 10;
-        poderDivino = Math.min(poderDivinoMaximo, poderDivino + recarga);
-        System.out.println("🙏 Poder Divino recarregado em +" + recarga +
-                " (Agora: " + poderDivino + ")");
-    }
-
-    public void recarregarPorNivel(int novoNivel) {
-        poderDivinoMaximo += 10;  // Aumenta o máximo a cada nível
-        poderDivino = poderDivinoMaximo;  // Recarrega completamente
-        System.out.println("🌟 Poder Divino máximo aumentou para " + poderDivinoMaximo +
-                " e foi completamente restaurado!");
-    }
-
-    public void usarHabilidadeEspecial(Personagem  alvo) {
-        System.out.println("\n🛡️ " + nome + " invoca o ESPÍRITO SAGRADO!");
-        int cura = 40 + (nivel * 5);
-        curar(cura);
-        int dano = 25 + (nivel * 3);
-        System.out.println("⚡ Luz divina atinge " + alvo.getNome() + " causando " + dano + " de dano!");
-        alvo.tomarDano(dano);
+    public void recarregarPoderDivino(int quantidade) {
+        if (quantidade <= 0) return;
+        poderDivino = Math.min(poderDivinoMaximo, poderDivino + quantidade);
     }
 
     @Override
-    public String getNomeHabilididade() {
-        return "";
+    public void recarregarPorEstagio(int estagioNumero) {
+        int recarga = estagioNumero * 10;
+        recarregarPoderDivino(recarga);
+        System.out.println("🙏 Poder Divino recarregado: +" + recarga + " (" + poderDivino + "/" + poderDivinoMaximo + ")");
     }
 
+    @Override
+    public void recarregarPorNivel(int novoNivel) {
+        poderDivinoMaximo += 10;
+        poderDivino = poderDivinoMaximo;
+        feAbencoada += 2;
+        System.out.println("🌟 Poder Divino máximo: " + poderDivinoMaximo + " | Completamente restaurado!");
+    }
+
+    @Override
+    public void usarHabilidadeEspecial(Personagem alvo) {
+        System.out.println("\n🛡️ " + nome + " invoca o ESPÍRITO SAGRADO!");
+
+        int custo = 30 + (feAbencoada * 2);
+        if (custo > 70) custo = 70;
+
+        if (!consumirPoderDivino(custo)) {
+            if (poderDivino > 15) {
+                System.out.println("⚠️ Poder Divino baixo! Usando versão reduzida...");
+                custo = poderDivino;
+                poderDivino = 0;
+                feAbencoada++;
+            } else {
+                System.out.println("❌ Poder Divino insuficiente! Habilidade cancelada.");
+                return;
+            }
+        }
+
+        int cura = 40 + (nivel * 5) + (poderDivino / 4);
+        curar(cura);
+        System.out.println("💚 Curou " + cura + " de vida!");
+
+        int dano = 25 + (nivel * 3) + (feAbencoada * 3);
+        System.out.println("⚡ Luz divina atinge " + alvo.getNome() + " causando " + dano + " de dano!");
+        alvo.tomarDano(dano);
+
+        System.out.println("📿 Fé Abençoada acumulada: " + feAbencoada);
+        recarregarPoderDivino(5);
+    }
+
+    @Override
     public String getNomeHabilidade() {
         return "ESPÍRITO SAGRADO";
     }
+
+    @Override
     public String getDescricaoHabilidade() {
-        return "Cura " + (40 + (nivel * 5)) + " de vida e causa " + (25 + (nivel * 3)) + " de dano ao inimigo.";
+        return "Cura " + (40 + (nivel * 5)) + " de vida e causa " +
+                (25 + (nivel * 3)) + " de dano sagrado.\n" +
+                "   📿 Quanto mais Fé Abençoada, mais forte fica!";
+    }
+
+    @Override
+    public void mostrarStatus() {
+        super.mostrarStatus();
+        System.out.println("   🙏 Poder Divino: " + poderDivino + "/" + poderDivinoMaximo);
+        System.out.println("   📿 Fé Abençoada: " + feAbencoada + " acúmulos");
     }
 }

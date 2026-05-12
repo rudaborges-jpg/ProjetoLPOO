@@ -18,9 +18,14 @@ public class GerenciadorBatalha {
     private Scanner scanner;
     private Random random;
 
-    // ⭐ Para controle de repetição de perguntas
     private Set<Integer> perguntasUsadas;
     private Map<Dificuldade, Integer> resetsPorDificuldade;
+
+    private int perguntasCertas;
+    private int perguntasErradas;
+    private int habilidadesUsadas;
+    private int danoTotalCausado;
+    private int danoTotalRecebido;
 
     public GerenciadorBatalha(Jogador jogador, BancoPerguntas bancoPerguntas) {
         this.jogador = jogador;
@@ -37,8 +42,17 @@ public class GerenciadorBatalha {
             resetsPorDificuldade.put(diff, 0);
         }
 
+        // Inicializa estatísticas
+        this.perguntasCertas = 0;
+        this.perguntasErradas = 0;
+        this.habilidadesUsadas = 0;
+        this.danoTotalCausado = 0;
+        this.danoTotalRecebido = 0;
+
         inicializarHabilidades();
     }
+
+    // ========= INICIALIZAÇÃO DE HABILIDADES =========
 
     private void inicializarHabilidades() {
         Personagem p = jogador.getPersonagem();
@@ -63,6 +77,8 @@ public class GerenciadorBatalha {
         }
     }
 
+    // ========= INÍCIO DO JOGO =========
+
     public void iniciarRota() {
         PerTipo tipoPersonagem = jogador.getPersonagem().getTipo();
         rotaAtual = gerenciadorRotas.getRota(tipoPersonagem);
@@ -85,7 +101,7 @@ public class GerenciadorBatalha {
             Estagio estagio = rotaAtual.getEstagios().get(estagioIndex);
             estagio.mostrarInfo();
 
-
+            // Cria inimigo para o estágio
             if (estagio.ehChefao()) {
                 inimigoAtual = estagio.getChefao();
                 System.out.println("\n⚠️ UM CHEFÃO APARECEU! ⚠️");
@@ -97,31 +113,44 @@ public class GerenciadorBatalha {
             boolean completo = realizarBatalha(estagio);
 
             if (!completo) {
-                System.out.println("\n💀 GAME OVER! Pontuação final: " + pontuacaoTotal);
+                exibirTelaDerrota();
                 return;
             }
 
+            // Recarrega atributos do personagem após estágio
+            Personagem p = jogador.getPersonagem();
+            p.recarregarPorEstagio(estagio.getNumero());
+
+            // Cura parcial após estágio
+            p.curar(30);
+            p.resetarCooldownHabilidade();
+
             estagioIndex++;
 
-            if (estagioIndex < rotaAtual.getTotalEstagios()) {
-                jogador.getPersonagem().curar(50);
+            if (estagioIndex < rotaAtual.getTotalEstagios() && jogador.vivo()) {
                 System.out.println("\n✨ Você avança para o próximo estágio! +30 de vida! ✨");
+                System.out.println("⏱️ Cooldown de habilidade resetado!");
                 System.out.print("\nPressione ENTER para continuar...");
                 scanner.nextLine();
             }
         }
 
+        // Verifica se completou a rota
         if (estagioIndex >= rotaAtual.getTotalEstagios() && jogador.vivo()) {
-            System.out.println("\n🏆 PARABÉNS! VOCÊ COMPLETOU A ROTA " + rotaAtual.getNomeRota() + "! 🏆");
-            System.out.println("🏆 Pontuação final: " + pontuacaoTotal);
-
-            System.out.println("\n📊 ESTATÍSTICAS DE PERGUNTAS:");
-            System.out.println("   Total de perguntas únicas usadas: " + perguntasUsadas.size());
-            for (Dificuldade diff : Dificuldade.values()) {
-                System.out.println("   " + diff.getNome() + " - Resets: " + resetsPorDificuldade.get(diff));
-            }
+            exibirTelaVitoria();
         }
     }
+
+    // ========= CRIAÇÃO DE INIMIGOS =========
+
+    private void criarInimigoParaEstagio(Estagio estagio) {
+        int vidaBase = 60 + (estagio.getNumero() * 100);
+        int ataqueBase = 25 + (estagio.getNumero() * 5);
+        String nome = "🗡️ Guardião do " + estagio.getNome() + " 🗡️";
+        this.inimigoAtual = new Inimigo(nome, vidaBase, ataqueBase, estagio.getNumero());
+    }
+
+    // ========= GERENCIAMENTO DE PERGUNTAS =========
 
     private void resetarPerguntasPorDificuldade(Dificuldade dificuldade) {
         perguntasUsadas.clear();
@@ -129,13 +158,6 @@ public class GerenciadorBatalha {
         resetsPorDificuldade.put(dificuldade, totalResets);
         System.out.println("🔄 Banco de perguntas reiniciado para dificuldade " +
                 dificuldade.getNome() + " (reset #" + totalResets + ")");
-    }
-
-    private void criarInimigoParaEstagio(Estagio estagio) {
-        int vidaBase = 60 + (estagio.getNumero() * 100);
-        int ataqueBase = 25 + (estagio.getNumero() * 5);
-        String nome = "🗡️ Guardião do " + estagio.getNome() + " 🗡️";
-        this.inimigoAtual = new Inimigo(nome, vidaBase, ataqueBase, estagio.getNumero());
     }
 
     private Pergunta getPerguntaSemRepeticao(PerTipo tipo, Dificuldade dificuldade, int estagioNumero) {
@@ -146,6 +168,7 @@ public class GerenciadorBatalha {
             return null;
         }
 
+        // Filtra perguntas não usadas
         List<Pergunta> perguntasNaoUsadas = new ArrayList<>();
         for (Pergunta p : todasPerguntas) {
             if (!perguntasUsadas.contains(p.getId())) {
@@ -153,20 +176,21 @@ public class GerenciadorBatalha {
             }
         }
 
+        // Se todas foram usadas, reinicia o ciclo
         if (perguntasNaoUsadas.isEmpty()) {
             System.out.println("\n🔄 Todas as " + todasPerguntas.size() +
                     " perguntas de dificuldade " + dificuldade.getNome() +
                     " já foram usadas na jornada!");
             System.out.println("   Reiniciando ciclo para esta dificuldade...");
             resetarPerguntasPorDificuldade(dificuldade);
-
             perguntasNaoUsadas = todasPerguntas;
         }
 
+        // Escolhe pergunta aleatória
         Pergunta escolhida = perguntasNaoUsadas.get(random.nextInt(perguntasNaoUsadas.size()));
-
         perguntasUsadas.add(escolhida.getId());
 
+        // Mostra estatísticas de uso
         int usadasNestaDificuldade = 0;
         for (Pergunta p : todasPerguntas) {
             if (perguntasUsadas.contains(p.getId())) {
@@ -180,6 +204,8 @@ public class GerenciadorBatalha {
         return escolhida;
     }
 
+    // ========= LOOP DE BATALHA =========
+
     private boolean realizarBatalha(Estagio estagio) {
         while (jogador.vivo() && inimigoAtual.vivo()) {
             rodadaAtual++;
@@ -190,9 +216,11 @@ public class GerenciadorBatalha {
             }
             System.out.println("=".repeat(60));
 
+            // Mostra status
             jogador.mostrarStatus();
             inimigoAtual.mostrarStatus();
 
+            // Mostra status da habilidade
             Personagem personagem = jogador.getPersonagem();
             if (personagem.getHabilidade() != null) {
                 if (personagem.isHabilidadePronta()) {
@@ -203,6 +231,7 @@ public class GerenciadorBatalha {
                 }
             }
 
+            // Menu de ações
             int escolha = mostrarMenuAcao();
 
             switch (escolha) {
@@ -225,8 +254,10 @@ public class GerenciadorBatalha {
                     break;
             }
 
+            // Atualiza cooldown da habilidade
             personagem.reduzirCooldownHabilidade();
 
+            // Verifica vitória
             if (!inimigoAtual.vivo()) {
                 System.out.println("\n🎉 VITÓRIA! Estágio " + estagio.getNumero() + " concluído! 🎉");
 
@@ -240,6 +271,7 @@ public class GerenciadorBatalha {
                 return true;
             }
 
+            // Verifica derrota
             if (!jogador.vivo()) {
                 System.out.println("\n💀 Você foi derrotado! 💀");
                 return false;
@@ -248,22 +280,7 @@ public class GerenciadorBatalha {
         return false;
     }
 
-    private int calcularExperienciaPorInimigo(Estagio estagio) {
-        int experienciaBase = 50;
-        int multiplicador = estagio.getNumero();
-
-        if (estagio.ehChefao()) {
-            multiplicador *= 2;
-        }
-
-        int experiencia = experienciaBase * multiplicador;
-
-        Random random = new Random();
-        double variacao = 0.9 + (random.nextDouble() * 0.2);
-        experiencia = (int)(experiencia * variacao);
-
-        return Math.max(20, experiencia);
-    }
+    // ========= MENU DE AÇÕES =========
 
     private int mostrarMenuAcao() {
         Personagem personagem = jogador.getPersonagem();
@@ -300,7 +317,10 @@ public class GerenciadorBatalha {
         return escolha;
     }
 
+    // ========= RODADA DE PERGUNTA =========
+
     private void realizarRodadaPergunta(Estagio estagio) {
+        // Determina dificuldade baseada no estágio
         Dificuldade dificuldade;
         if (estagio.getDificuldade() <= 3) {
             dificuldade = Dificuldade.FACIL;
@@ -310,6 +330,7 @@ public class GerenciadorBatalha {
             dificuldade = Dificuldade.DIFICIL;
         }
 
+        // Obtém pergunta
         Pergunta pergunta = getPerguntaSemRepeticao(
                 jogador.getPersonagem().getTipo(), dificuldade, estagio.getNumero());
 
@@ -323,8 +344,10 @@ public class GerenciadorBatalha {
             return;
         }
 
+        // Exibe pergunta
         pergunta.exibir();
 
+        // Obtém resposta
         String resposta;
         if (pergunta instanceof PerguntaCompletarLacuna) {
             System.out.print("\nDigite sua resposta: ");
@@ -334,30 +357,43 @@ public class GerenciadorBatalha {
             resposta = scanner.nextLine().toUpperCase();
         }
 
+        // Avalia resposta
         boolean correta = AvaliadorRespostas.avaliar(pergunta, resposta);
-        int dano = calcularDano(pergunta.getDificuldade(), estagio);
 
         if (correta) {
+            perguntasCertas++;
             System.out.println("\n✅ CORRETO!");
-            inimigoAtual.tomarDano(dano);
 
+            // Calcula e aplica dano
+            int dano = calcularDano(pergunta.getDificuldade(), estagio);
+            inimigoAtual.tomarDano(dano);
+            danoTotalCausado += dano;
+
+            // Ganha experiência
             int experienciaGanha = (estagio.getDificuldade() * 5);
             jogador.getPersonagem().addExperiencia(experienciaGanha);
             System.out.println("📚 +" + experienciaGanha + " de experiência!");
 
+            // Ganha pontos
             int pontos = calcularPontos(pergunta.getDificuldade(), estagio);
             pontuacaoTotal += pontos;
             jogador.addPontuacao(pontos);
             System.out.println("🏆 +" + pontos + " pontos! Total: " + pontuacaoTotal);
+
         } else {
+            perguntasErradas++;
             System.out.println("\n❌ ERRADO!");
             System.out.println("Resposta correta: " + pergunta.getRespostaCorreta());
 
+            // Inimigo contra-ataca
             int danoInimigo = calcularDanoInimigo();
             jogador.tomarDano(danoInimigo);
+            danoTotalRecebido += danoInimigo;
             System.out.println("⚠️ " + inimigoAtual.getNome() + " contra-ataca causando " + danoInimigo + " de dano!");
         }
     }
+
+    // ========= RODADA DE HABILIDADE =========
 
     private void realizarRodadaHabilidade(Estagio estagio) {
         Personagem personagem = jogador.getPersonagem();
@@ -375,28 +411,14 @@ public class GerenciadorBatalha {
             return;
         }
 
+        habilidadesUsadas++;
         int dano = personagem.usarHabilidade(inimigoAtual);
+        danoTotalCausado += dano;
 
         if (dano > 0) {
-            System.out.println("\n💥 " + personagem.getNome() + " causa " + dano + " de dano com sua habilidade especial!");
+            System.out.println("\n💥 " + personagem.getNome() + " causa " + dano +
+                    " de dano com sua habilidade especial!");
         }
-    }
-
-    private int calcularDanoInimigo() {
-        int danoBase = inimigoAtual.getAtaque();
-
-        int multiplicador = (estagioIndex + 1);
-
-        if (rotaAtual.getEstagios().get(estagioIndex).ehChefao()) {
-            multiplicador *= 2;
-        }
-
-        int dano = danoBase + (multiplicador * 2);
-
-        double variacao = 0.8 + (random.nextDouble() * 0.4);
-        dano = (int)(dano * variacao);
-
-        return Math.max(5, dano);
     }
 
     private int calcularDano(Dificuldade diff, Estagio estagio) {
@@ -427,15 +449,97 @@ public class GerenciadorBatalha {
         double variacao = 0.85 + (random.nextDouble() * 0.3);
         dano = (int)(dano * variacao);
 
-        dano = Math.max(5, dano);
+        dano = Math.max(10, dano);
+        dano = Math.min(60, dano);
 
-        dano = Math.min(50, dano);
+        return dano;
+    }
 
-    return dano;
+    private int calcularDanoInimigo() {
+        int danoBase = inimigoAtual.getAtaque();
 
+        int multiplicador = (estagioIndex + 1);
+
+        if (rotaAtual.getEstagios().get(estagioIndex).ehChefao()) {
+            multiplicador *= 2;
+        }
+
+        int dano = danoBase + (multiplicador * 3);
+
+        double variacao = 0.85 + (random.nextDouble() * 0.3);
+        dano = (int)(dano * variacao);
+
+        return Math.max(8, dano);
     }
 
     private int calcularPontos(Dificuldade diff, Estagio estagio) {
         return diff.getDanoBase() * 5 * estagio.getDificuldade();
+    }
+
+    private int calcularExperienciaPorInimigo(Estagio estagio) {
+        int experienciaBase = 50;
+        int multiplicador = estagio.getNumero();
+
+        if (estagio.ehChefao()) {
+            multiplicador *= 2;
+        }
+
+        int experiencia = experienciaBase * multiplicador;
+
+        double variacao = 0.9 + (random.nextDouble() * 0.2);
+        experiencia = (int)(experiencia * variacao);
+
+        return Math.max(20, experiencia);
+    }
+    private void exibirTelaDerrota() {
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("💀💀💀 GAME OVER 💀💀💀");
+        System.out.println("=".repeat(60));
+        exibirEstatisticasFinais();
+    }
+
+    private void exibirTelaVitoria() {
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("🏆🏆🏆 PARABÉNS! VITÓRIA TOTAL! 🏆🏆🏆");
+        System.out.println("=".repeat(60));
+        System.out.println("\n🎉 Você completou a rota: " + rotaAtual.getNomeRota());
+        System.out.println("👤 Personagem: " + jogador.getPersonagem().getNome());
+        System.out.println("⭐ Nível final: " + jogador.getPersonagem().getNivel());
+        exibirEstatisticasFinais();
+    }
+
+    private void exibirEstatisticasFinais() {
+        System.out.println("\n📊 ESTATÍSTICAS DA PARTIDA");
+        System.out.println("=".repeat(40));
+        System.out.println("🏆 Pontuação Total: " + pontuacaoTotal);
+        System.out.println("📊 Rodadas Jogadas: " + rodadaAtual);
+        System.out.println("✅ Perguntas Certas: " + perguntasCertas);
+        System.out.println("❌ Perguntas Erradas: " + perguntasErradas);
+
+        if (perguntasCertas + perguntasErradas > 0) {
+            double aproveitamento = (double) perguntasCertas / (perguntasCertas + perguntasErradas) * 100;
+            System.out.println("📈 Aproveitamento: " + String.format("%.1f", aproveitamento) + "%");
+        }
+
+        System.out.println("🌟 Habilidades Usadas: " + habilidadesUsadas);
+        System.out.println("⚔️ Dano Total Causado: " + danoTotalCausado);
+        System.out.println("💔 Dano Total Recebido: " + danoTotalRecebido);
+
+        Personagem p = jogador.getPersonagem();
+        System.out.println("\n👤 PERSONAGEM FINAL");
+        System.out.println("=".repeat(40));
+        p.mostrarStatus();
+
+        System.out.println("\n📚 PERGUNTAS ÚNICAS USADAS: " + perguntasUsadas.size());
+        for (Dificuldade diff : Dificuldade.values()) {
+            int resets = resetsPorDificuldade.get(diff);
+            if (resets > 0) {
+                System.out.println("   🔄 " + diff.getNome() + ": " + resets + " reset(s)");
+            }
+        }
+
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("🙏 Obrigado por jogar CodeArena: Batalha do Conhecimento!");
+        System.out.println("=".repeat(60));
     }
 }

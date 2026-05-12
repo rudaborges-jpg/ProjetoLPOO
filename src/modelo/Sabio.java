@@ -1,72 +1,122 @@
+// 📁 modelo/Sabio.java
 package modelo;
 
 public class Sabio extends Personagem {
     private int mana;
     private int manaMaxima;
+    private int conhecimento;
 
     public Sabio() {
-        super(PerTipo.SABIO, "Sábio", 100, 25, 10);
+        super(PerTipo.SABIO, "Sábio", 100, 25, 14);
         this.manaMaxima = 100;
         this.mana = 100;
+        this.conhecimento = 0;
     }
 
     public int getMana() { return mana; }
     public int getManaMaxima() { return manaMaxima; }
+    public int getConhecimento() { return conhecimento; }
 
-    private boolean usarMana(int quantidade) {
+    public boolean usarMana(int quantidade) {
         if (mana >= quantidade) {
             mana -= quantidade;
+            conhecimento++;
+            System.out.println("💙 Mana consumida: " + quantidade +
+                    " (Restante: " + mana + "/" + manaMaxima + ")");
             return true;
         }
-        System.out.println("❌ Mana insuficiente! (Mana: " + mana + "/" + manaMaxima + ")");
+        System.out.println("❌ Mana insuficiente! (" + mana + "/" + manaMaxima + ")");
         return false;
     }
 
-    private void recuperarMana(int quantidade) {
-        mana += quantidade;
-        if (mana > manaMaxima) mana = manaMaxima;
-        System.out.println("🔮 " + nome + " recuperou " + quantidade + " de mana! (Mana: " + mana + "/" + manaMaxima + ")");
+    public void recuperarMana(int quantidade) {
+        mana = Math.min(manaMaxima, mana + quantidade);
+        if (quantidade > 0) {
+            System.out.println("💙 Mana recuperada: +" + quantidade + " (Agora: " + mana + "/" + manaMaxima + ")");
+        }
     }
 
+    @Override
+    public void recarregarPorEstagio(int estagioNumero) {
+        int recarga = estagioNumero * 10;
+        recuperarMana(recarga);
+        System.out.println("📚 Conhecimento acumulado: " + conhecimento);
+    }
 
+    @Override
+    public void recarregarPorNivel(int novoNivel) {
+        manaMaxima += 10;
+        mana = manaMaxima;
+        System.out.println("🧠 Mana máxima: " + manaMaxima + " | Completamente restaurada!");
+    }
+
+    @Override
     public int ataqueInimigo(Personagem alvo) {
-        if (usarMana(10)) {
-            int dano = ataque + (nivel * 2) + 10;
+        if (mana >= 10) {
+            usarMana(10);
+            int bonusConhecimento = conhecimento / 2;
+            int dano = ataque + (nivel * 2) + 10 + bonusConhecimento;
             System.out.println("🔮 " + nome + " lança MISSIL MÁGICO causando " + dano + " de dano!");
+            if (bonusConhecimento > 0) {
+                System.out.println("   📚 +" + bonusConhecimento + " bônus de conhecimento");
+            }
             alvo.tomarDano(dano);
+            recuperarMana(5);
             return dano;
         } else {
-            return super.ataqueInimigo(alvo);
+            int dano = ataque + (nivel * 2);
+            System.out.println("🗡️ " + nome + " ataca sem mana causando " + dano + " de dano!");
+            alvo.tomarDano(dano);
+            return dano;
         }
     }
 
-
-
+    @Override
     public void usarHabilidadeEspecial(Personagem alvo) {
         System.out.println("\n📜 " + nome + " conjura SABEDORIA ANCESTRAL!");
-        if (usarMana(30)) {
-            int dano = 40 + (nivel * 3);
-            System.out.println("💥 Explosão arcana causa " + dano + " de dano!");
-            alvo.tomarDano(dano);
-            int cura = 30 + (nivel * 2);
-            curar(cura);
-            recuperarMana(20);
+
+        int custo = 30;
+        if (!usarMana(custo)) {
+            if (mana > 10) {
+                System.out.println("⚠️ Mana insuficiente! Usando versão reduzida...");
+                custo = mana;
+                mana = 0;
+            } else {
+                System.out.println("❌ Mana insuficiente! Habilidade cancelada.");
+                return;
+            }
         }
+
+        int bonusConhecimento = conhecimento * 2;
+        int dano = 40 + (nivel * 3) + bonusConhecimento;
+        System.out.println("💥 Explosão arcana causa " + dano + " de dano!");
+        alvo.tomarDano(dano);
+
+        int cura = 30 + (nivel * 2) + (conhecimento);
+        curar(cura);
+        System.out.println("💚 Curou " + cura + " de vida!");
+
+        recuperarMana(10 + (conhecimento / 3));
+        System.out.println("📚 Conhecimento acumulado: " + conhecimento);
     }
 
-    public String getNomeHabilididade() {
+    @Override
+    public String getNomeHabilidade() {
         return "SABEDORIA ANCESTRAL";
     }
 
+    @Override
     public String getDescricaoHabilidade() {
         return "Causa " + (40 + (nivel * 3)) + " de dano, cura " + (30 + (nivel * 2)) +
-                " de vida e recupera 20 de mana. Custa 30 de mana.";
+                " de vida e recupera mana.\n   📚 Quanto mais conhecimento, mais forte!";
     }
 
-
-
+    @Override
     public void mostrarStatus() {
         super.mostrarStatus();
-        System.out.println("   🔮 Mana: " + mana + "/" + manaMaxima);
+        System.out.println("   💙 Mana: " + mana + "/" + manaMaxima);
+        if (conhecimento > 0) {
+            System.out.println("   📚 Conhecimento: " + conhecimento);
+        }
     }
 }
