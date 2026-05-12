@@ -101,6 +101,7 @@ public class GerenciadorRotas {
         // Diagnóstico
         System.out.println("\n✅ Rotas criadas com sucesso!");
         for (PerTipo tipo : PerTipo.values()) {
+            if (tipo == PerTipo.CAPOEIRISTA) continue;
             System.out.println("   " + tipo.getNome() + ": " + rotas.get(tipo).getTotalEstagios() + " estágios");
         }
     }
