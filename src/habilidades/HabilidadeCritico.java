@@ -2,32 +2,42 @@ package habilidades;
 
 import modelo.Inimigo;
 import modelo.Personagem;
+import modelo.AtributoEspecial;
 import java.util.Random;
 
 public class HabilidadeCritico implements HabilidadeEspecial {
     private Personagem usuario;
-    private int danoBase;
     private int cooldownMaximo;
     private int cooldownAtual;
     private String nome;
     private String descricao;
     private Random random;
 
-    public HabilidadeCritico(Personagem usuario, int danoBase, int cooldown) {
+    public HabilidadeCritico(Personagem usuario, int cooldown) {
         this.usuario = usuario;
-        this.danoBase = danoBase;
         this.cooldownMaximo = cooldown;
         this.cooldownAtual = 0;
         this.random = new Random();
-        this.nome = "Chuva de Flechas";
-        this.descricao = "Causa " + danoBase + " de dano em área com chance de crítico";
+        this.nome = "CHUVA DE FLECHAS";
+        atualizarDescricao();
+    }
+
+    private void atualizarDescricao() {
+        int ataque = usuario.getAtaque();
+        int danoEstimado = (int)(ataque * 1.8);
+        this.descricao = "Dispara múltiplas flechas causando ~" + danoEstimado +
+                " de dano + sangramento.\n" +
+                "   🎯 Chance de crítico aumenta com Penetração restante!";
     }
 
     @Override
     public String getNome() { return nome; }
 
     @Override
-    public String getDescricao() { return descricao; }
+    public String getDescricao() {
+        atualizarDescricao();
+        return descricao;
+    }
 
     @Override
     public int getCooldown() { return cooldownMaximo; }
@@ -45,21 +55,57 @@ public class HabilidadeCritico implements HabilidadeEspecial {
             return 0;
         }
 
-        int dano = danoBase + usuario.getAtaque();
+        // ========== LÓGICA COM ATRIBUTO ESPECIAL ==========
+        AtributoEspecial attr = (AtributoEspecial) usuario;
+        int custo = 35;
 
-        // Chance de crítico (40%)
-        if (random.nextDouble() < 0.4) {
-            dano = (int)(dano * 1.5);
-            System.out.print("🎯 GOLPE CRÍTICO! ");
+        // Verifica se tem recurso suficiente
+        if (!attr.consumir(custo)) {
+            if (attr.getValorAtual() > 10) {
+                System.out.println("⚠️ " + attr.getNomeAtributo() + " baixo! Usando versão reduzida...");
+                custo = attr.getValorAtual();
+                attr.consumir(custo);
+            } else {
+                System.out.println("❌ " + attr.getNomeAtributo() + " insuficiente! Habilidade cancelada.");
+                return 0;
+            }
         }
 
+        // Cálculos baseados no ATAQUE do personagem
+        int ataque = usuario.getAtaque();
+
+        // Dano = 1.8x o ataque
+        int dano = (int)(ataque * 1.8);
+
+        // Chance de crítico baseada na penetração restante
+        // 30% base + até 25% extra conforme penetração
+        double chanceCritico = 0.30 + (attr.getPorcentagem() / 100 * 0.25);
+        boolean critico = random.nextDouble() < chanceCritico;
+
+        System.out.println("\n🏹 " + usuario.getNome() + " dispara CHUVA DE FLECHAS!");
+        System.out.println("💙 Consumiu " + custo + " de " + attr.getNomeAtributo() +
+                " (Restante: " + attr.getValorAtual() + "/" + attr.getValorMaximo() + ")");
+        System.out.println("⚔️ Ataque base: " + ataque + " × 1.8 = " + dano);
+
+        if (critico) {
+            dano = (int)(dano * 1.5);
+            System.out.println("🎯 GOLPE CRÍTICO! (Chance era " + String.format("%.0f", chanceCritico * 100) + "%)");
+        }
+
+        System.out.println("💥 Flechas causam " + dano + " de dano!");
         alvo.tomarDano(dano);
 
-        // Dano de sangramento adicional
-        alvo.tomarDano(10);
+        // Dano de sangramento = 15% do ataque
+        int sangramento = (int)(ataque * 0.15);
+        System.out.println("🩸 Sangramento! +" + sangramento + " de dano adicional!");
+        alvo.tomarDano(sangramento);
+
+        // Recupera um pouco de penetração
+        attr.recarregar(5);
+        System.out.println("✨ +5 de " + attr.getNomeAtributo() + " recuperado!");
 
         cooldownAtual = cooldownMaximo;
-        return dano;
+        return dano + sangramento;
     }
 
     @Override

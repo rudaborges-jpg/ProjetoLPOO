@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.Random;
 
-public class Capoeirista extends Personagem {
+public class Capoeirista extends Personagem implements AtributoEspecial {
     private int energiaGinga;
     private int energiaMaxima;
     private int esquivasRestantes;
@@ -242,5 +242,42 @@ public class Capoeirista extends Personagem {
         System.out.println("   🛡️ Defesa: " + defesa + " (reduz " + percentualReducao + "% do dano)");
         System.out.println("   🌀 Energia da Ginga: " + energiaGinga + "/" + energiaMaxima);
         System.out.println("   🔄 Esquivas: " + esquivasRestantes + "/" + esquivasMaximas);
+    }
+    // ============ IMPLEMENTAÇÃO DE AtributoEspecial ============
+
+    @Override
+    public String getNomeAtributo() {
+        return "Energia da Ginga";
+    }
+
+    @Override
+    public int getValorAtual() {
+        return energiaGinga;
+    }
+
+    @Override
+    public int getValorMaximo() {
+        return energiaMaxima;
+    }
+
+    @Override
+    public double getPorcentagem() {
+        return (double) energiaGinga / energiaMaxima * 100;
+    }
+
+    @Override
+    public boolean consumir(int quantidade) {
+        return consumirEnergiaGinga(quantidade);
+    }
+
+    @Override
+    public void recarregar(int quantidade) {
+        energiaGinga = Math.min(energiaMaxima, energiaGinga + quantidade);
+    }
+
+    @Override
+    public void recarregarCompletamente() {
+        energiaGinga = energiaMaxima;
+        recarregarEsquivas();
     }
 }

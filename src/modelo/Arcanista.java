@@ -3,7 +3,7 @@ package modelo;
 
 import java.util.Random;
 
-public class Arcanista extends Personagem {
+public class Arcanista extends Personagem implements AtributoEspecial {
     private int poderArcano;
     private int poderMaximo;
     private Random random;
@@ -136,5 +136,41 @@ public class Arcanista extends Personagem {
     public void mostrarStatus() {
         super.mostrarStatus();
         System.out.println("   🔮 Poder Arcano: " + poderArcano + "/" + poderMaximo);
+    }
+    // ============ IMPLEMENTAÇÃO DE AtributoEspecial ============
+
+    @Override
+    public String getNomeAtributo() {
+        return "Poder Arcano";
+    }
+
+    @Override
+    public int getValorAtual() {
+        return poderArcano;
+    }
+
+    @Override
+    public int getValorMaximo() {
+        return poderMaximo;
+    }
+
+    @Override
+    public double getPorcentagem() {
+        return (double) poderArcano / poderMaximo * 100;
+    }
+
+    @Override
+    public boolean consumir(int quantidade) {
+        return consumirPoderArcano(quantidade);
+    }
+
+    @Override
+    public void recarregar(int quantidade) {
+        poderArcano = Math.min(poderMaximo, poderArcano + quantidade);
+    }
+
+    @Override
+    public void recarregarCompletamente() {
+        poderArcano = poderMaximo;
     }
 }

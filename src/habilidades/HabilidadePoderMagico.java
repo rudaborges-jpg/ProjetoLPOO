@@ -2,30 +2,43 @@ package habilidades;
 
 import modelo.Inimigo;
 import modelo.Personagem;
-import modelo.Sabio;
+import modelo.AtributoEspecial;
 
 public class HabilidadePoderMagico implements HabilidadeEspecial {
     private Personagem usuario;
-    private int danoBase;
     private int cooldownMaximo;
     private int cooldownAtual;
     private String nome;
     private String descricao;
+    private int conhecimento;
 
-    public HabilidadePoderMagico(Personagem usuario, int danoBase, int cooldown) {
+    public HabilidadePoderMagico(Personagem usuario, int cooldown) {
         this.usuario = usuario;
-        this.danoBase = danoBase;
         this.cooldownMaximo = cooldown;
         this.cooldownAtual = 0;
-        this.nome = "Sabedoria Ancestral";
-        this.descricao = "Causa dano, cura e recupera mana";
+        this.nome = "SABEDORIA ANCESTRAL";
+        this.conhecimento = 0;
+        atualizarDescricao();
+    }
+
+    private void atualizarDescricao() {
+        int ataque = usuario.getAtaque();
+        int danoEstimado = (int)(ataque * 2.2);
+        int curaEstimada = (int)(ataque * 1.2);
+        this.descricao = "Conjura sabedoria arcana causando ~" + danoEstimado +
+                " de dano e curando ~" + curaEstimada + ".\n" +
+                "   📚 Conhecimento acumulado aumenta poder!\n" +
+                "   💙 Recupera mana após o uso!";
     }
 
     @Override
     public String getNome() { return nome; }
 
     @Override
-    public String getDescricao() { return descricao; }
+    public String getDescricao() {
+        atualizarDescricao();
+        return descricao;
+    }
 
     @Override
     public int getCooldown() { return cooldownMaximo; }
@@ -43,15 +56,50 @@ public class HabilidadePoderMagico implements HabilidadeEspecial {
             return 0;
         }
 
-        int dano = danoBase + usuario.getAtaque();
+        // ========== LÓGICA COM ATRIBUTO ESPECIAL ==========
+        AtributoEspecial attr = (AtributoEspecial) usuario;
+        int custo = 30;
+
+        // Verifica se tem recurso suficiente
+        if (!attr.consumir(custo)) {
+            if (attr.getValorAtual() > 10) {
+                System.out.println("⚠️ " + attr.getNomeAtributo() + " baixo! Usando versão reduzida...");
+                custo = attr.getValorAtual();
+                attr.consumir(custo);
+            } else {
+                System.out.println("❌ " + attr.getNomeAtributo() + " insuficiente! Habilidade cancelada.");
+                return 0;
+            }
+        }
+
+        conhecimento++;
+
+        // Cálculos baseados no ATAQUE do personagem
+        int ataque = usuario.getAtaque();
+        int bonusConhecimento = conhecimento * 3;
+        int bonusMana = attr.getValorAtual() / 3;
+
+        // Dano = 2.2x o ataque + bônus
+        int dano = (int)(ataque * 2.2) + bonusConhecimento + bonusMana;
+
+        System.out.println("\n📜 " + usuario.getNome() + " conjura SABEDORIA ANCESTRAL!");
+        System.out.println("💙 Consumiu " + custo + " de " + attr.getNomeAtributo() +
+                " (Restante: " + attr.getValorAtual() + "/" + attr.getValorMaximo() + ")");
+        System.out.println("⚔️ Ataque base: " + ataque + " × 2.2 = " + (int)(ataque * 2.2));
+        System.out.println("📚 Conhecimento x" + conhecimento + " (+" + bonusConhecimento + " de dano)");
+        System.out.println("💙 Bônus de mana: +" + bonusMana + " de dano");
+        System.out.println("💥 Explosão arcana causa " + dano + " de dano!");
         alvo.tomarDano(dano);
 
-        usuario.curar(30);
+        // Cura = 1.2x o ataque + bônus de conhecimento
+        int cura = (int)(ataque * 1.2) + (conhecimento * 4);
+        usuario.curar(cura);
+        System.out.println("💚 Curou " + cura + " de vida!");
 
-        if (usuario instanceof Sabio) {
-            Sabio sabio = (Sabio) usuario;
-            System.out.println("🔮 Mana recuperada!");
-        }
+        // Recupera mana
+        int recuperacao = 10 + (conhecimento / 2);
+        attr.recarregar(recuperacao);
+        System.out.println("🔮 +" + recuperacao + " de " + attr.getNomeAtributo() + " recuperado!");
 
         cooldownAtual = cooldownMaximo;
         return dano;

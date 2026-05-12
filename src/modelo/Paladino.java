@@ -1,7 +1,7 @@
 // 📁 modelo/Paladino.java
 package modelo;
 
-public class Paladino extends Personagem {
+public class Paladino extends Personagem implements AtributoEspecial {
     private int poderDivino;
     private int poderDivinoMaximo;
     private int feAbencoada;
@@ -97,5 +97,41 @@ public class Paladino extends Personagem {
         super.mostrarStatus();
         System.out.println("   🙏 Poder Divino: " + poderDivino + "/" + poderDivinoMaximo);
         System.out.println("   📿 Fé Abençoada: " + feAbencoada + " acúmulos");
+    }
+    // ============ IMPLEMENTAÇÃO DE AtributoEspecial ============
+
+    @Override
+    public String getNomeAtributo() {
+        return "Poder Divino";
+    }
+
+    @Override
+    public int getValorAtual() {
+        return poderDivino;
+    }
+
+    @Override
+    public int getValorMaximo() {
+        return poderDivinoMaximo;
+    }
+
+    @Override
+    public double getPorcentagem() {
+        return (double) poderDivino / poderDivinoMaximo * 100;
+    }
+
+    @Override
+    public boolean consumir(int quantidade) {
+        return consumirPoderDivino(quantidade);
+    }
+
+    @Override
+    public void recarregar(int quantidade) {
+        recarregarPoderDivino(quantidade);
+    }
+
+    @Override
+    public void recarregarCompletamente() {
+        poderDivino = poderDivinoMaximo;
     }
 }

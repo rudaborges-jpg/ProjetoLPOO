@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.Random;
 
-public class Cacadora extends Personagem {
+public class Cacadora extends Personagem implements AtributoEspecial {
     private int penetracao;
     private int penetracaoMaxima;
     private int flechasPrecisas;
@@ -104,5 +104,41 @@ public class Cacadora extends Personagem {
         if (flechasPrecisas > 0) {
             System.out.println("   🏹 Flechas Precisas: " + flechasPrecisas);
         }
+    }
+    // ============ IMPLEMENTAÇÃO DE AtributoEspecial ============
+
+    @Override
+    public String getNomeAtributo() {
+        return "Penetração";
+    }
+
+    @Override
+    public int getValorAtual() {
+        return penetracao;
+    }
+
+    @Override
+    public int getValorMaximo() {
+        return penetracaoMaxima;
+    }
+
+    @Override
+    public double getPorcentagem() {
+        return (double) penetracao / penetracaoMaxima * 100;
+    }
+
+    @Override
+    public boolean consumir(int quantidade) {
+        return consumirPenetracao(quantidade);
+    }
+
+    @Override
+    public void recarregar(int quantidade) {
+        penetracao = Math.min(penetracaoMaxima, penetracao + quantidade);
+    }
+
+    @Override
+    public void recarregarCompletamente() {
+        penetracao = penetracaoMaxima;
     }
 }

@@ -1,6 +1,6 @@
 package modelo;
 
-public class Guerreiro extends Personagem {
+public class Guerreiro extends Personagem implements AtributoEspecial {
     private int espiritoLuta;
     private int espiritoLutaMaximo;
     private int comboAtual;
@@ -93,5 +93,41 @@ public class Guerreiro extends Personagem {
         if (comboAtual > 0) {
             System.out.println("   🔥 Combo: x" + comboAtual);
         }
+    }
+    // ============ IMPLEMENTAÇÃO DE AtributoEspecial ============
+
+    @Override
+    public String getNomeAtributo() {
+        return "Espírito de Luta";
+    }
+
+    @Override
+    public int getValorAtual() {
+        return espiritoLuta;
+    }
+
+    @Override
+    public int getValorMaximo() {
+        return espiritoLutaMaximo;
+    }
+
+    @Override
+    public double getPorcentagem() {
+        return (double) espiritoLuta / espiritoLutaMaximo * 100;
+    }
+
+    @Override
+    public boolean consumir(int quantidade) {
+        return consumirEspiritoLuta(quantidade);
+    }
+
+    @Override
+    public void recarregar(int quantidade) {
+        espiritoLuta = Math.min(espiritoLutaMaximo, espiritoLuta + quantidade);
+    }
+
+    @Override
+    public void recarregarCompletamente() {
+        espiritoLuta = espiritoLutaMaximo;
     }
 }

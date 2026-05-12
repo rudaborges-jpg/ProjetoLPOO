@@ -1,7 +1,7 @@
 // 📁 modelo/Sabio.java
 package modelo;
 
-public class Sabio extends Personagem {
+public class Sabio extends Personagem implements AtributoEspecial {
     private int mana;
     private int manaMaxima;
     private int conhecimento;
@@ -118,5 +118,41 @@ public class Sabio extends Personagem {
         if (conhecimento > 0) {
             System.out.println("   📚 Conhecimento: " + conhecimento);
         }
+    }
+    // ============ IMPLEMENTAÇÃO DE AtributoEspecial ============
+
+    @Override
+    public String getNomeAtributo() {
+        return "Mana";
+    }
+
+    @Override
+    public int getValorAtual() {
+        return mana;
+    }
+
+    @Override
+    public int getValorMaximo() {
+        return manaMaxima;
+    }
+
+    @Override
+    public double getPorcentagem() {
+        return (double) mana / manaMaxima * 100;
+    }
+
+    @Override
+    public boolean consumir(int quantidade) {
+        return usarMana(quantidade);
+    }
+
+    @Override
+    public void recarregar(int quantidade) {
+        recuperarMana(quantidade);
+    }
+
+    @Override
+    public void recarregarCompletamente() {
+        mana = manaMaxima;
     }
 }
