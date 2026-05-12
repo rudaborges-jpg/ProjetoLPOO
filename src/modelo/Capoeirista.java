@@ -226,7 +226,6 @@ public class Capoeirista extends Personagem {
 
     @Override
     public void mostrarStatus() {
-        // Calcula redução de dano
         double reducao = (double) defesa / (defesa + 50);
         int percentualReducao = (int)(reducao * 100);
 
