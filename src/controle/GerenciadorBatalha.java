@@ -539,7 +539,7 @@ public class GerenciadorBatalha {
         }
 
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("🙏 Obrigado por jogar CodeArena: Batalha do Conhecimento!");
+        System.out.println("🙏 Obrigado por jogar BAQUARA: Batalha do Saber!");
         System.out.println("=".repeat(60));
     }
 }

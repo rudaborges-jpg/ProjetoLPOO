@@ -583,9 +583,9 @@ public class BancoPerguntasCapoeira {
 
         Pergunta p = new PerguntaMultiplaEscolha(
                 proximoId, texto, opcoes, letraCorreta, diff,
-                PerTipo.CACADORA, "Capoeira", 1
+                PerTipo.CAPOEIRISTA, "Capoeira", 1
         );
-        proximoId++; // ✅ Incrementa o ID
+        proximoId++;
 
         perguntasPorDificuldade.get(diff).add(p);
     }
@@ -593,9 +593,9 @@ public class BancoPerguntasCapoeira {
     private void adicionarVF(String texto, boolean resposta, Dificuldade diff) {
         Pergunta p = new PerguntaVerdadeiroFalso(
                 proximoId, texto, resposta, diff,
-                PerTipo.CACADORA, "Capoeira", 1
+                PerTipo.CAPOEIRISTA, "Capoeira", 1
         );
-        proximoId++; // ✅ Incrementa o ID
+        proximoId++;
 
         perguntasPorDificuldade.get(diff).add(p);
     }
@@ -603,9 +603,9 @@ public class BancoPerguntasCapoeira {
     private void adicionarLacuna(String texto, String resposta, Dificuldade diff) {
         Pergunta p = new PerguntaCompletarLacuna(
                 proximoId, texto, resposta, diff,
-                PerTipo.CACADORA, "Capoeira", 1
+                PerTipo.CAPOEIRISTA, "Capoeira", 1
         );
-        proximoId++; // ✅ Incrementa o ID
+        proximoId++;
 
         perguntasPorDificuldade.get(diff).add(p);
     }
