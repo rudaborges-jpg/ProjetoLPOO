@@ -134,7 +134,6 @@ public class Game {
         System.out.print("Pressione ENTER para entrar na roda...");
         scanner.nextLine();
 
-        // ✅ CRIA O CAPOEIRISTA E INICIA A RODA
         Capoeirista capoeirista = new Capoeirista();
         jogador.escolherPersonagem(capoeirista);
 
