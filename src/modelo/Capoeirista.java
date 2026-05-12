@@ -23,7 +23,7 @@ public class Capoeirista extends Personagem {
     };
 
     public Capoeirista() {
-        super(PerTipo.CACADORA, "INICIANTE NA RODA", 120, 25, 15);
+        super(PerTipo.CAPOEIRISTA, "INICIANTE NA RODA", 120, 25, 15);
         this.energiaMaxima = 100;
         this.energiaGinga = 100;
         this.esquivasMaximas = 2;
@@ -31,8 +31,25 @@ public class Capoeirista extends Personagem {
         this.random = new Random();
     }
 
-    public int getEnergiaGinga() { return energiaGinga; }
-    public int getEsquivasRestantes() { return esquivasRestantes; }
+    // ============ GETTERS ============
+
+    public int getEnergiaGinga() {
+        return energiaGinga;
+    }
+
+    public int getEnergiaMaxima() {
+        return energiaMaxima;
+    }
+
+    public int getEsquivasRestantes() {
+        return esquivasRestantes;
+    }
+
+    public int getEsquivasMaximas() {
+        return esquivasMaximas;
+    }
+
+    // ============ MÉTODOS DE GINGA ============
 
     public boolean consumirEnergiaGinga(int quantidade) {
         if (energiaGinga >= quantidade) {
@@ -54,15 +71,26 @@ public class Capoeirista extends Personagem {
         esquivasRestantes = esquivasMaximas;
     }
 
+    public void recarregarEsquivasParcialmente(int quantidade) {
+        esquivasRestantes = Math.min(esquivasMaximas, esquivasRestantes + quantidade);
+    }
+
+    public void recarregarTotalmente() {
+        energiaGinga = energiaMaxima;
+        recarregarEsquivas();
+        System.out.println("🌀 Ginga e esquivas totalmente restauradas!");
+    }
+
+    // ============ EVOLUÇÃO ============
+
     public void evoluirTitulo(int estagio) {
         if (estagio < 1 || estagio > 10) return;
 
         this.nome = titulos[estagio - 1];
 
-        // Aumenta atributos
         int aumentoVida = 25;
         vidaMax += aumentoVida;
-        vida = vidaMax; // Cura total
+        vida = vidaMax;
         ataque += 4;
         defesa += 2;
         energiaMaxima += 15;
@@ -78,16 +106,11 @@ public class Capoeirista extends Personagem {
 
     @Override
     public void recarregarPorEstagio(int estagioNumero) {
-        // Recupera um pouco de energia
         int recarga = 15;
         energiaGinga = Math.min(energiaMaxima, energiaGinga + recarga);
-        System.out.println("🌀 Ginga recuperada: +" + recarga + " (" + energiaGinga + "/" + energiaMaxima + ")");
-    }
-
-    public void recarregarTotalmente() {
-        energiaGinga = energiaMaxima;
         recarregarEsquivas();
-        System.out.println("🌀 Ginga e esquivas totalmente restauradas!");
+        System.out.println("🌀 Ginga recuperada: +" + recarga + " (" + energiaGinga + "/" + energiaMaxima + ")");
+        System.out.println("🔄 Esquivas restauradas: " + esquivasRestantes + "/" + esquivasMaximas);
     }
 
     @Override
@@ -96,22 +119,17 @@ public class Capoeirista extends Personagem {
         energiaGinga = energiaMaxima;
     }
 
-    /**
-     * ATAQUE NORMAL: GINGA BÁSICA (sem custo)
-     */
+    // ============ ATAQUES ============
+
     public int ataqueNormal(Inimigo alvo) {
         int dano = ataque + random.nextInt(10) + 5;
         System.out.println("🔄 GINGA BÁSICA! " + dano + " de dano!");
         alvo.tomarDano(dano);
 
-        // Recupera um pouco de ginga
         energiaGinga = Math.min(energiaMaxima, energiaGinga + 5);
         return dano;
     }
 
-    /**
-     * ATAQUE DIFÍCIL: MOVIMENTOS ACROBÁTICOS (custa 20 de ginga)
-     */
     public int ataqueDificil(Inimigo alvo) {
         if (!consumirEnergiaGinga(20)) {
             System.out.println("❌ Ginga insuficiente! (Precisa de 20, tem " + energiaGinga + ")");
@@ -133,7 +151,6 @@ public class Capoeirista extends Personagem {
         System.out.println(movimento + " 💥 " + dano + " de dano!");
         alvo.tomarDano(dano);
 
-        // 30% de chance de bônus
         if (random.nextDouble() < 0.3) {
             int bonus = random.nextInt(10) + 5;
             System.out.println("🎯 GOLPE PRECISO! +" + bonus + " de dano extra!");
@@ -144,9 +161,6 @@ public class Capoeirista extends Personagem {
         return dano;
     }
 
-    /**
-     * ATAQUE MUITO DIFÍCIL: SEQUÊNCIA COMBINADA (custa 40 de ginga)
-     */
     public int ataqueCombinado(Inimigo alvo) {
         if (!consumirEnergiaGinga(40)) {
             System.out.println("❌ Ginga insuficiente! (Precisa de 40, tem " + energiaGinga + ")");
@@ -166,7 +180,7 @@ public class Capoeirista extends Personagem {
         System.out.println("   " + combinacoes[random.nextInt(combinacoes.length)]);
 
         int danoTotal = 0;
-        int golpes = 3 + random.nextInt(2); // 3-4 golpes
+        int golpes = 3 + random.nextInt(2);
 
         for (int i = 0; i < golpes; i++) {
             int danoGolpe = 8 + random.nextInt(12);
@@ -175,16 +189,12 @@ public class Capoeirista extends Personagem {
             danoTotal += danoGolpe;
         }
 
-        // Dano final baseado no ataque
         int danoFinal = ataque + danoTotal;
         System.out.println("🎯 TOTAL COMBINADO: " + danoFinal + " de dano!");
 
         return danoFinal;
     }
 
-    /**
-     * ESQUIVA: DESVIO DE GOLPE
-     */
     public boolean executarEsquiva(Inimigo inimigo) {
         if (!usarEsquiva()) {
             System.out.println("❌ Sem esquivas disponíveis! (" + esquivasRestantes + "/" + esquivasMaximas + ")");
@@ -195,14 +205,12 @@ public class Capoeirista extends Personagem {
 
         System.out.println("🔄 ESQUIVA DE CAPOEIRA! Você desvia do ataque!");
 
-        // 40% de chance de contra-ataque
         if (random.nextDouble() < 0.4) {
             int contraAtaque = ataque / 2 + random.nextInt(10);
             System.out.println("⚡ CONTRA-ATAQUE! " + contraAtaque + " de dano!");
             inimigo.tomarDano(contraAtaque);
         }
 
-        // Recupera um pouco de ginga
         energiaGinga = Math.min(energiaMaxima, energiaGinga + 10);
 
         return true;
@@ -211,7 +219,6 @@ public class Capoeirista extends Personagem {
     @Override
     public void usarHabilidadeEspecial(Personagem alvo) {
         System.out.println("🥋 " + nome + " usa JOGO DE CAPOEIRA!");
-        // Não implementado na rota secreta
     }
 
     @Override
