@@ -19,7 +19,7 @@ public class BesouroManganga extends Inimigo {
         );
         this.faseAtual = 1;
         this.invulneravel = false;
-        this.defesaBase = 10; // Defesa inicial
+        this.defesaBase = 20; // Defesa inicial
         this.random = new Random();
 
         this.frases = new String[] {
@@ -32,17 +32,13 @@ public class BesouroManganga extends Inimigo {
         };
 
         this.movimentosPorFase = new String[] {
-                // Fase 1
                 "💨 VOOS RASANTES - Ataques rápidos como o inseto",
-                // Fase 2
                 "🛡️ CORPO FECHADO - Invulnerável a ataques normais e defesa aumentada",
-                // Fase 3
                 "⚡ VINGANÇA DO BESOURO - Dobro de dano, metade da defesa"
         };
     }
 
     public int getFaseAtual() { return faseAtual; }
-    public boolean isInvulneravel() { return invulneravel; }
     public String getFrase() { return frases[random.nextInt(frases.length)]; }
 
     @Override
@@ -59,13 +55,13 @@ public class BesouroManganga extends Inimigo {
         switch (faseAtual) {
             case 2:
                 invulneravel = true;
-                defesaBase = 40; // Aumenta a defesa na fase 2 (era 10)
+                defesaBase = 65;
                 System.out.println("   🛡️ CORPO FECHADO! Imune a ataques normais!");
                 System.out.println("   🛡️ Defesa aumentada para " + defesaBase + "!");
                 break;
             case 3:
                 invulneravel = false;
-                defesaBase = 5; // Reduz a defesa na fase 3 (metade da defesa original)
+                defesaBase = 10;
                 System.out.println("   ⚡ FÚRIA DO BESOURO! Dano dobrado, mas defesa reduzida para " + defesaBase + "!");
                 break;
         }
