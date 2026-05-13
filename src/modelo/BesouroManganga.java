@@ -5,6 +5,7 @@ import java.util.Random;
 public class BesouroManganga extends Inimigo {
     private int faseAtual;
     private boolean invulneravel;
+    private int defesaBase;
     private Random random;
     private String[] frases;
     private String[] movimentosPorFase;
@@ -18,6 +19,7 @@ public class BesouroManganga extends Inimigo {
         );
         this.faseAtual = 1;
         this.invulneravel = false;
+        this.defesaBase = 10; // Defesa inicial
         this.random = new Random();
 
         this.frases = new String[] {
@@ -33,7 +35,7 @@ public class BesouroManganga extends Inimigo {
                 // Fase 1
                 "💨 VOOS RASANTES - Ataques rápidos como o inseto",
                 // Fase 2
-                "🛡️ CORPO FECHADO - Invulnerável a ataques normais",
+                "🛡️ CORPO FECHADO - Invulnerável a ataques normais e defesa aumentada",
                 // Fase 3
                 "⚡ VINGANÇA DO BESOURO - Dobro de dano, metade da defesa"
         };
@@ -42,6 +44,11 @@ public class BesouroManganga extends Inimigo {
     public int getFaseAtual() { return faseAtual; }
     public boolean isInvulneravel() { return invulneravel; }
     public String getFrase() { return frases[random.nextInt(frases.length)]; }
+
+    @Override
+    public int getDefesa() {
+        return defesaBase;
+    }
 
     public void avancarFase() {
         faseAtual++;
@@ -52,11 +59,14 @@ public class BesouroManganga extends Inimigo {
         switch (faseAtual) {
             case 2:
                 invulneravel = true;
+                defesaBase = 40; // Aumenta a defesa na fase 2 (era 10)
                 System.out.println("   🛡️ CORPO FECHADO! Imune a ataques normais!");
+                System.out.println("   🛡️ Defesa aumentada para " + defesaBase + "!");
                 break;
             case 3:
                 invulneravel = false;
-                System.out.println("   ⚡ FÚRIA DO BESOURO! Dano dobrado!");
+                defesaBase = 5; // Reduz a defesa na fase 3 (metade da defesa original)
+                System.out.println("   ⚡ FÚRIA DO BESOURO! Dano dobrado, mas defesa reduzida para " + defesaBase + "!");
                 break;
         }
     }
@@ -73,6 +83,7 @@ public class BesouroManganga extends Inimigo {
             System.out.println("💢 CORPO ABERTO! Toma 50% mais dano!");
         }
 
+        // Aplica a defesa normalmente (já está implementada na classe Inimigo)
         super.tomarDano(danoBruto);
 
         double porcentagemVida = (double) getVida() / getVidaMax();
@@ -86,8 +97,16 @@ public class BesouroManganga extends Inimigo {
 
     @Override
     public void mostrarStatus() {
+        double reducao = (double) getDefesa() / (getDefesa() + 50);
+        int percentualReducao = (int)(reducao * 100);
+
         System.out.println("🦗 " + getNome() + " - O LENDÁRIO CAPOEIRISTA 🦗");
         System.out.println("   Fase " + faseAtual + "/3: " + movimentosPorFase[faseAtual - 1]);
-        super.mostrarStatus();
+        System.out.println("   ❤️ Vida: " + getVida() + "/" + getVidaMax());
+        System.out.println("   ⚔️ Ataque: " + getAtaque());
+        System.out.println("   🛡️ Defesa: " + getDefesa() + " (reduz " + percentualReducao + "% do dano)");
+        if (invulneravel) {
+            System.out.println("   🔮 CORPO FECHADO ATIVO! Imune a ataques com menos de 50 de dano!");
+        }
     }
 }

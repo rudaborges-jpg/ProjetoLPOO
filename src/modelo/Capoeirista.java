@@ -33,25 +33,19 @@ public class Capoeirista extends Personagem implements AtributoEspecial {
 
     // ============ GETTERS ============
 
-    public int getEnergiaGinga() {
-        return energiaGinga;
-    }
-
-    public int getEnergiaMaxima() {
-        return energiaMaxima;
-    }
-
-    public int getEsquivasRestantes() {
-        return esquivasRestantes;
-    }
-
-    public int getEsquivasMaximas() {
-        return esquivasMaximas;
-    }
+    public int getEnergiaGinga() { return energiaGinga; }
+    public int getEnergiaMaxima() { return energiaMaxima; }
+    public int getEsquivasRestantes() { return esquivasRestantes; }
+    public int getEsquivasMaximas() { return esquivasMaximas; }
 
     // ============ MÉTODOS DE GINGA ============
 
     public boolean consumirEnergiaGinga(int quantidade) {
+        if (quantidade < 0) {
+            // Valores negativos significam RECUPERAR ginga
+            energiaGinga = Math.min(energiaMaxima, energiaGinga - quantidade);
+            return true;
+        }
         if (energiaGinga >= quantidade) {
             energiaGinga -= quantidade;
             return true;
@@ -71,28 +65,25 @@ public class Capoeirista extends Personagem implements AtributoEspecial {
         esquivasRestantes = esquivasMaximas;
     }
 
-    public void recarregarEsquivasParcialmente(int quantidade) {
-        esquivasRestantes = Math.min(esquivasMaximas, esquivasRestantes + quantidade);
-    }
-
     public void recarregarTotalmente() {
         energiaGinga = energiaMaxima;
         recarregarEsquivas();
         System.out.println("🌀 Ginga e esquivas totalmente restauradas!");
     }
 
-    // ============ EVOLUÇÃO ============
+    // ============ EVOLUÇÃO (CORRIGIDA) ============
 
     public void evoluirTitulo(int estagio) {
         if (estagio < 1 || estagio > 10) return;
 
         this.nome = titulos[estagio - 1];
 
-        int aumentoVida = 25;
+        // ✅ CORRIGIDO: Valores alinhados com personagens normais
+        int aumentoVida = 35;     // era 25, agora alinhado com levelUp (40)
         vidaMax += aumentoVida;
         vida = vidaMax;
-        ataque += 4;
-        defesa += 2;
+        ataque += 5;              // era 4, agora alinhado com levelUp (5)
+        defesa += 3;              // era 2, agora alinhado com levelUp (3)
         energiaMaxima += 15;
         energiaGinga = energiaMaxima;
         esquivasMaximas++;
@@ -125,7 +116,6 @@ public class Capoeirista extends Personagem implements AtributoEspecial {
         int dano = ataque + random.nextInt(10) + 5;
         System.out.println("🔄 GINGA BÁSICA! " + dano + " de dano!");
         alvo.tomarDano(dano);
-
         energiaGinga = Math.min(energiaMaxima, energiaGinga + 5);
         return dano;
     }
@@ -180,7 +170,7 @@ public class Capoeirista extends Personagem implements AtributoEspecial {
         System.out.println("   " + combinacoes[random.nextInt(combinacoes.length)]);
 
         int danoTotal = 0;
-        int golpes = 3 + random.nextInt(2);
+        int golpes = 3 + random.nextInt(2); // 3 ou 4 golpes
 
         for (int i = 0; i < golpes; i++) {
             int danoGolpe = 8 + random.nextInt(12);
@@ -212,9 +202,10 @@ public class Capoeirista extends Personagem implements AtributoEspecial {
         }
 
         energiaGinga = Math.min(energiaMaxima, energiaGinga + 10);
-
         return true;
     }
+
+    // ============ HABILIDADE ESPECIAL ============
 
     @Override
     public void usarHabilidadeEspecial(Personagem alvo) {
@@ -231,19 +222,7 @@ public class Capoeirista extends Personagem implements AtributoEspecial {
         return "Estilos de luta: Normal, Difícil, Combinado e Esquiva";
     }
 
-    @Override
-    public void mostrarStatus() {
-        double reducao = (double) defesa / (defesa + 50);
-        int percentualReducao = (int)(reducao * 100);
-
-        System.out.println("\n👤 " + nome + " (Nv." + nivel + ")");
-        System.out.println("   ❤️ Vida: " + vida + "/" + vidaMax);
-        System.out.println("   ⚔️ Ataque: " + ataque);
-        System.out.println("   🛡️ Defesa: " + defesa + " (reduz " + percentualReducao + "% do dano)");
-        System.out.println("   🌀 Energia da Ginga: " + energiaGinga + "/" + energiaMaxima);
-        System.out.println("   🔄 Esquivas: " + esquivasRestantes + "/" + esquivasMaximas);
-    }
-    // ============ IMPLEMENTAÇÃO DE AtributoEspecial ============
+    // ============ ATRIBUTO ESPECIAL ============
 
     @Override
     public String getNomeAtributo() {
@@ -279,5 +258,20 @@ public class Capoeirista extends Personagem implements AtributoEspecial {
     public void recarregarCompletamente() {
         energiaGinga = energiaMaxima;
         recarregarEsquivas();
+    }
+
+    // ============ MOSTRAR STATUS ============
+
+    @Override
+    public void mostrarStatus() {
+        double reducao = (double) defesa / (defesa + 50);
+        int percentualReducao = (int)(reducao * 100);
+
+        System.out.println("\n👤 " + nome + " (Nv." + nivel + ")");
+        System.out.println("   ❤️ Vida: " + vida + "/" + vidaMax);
+        System.out.println("   ⚔️ Ataque: " + ataque);
+        System.out.println("   🛡️ Defesa: " + defesa + " (reduz " + percentualReducao + "% do dano)");
+        System.out.println("   🌀 Energia da Ginga: " + energiaGinga + "/" + energiaMaxima);
+        System.out.println("   🔄 Esquivas: " + esquivasRestantes + "/" + esquivasMaximas);
     }
 }
