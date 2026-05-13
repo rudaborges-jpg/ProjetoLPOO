@@ -379,6 +379,12 @@ public class GerenciadorRodaCapoeira {
 
     // ============ LOOP DE BATALHA COM TODAS AS MECÂNICAS ============
 
+    // Dentro do GerenciadorRodaCapoeira.java, substitua o método batalhaDeCapoeira:
+
+    /**
+     * Loop principal de batalha da Roda de Capoeira
+     * Agora com temporizador integrado!
+     */
     private boolean batalhaDeCapoeira(Inimigo inimigo, boolean ehChefao) {
         Capoeirista capoeirista = (Capoeirista) jogador.getPersonagem();
         int rodada = 0;
@@ -404,7 +410,7 @@ public class GerenciadorRodaCapoeira {
                 inimigo.mostrarStatus();
             }
 
-            // ===== MENU DE ATAQUE =====
+            // ===== MENU DE ATAQUE (SEM TEMPO - escolha estratégica) =====
             int escolhaAtaque = mostrarMenuAtaqueSemTempo();
 
             // ===== ESQUIVA NÃO TEM PERGUNTA =====
@@ -414,13 +420,10 @@ public class GerenciadorRodaCapoeira {
 
                 if (esquivou) {
                     System.out.println("   ✨ Você desviou com elegância!");
-                    // A Esquiva já recupera +10 no método do Capoeirista
-                    // Adiciona mais +5 de bônus
                     capoeirista.consumirEnergiaGinga(-5);
                     System.out.println("   🌀 +5 de Ginga bônus!");
                 }
 
-                // Contador reseta ao usar esquiva
                 contadorAtaquesBasicos = 0;
 
                 if (!inimigo.vivo()) {
@@ -453,13 +456,69 @@ public class GerenciadorRodaCapoeira {
             System.out.println("   Estágio: " + estagioAtual + " | Multiplicador: ×" + (estagioAtual / 3 + 1));
             pergunta.exibir();
 
+            // ===== 🆕 TEMPORIZADOR - VERSÃO CORRIGIDA =====
+// Determina o tempo baseado na dificuldade
+            int tempoMaximo;
+            String nomeDificuldade;
+
+            switch (dificuldade) {
+                case FACIL:
+                    tempoMaximo = 15;
+                    nomeDificuldade = "⭐ FÁCIL";
+                    break;
+                case MEDIO:
+                    tempoMaximo = 12;
+                    nomeDificuldade = "⭐⭐ MÉDIO";
+                    break;
+                case DIFICIL:
+                    tempoMaximo = 10;
+                    nomeDificuldade = "⭐⭐⭐ DIFÍCIL";
+                    break;
+                default:
+                    tempoMaximo = 15;
+                    nomeDificuldade = "⭐ FÁCIL";
+            }
+
+// Ajuste para chefão (mais difícil)
+            if (ehChefao) {
+                tempoMaximo = 8;
+                System.out.println("🦗 CHEFÃO! Tempo reduzido para " + tempoMaximo + " segundos!");
+            }
+
+            System.out.println("📚 Pergunta de Capoeira [" + nomeDificuldade + "]");
+            System.out.println("⏱️  Você tem " + tempoMaximo + " segundos para responder!");
+            System.out.println("=".repeat(40));
+            pergunta.exibir();
+
+// Lê a resposta com temporizador
             String resposta;
             if (pergunta instanceof PerguntaCompletarLacuna) {
-                System.out.print("\n✏️  Digite sua resposta: ");
-                resposta = scanner.nextLine().trim();
+                resposta = TemporizadorResposta.lerComTempo(scanner, "\n✏️  Digite sua resposta: ", tempoMaximo);
             } else {
-                System.out.print("\n✏️  Sua resposta: ");
-                resposta = scanner.nextLine().trim().toUpperCase();
+                resposta = TemporizadorResposta.lerComTempo(scanner, "\n✏️  Sua resposta: ", tempoMaximo);
+            }
+
+// Verifica se o tempo esgotou
+            boolean tempoEsgotado = resposta.equals("TEMPO_ESGOTADO");
+            if (tempoEsgotado) {
+                System.out.println("\n⏰ TEMPO ESGOTADO! Você perdeu a chance de atacar!");
+                System.out.println("💢 " + inimigo.getNome() + " se aproveita da sua hesitação!");
+
+                // O inimigo ataca com dano reduzido (não é erro de conhecimento)
+                int danoInimigo = (int)(calcularDanoInimigo(inimigo, ehChefao) * 0.7);
+                System.out.println("⚡ " + inimigo.getNome() + " te acerta causando " + danoInimigo + " de dano!");
+                jogador.tomarDano(danoInimigo);
+
+                vezesSemTempo++;
+                contadorAtaquesBasicos = 0;
+
+                if (!jogador.vivo()) {
+                    return false;
+                }
+
+                System.out.print("\n⏭️  Pressione ENTER para próxima rodada...");
+                scanner.nextLine();
+                continue;
             }
 
             // ===== AVALIA RESPOSTA =====
@@ -469,7 +528,7 @@ public class GerenciadorRodaCapoeira {
             if (acertou) {
                 perguntasCertas++;
 
-                // 🆕 Verifica se o inimigo vai esquivar (padrão de ataques básicos)
+                // Verifica se o inimigo vai esquivar (padrão de ataques básicos)
                 if (inimigoVaiEsquivar(escolhaAtaque, inimigo)) {
                     executarEsquivaInimigo(inimigo, ehChefao);
 
@@ -484,23 +543,17 @@ public class GerenciadorRodaCapoeira {
                     int danoBase = executarAtaqueComDano(escolhaAtaque, capoeirista, inimigo);
                     int danoFinal = calcularDanoEscalado(danoBase, dificuldade);
 
-                    System.out.println("💥 DANO ESCALADO: " + danoBase + " → " + danoFinal + " (Estágio " + estagioAtual + ")");
+                    System.out.println("💥 DANO ESCALADO: " + danoBase + " → " + danoFinal +
+                            " (Estágio " + estagioAtual + ")");
                     inimigo.tomarDano(danoFinal);
 
-                    // 🆕 Recarga de Ginga balanceada
+                    // Recarga de Ginga balanceada
                     int recargaGinga;
                     switch (escolhaAtaque) {
-                        case 1: // Ataque Básico
-                            recargaGinga = 15;
-                            break;
-                        case 2: // Ataque Difícil
-                            recargaGinga = 10;
-                            break;
-                        case 3: // Combinação Mortal
-                            recargaGinga = 5;
-                            break;
-                        default:
-                            recargaGinga = 10;
+                        case 1: recargaGinga = 15; break;  // Ataque Básico
+                        case 2: recargaGinga = 10; break;  // Ataque Difícil
+                        case 3: recargaGinga = 5;  break;  // Combinação Mortal
+                        default: recargaGinga = 10;
                     }
 
                     capoeirista.consumirEnergiaGinga(-recargaGinga);
@@ -509,30 +562,23 @@ public class GerenciadorRodaCapoeira {
 
             } else {
                 perguntasErradas++;
-                contadorAtaquesBasicos = 0; // 🆕 Reseta contador ao errar
+                contadorAtaquesBasicos = 0;
 
                 System.out.println("\n❌ ERRADO!");
-
-                // Feedback da resposta correta
-                if (pergunta instanceof PerguntaMultiplaEscolha) {
-                    PerguntaMultiplaEscolha multipla = (PerguntaMultiplaEscolha) pergunta;
-                    System.out.println("   Resposta correta: " + multipla.getLetraCorreta() + ") " +
-                            pergunta.getRespostaCorreta());
-                } else if (pergunta instanceof PerguntaVerdadeiroFalso) {
-                    System.out.println("   Resposta correta: " + pergunta.getRespostaCorreta());
-                } else {
-                    System.out.println("   Resposta correta: " + pergunta.getRespostaCorreta());
-                }
+                System.out.println("   Resposta correta: " +
+                        AvaliadorRespostas.getRespostaCorretaFormatada(pergunta));
 
                 // Inimigo contra-ataca
                 int danoInimigo = calcularDanoInimigo(inimigo, ehChefao);
-                System.out.println("💢 " + inimigo.getNome() + " contra-ataca causando " + danoInimigo + " de dano!");
+                System.out.println("💢 " + inimigo.getNome() + " contra-ataca causando " +
+                        danoInimigo + " de dano!");
                 jogador.tomarDano(danoInimigo);
 
                 // 20% de chance de golpe especial
                 if (random.nextDouble() < 0.2) {
                     int danoExtra = (int)(danoInimigo * 0.5);
-                    System.out.println("⚡ " + inimigo.getNome() + " usa GOLPE ESPECIAL! +" + danoExtra + " de dano!");
+                    System.out.println("⚡ " + inimigo.getNome() + " usa GOLPE ESPECIAL! +" +
+                            danoExtra + " de dano!");
                     jogador.tomarDano(danoExtra);
                 }
             }
