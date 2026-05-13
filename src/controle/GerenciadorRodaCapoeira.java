@@ -134,6 +134,7 @@ public class GerenciadorRodaCapoeira {
         System.out.println("   📚 Ataque Básico     → Pergunta FÁCIL");
         System.out.println("   💫 Ataque Difícil    → Pergunta MÉDIA");
         System.out.println("   🔥 Combinação Mortal → Pergunta DIFÍCIL");
+        System.out.println("   🌀 Esquiva           → SEM pergunta (desvia do ataque)");
         System.out.println("   ⏱️  10 segundos para responder cada pergunta!");
         System.out.println("   ❌ Se o tempo acabar, o inimigo ataca!");
         System.out.println("=".repeat(60));
@@ -211,7 +212,7 @@ public class GerenciadorRodaCapoeira {
         return batalhaDeCapoeira(mestre, false);
     }
 
-    // ============ LOOP DE BATALHA ============
+    // ============ LOOP DE BATALHA (CORRIGIDO) ============
 
     private boolean batalhaDeCapoeira(Inimigo inimigo, boolean ehChefao) {
         Capoeirista capoeirista = (Capoeirista) jogador.getPersonagem();
@@ -238,10 +239,42 @@ public class GerenciadorRodaCapoeira {
                 inimigo.mostrarStatus();
             }
 
-            // ===== MENU DE ATAQUE (SEM TEMPO) =====
+            // ===== MENU DE ATAQUE =====
             int escolhaAtaque = mostrarMenuAtaqueSemTempo();
 
-            // Determina dificuldade baseada no ataque escolhido
+            // ===== CORREÇÃO: ESQUIVA NÃO TEM PERGUNTA =====
+            if (escolhaAtaque == 4) {
+                // Esquiva é executada diretamente, sem pergunta
+                System.out.println("\n🌀 ESQUIVA DE CAPOEIRA!");
+                boolean esquivou = capoeirista.executarEsquiva(inimigo);
+
+                if (esquivou) {
+                    System.out.println("   ✨ Você desviou com elegância!");
+                    // Recupera um pouco de ginga
+                    capoeirista.consumirEnergiaGinga(-5);
+                    System.out.println("   🌀 +5 de Ginga recuperada!");
+                }
+
+                // Pula o resto da rodada (sem pergunta, sem ataque inimigo)
+                if (!inimigo.vivo()) {
+                    // Se a esquiva matou o inimigo (contra-ataque)
+                    System.out.println("\n💀 " + inimigo.getNome() + " FOI DERROTADO!");
+                    int bonus = estagioAtual * 35;
+                    pontuacaoTotal += bonus;
+                    jogador.addPontuacao(bonus);
+                    System.out.println("🏆 +" + bonus + " pontos! Total: " + pontuacaoTotal);
+                    return true;
+                }
+
+                // Pequena pausa
+                if (inimigo.vivo() && jogador.vivo()) {
+                    System.out.print("\n⏭️  Pressione ENTER para próxima rodada...");
+                    scanner.nextLine();
+                }
+                continue; // Pula o resto do loop
+            }
+
+            // Para ataques 1, 2 e 3: determina dificuldade
             Dificuldade dificuldade = getDificuldadePorAtaque(escolhaAtaque);
 
             // Obtém pergunta de capoeira
@@ -259,17 +292,15 @@ public class GerenciadorRodaCapoeira {
 
             String resposta;
             if (pergunta instanceof PerguntaCompletarLacuna) {
-                resposta = TemporizadorResposta.lerComTempo(scanner, "\n✏️  Digite sua resposta: ");
+                System.out.print("\n✏️  Digite sua resposta: ");
+                resposta = scanner.nextLine().trim();
             } else {
-                resposta = TemporizadorResposta.lerComTempo(scanner, "\n✏️  Sua resposta: ");
+                System.out.print("\n✏️  Sua resposta: ");
+                resposta = scanner.nextLine().trim().toUpperCase();
             }
 
-            boolean acertou = false;
-            boolean tempoEsgotado = resposta.equals("TEMPO_ESGOTADO");
-
-            if (!tempoEsgotado) {
-                acertou = AvaliadorRespostas.avaliar(pergunta, resposta);
-            }
+            // ===== CORREÇÃO: AVALIAÇÃO DE RESPOSTA =====
+            boolean acertou = AvaliadorRespostas.avaliar(pergunta, resposta);
 
             // ===== PROCESSAR RESULTADO =====
             if (acertou) {
@@ -280,16 +311,21 @@ public class GerenciadorRodaCapoeira {
                 executarAtaque(escolhaAtaque, capoeirista, inimigo);
 
                 // Bônus de ginga por acertar
-                capoeirista.consumirEnergiaGinga(-10); // Recupera 10 de ginga
+                capoeirista.consumirEnergiaGinga(-10);
                 System.out.println("🌀 +10 de Ginga recuperada!");
 
             } else {
-                if (tempoEsgotado) {
-                    vezesSemTempo++;
-                    System.out.println("\n⏰ TEMPO ESGOTADO!");
+                perguntasErradas++;
+                System.out.println("\n❌ ERRADO!");
+
+                // Mostra a resposta correta para feedback
+                if (pergunta instanceof PerguntaMultiplaEscolha) {
+                    PerguntaMultiplaEscolha multipla = (PerguntaMultiplaEscolha) pergunta;
+                    System.out.println("   Resposta correta: " + multipla.getLetraCorreta() + ") " +
+                            pergunta.getRespostaCorreta());
+                } else if (pergunta instanceof PerguntaVerdadeiroFalso) {
+                    System.out.println("   Resposta correta: " + pergunta.getRespostaCorreta());
                 } else {
-                    perguntasErradas++;
-                    System.out.println("\n❌ ERRADO!");
                     System.out.println("   Resposta correta: " + pergunta.getRespostaCorreta());
                 }
 
@@ -298,8 +334,8 @@ public class GerenciadorRodaCapoeira {
                 System.out.println("💢 " + inimigo.getNome() + " contra-ataca causando " + danoInimigo + " de dano!");
                 jogador.tomarDano(danoInimigo);
 
-                // Chance do inimigo usar habilidade especial
-                if (random.nextDouble() < 0.2) { // 20% de chance
+                // Chance do inimigo usar habilidade especial (20%)
+                if (random.nextDouble() < 0.2) {
                     int danoExtra = (int)(danoInimigo * 0.5);
                     System.out.println("⚡ " + inimigo.getNome() + " usa GOLPE ESPECIAL! +" + danoExtra + " de dano!");
                     jogador.tomarDano(danoExtra);
@@ -427,16 +463,10 @@ public class GerenciadorRodaCapoeira {
 
     private Dificuldade getDificuldadePorAtaque(int escolhaAtaque) {
         switch (escolhaAtaque) {
-            case 1: // Ginga Básica → Fácil
-                return Dificuldade.FACIL;
-            case 2: // Ataque Difícil → Médio
-                return Dificuldade.MEDIO;
-            case 3: // Combinação Mortal → Difícil
-                return Dificuldade.DIFICIL;
-            case 4: // Esquiva → Não tem pergunta (retorna fácil como fallback)
-                return Dificuldade.FACIL;
-            default:
-                return Dificuldade.FACIL;
+            case 1: return Dificuldade.FACIL;
+            case 2: return Dificuldade.MEDIO;
+            case 3: return Dificuldade.DIFICIL;
+            default: return Dificuldade.FACIL;
         }
     }
 
@@ -452,7 +482,6 @@ public class GerenciadorRodaCapoeira {
     // ============ EXECUTAR ATAQUE ============
 
     private void executarAtaque(int escolha, Capoeirista cap, Inimigo inimigo) {
-        // Pequena animação
         System.out.print("\n💨 Preparando golpe");
         for (int i = 0; i < 3; i++) {
             try {
@@ -480,14 +509,6 @@ public class GerenciadorRodaCapoeira {
                 System.out.println("\n🔥 COMBINAÇÃO MORTAL!");
                 cap.ataqueCombinado(inimigo);
                 break;
-
-            case 4:
-                System.out.println("\n🌀 ESQUIVA DE CAPOEIRA!");
-                boolean esquivou = cap.executarEsquiva(inimigo);
-                if (esquivou) {
-                    System.out.println("   ✨ Você desviou com elegância!");
-                }
-                break;
         }
     }
 
@@ -496,13 +517,11 @@ public class GerenciadorRodaCapoeira {
     private int calcularDanoInimigo(Inimigo inimigo, boolean ehChefao) {
         int danoBase = inimigo.getAtaque();
 
-        // Chefão na fase 3 causa dano dobrado
         if (ehChefao && besouro.getFaseAtual() == 3) {
             danoBase *= 2;
             System.out.println("⚡ FÚRIA DO BESOURO! Dano dobrado!");
         }
 
-        // Variação de ±30%
         int variacao = random.nextInt((int)(danoBase * 0.6)) - (int)(danoBase * 0.3);
         int danoFinal = danoBase + variacao;
 
@@ -552,11 +571,9 @@ public class GerenciadorRodaCapoeira {
         System.out.println("📊 Perguntas Respondidas: " + (perguntasCertas + perguntasErradas));
         System.out.println("✅ Acertos: " + perguntasCertas);
         System.out.println("❌ Erros: " + perguntasErradas);
-        System.out.println("⏰ Tempo Esgotado: " + vezesSemTempo);
 
-        if (perguntasCertas + perguntasErradas + vezesSemTempo > 0) {
-            int totalTentativas = perguntasCertas + perguntasErradas + vezesSemTempo;
-            double aproveitamento = (double) perguntasCertas / totalTentativas * 100;
+        if (perguntasCertas + perguntasErradas > 0) {
+            double aproveitamento = (double) perguntasCertas / (perguntasCertas + perguntasErradas) * 100;
             System.out.println("📈 Aproveitamento: " + String.format("%.1f", aproveitamento) + "%");
         }
 
@@ -568,7 +585,7 @@ public class GerenciadorRodaCapoeira {
         System.out.println("   ❤️ Vida Final: " + c.getVida() + "/" + c.getVidaMax());
         System.out.println("   ⚔️ Ataque: " + c.getAtaque());
         System.out.println("   🛡️ Defesa: " + c.getDefesa());
-        System.out.println("   🌀 Ginga Máxima: " + c.getEnergiaGinga());
+        System.out.println("   🌀 Ginga Máxima: " + c.getEnergiaMaxima());
         System.out.println("   🦗 Enfrentou o Besouro: " + (estagioAtual >= 10 ? "SIM 👑" : "NÃO"));
 
         System.out.println("\n🎵 O berimbau continuará tocando...");
