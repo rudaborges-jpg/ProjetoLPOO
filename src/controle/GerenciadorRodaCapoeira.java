@@ -451,46 +451,45 @@ public class GerenciadorRodaCapoeira {
             }
 
             // ===== EXIBE PERGUNTA =====
-            System.out.println("\n📚 PERGUNTA DE CAPOEIRA:");
-            System.out.println("   Dificuldade: " + getNomeDificuldade(dificuldade));
-            System.out.println("   Estágio: " + estagioAtual + " | Multiplicador: ×" + (estagioAtual / 3 + 1));
-            pergunta.exibir();
+            System.out.println("\n" + "=".repeat(50));
+            System.out.println("📚 PERGUNTA DE CAPOEIRA");
 
-            // ===== 🆕 TEMPORIZADOR - VERSÃO CORRIGIDA =====
 // Determina o tempo baseado na dificuldade
             int tempoMaximo;
             String nomeDificuldade;
 
             switch (dificuldade) {
                 case FACIL:
-                    tempoMaximo = 15;
+                    tempoMaximo = TemporizadorResposta.TEMPO_FACIL;
                     nomeDificuldade = "⭐ FÁCIL";
                     break;
                 case MEDIO:
-                    tempoMaximo = 12;
+                    tempoMaximo = TemporizadorResposta.TEMPO_MEDIO;
                     nomeDificuldade = "⭐⭐ MÉDIO";
                     break;
                 case DIFICIL:
-                    tempoMaximo = 10;
+                    tempoMaximo = TemporizadorResposta.TEMPO_DIFICIL;
                     nomeDificuldade = "⭐⭐⭐ DIFÍCIL";
                     break;
                 default:
-                    tempoMaximo = 15;
+                    tempoMaximo = TemporizadorResposta.TEMPO_PADRAO;
                     nomeDificuldade = "⭐ FÁCIL";
             }
 
-// Ajuste para chefão (mais difícil)
+// Ajuste para chefão
             if (ehChefao) {
-                tempoMaximo = 8;
-                System.out.println("🦗 CHEFÃO! Tempo reduzido para " + tempoMaximo + " segundos!");
+                tempoMaximo = TemporizadorResposta.TEMPO_CHEFAO;
+                System.out.println("🦗 CHEFÃO! Tempo reduzido!");
             }
 
-            System.out.println("📚 Pergunta de Capoeira [" + nomeDificuldade + "]");
-            System.out.println("⏱️  Você tem " + tempoMaximo + " segundos para responder!");
-            System.out.println("=".repeat(40));
+            System.out.println("   Dificuldade: " + nomeDificuldade);
+            System.out.println("   Estágio: " + estagioAtual);
+            System.out.println("   ⏱️  Tempo: " + tempoMaximo + " segundos");
+            System.out.println("=".repeat(50));
+
             pergunta.exibir();
 
-// Lê a resposta com temporizador
+// Lê a resposta COM temporizador
             String resposta;
             if (pergunta instanceof PerguntaCompletarLacuna) {
                 resposta = TemporizadorResposta.lerComTempo(scanner, "\n✏️  Digite sua resposta: ", tempoMaximo);
@@ -498,13 +497,18 @@ public class GerenciadorRodaCapoeira {
                 resposta = TemporizadorResposta.lerComTempo(scanner, "\n✏️  Sua resposta: ", tempoMaximo);
             }
 
-// Verifica se o tempo esgotou
+// ===== VERIFICA SE O TEMPO ESGOTOU =====
             boolean tempoEsgotado = resposta.equals("TEMPO_ESGOTADO");
+
             if (tempoEsgotado) {
                 System.out.println("\n⏰ TEMPO ESGOTADO! Você perdeu a chance de atacar!");
                 System.out.println("💢 " + inimigo.getNome() + " se aproveita da sua hesitação!");
 
-                // O inimigo ataca com dano reduzido (não é erro de conhecimento)
+                // ✅ MOSTRA A RESPOSTA CORRETA MESMO NO TIMEOUT
+                System.out.println("📖 Resposta correta: " +
+                        AvaliadorRespostas.getRespostaCorretaFormatada(pergunta));
+
+                // O inimigo ataca com dano reduzido
                 int danoInimigo = (int)(calcularDanoInimigo(inimigo, ehChefao) * 0.7);
                 System.out.println("⚡ " + inimigo.getNome() + " te acerta causando " + danoInimigo + " de dano!");
                 jogador.tomarDano(danoInimigo);
@@ -521,38 +525,35 @@ public class GerenciadorRodaCapoeira {
                 continue;
             }
 
-            // ===== AVALIA RESPOSTA =====
+// ===== AVALIA RESPOSTA =====
             boolean acertou = AvaliadorRespostas.avaliar(pergunta, resposta);
 
-            // ===== PROCESSAR RESULTADO =====
+// ===== PROCESSAR RESULTADO =====
             if (acertou) {
                 perguntasCertas++;
 
                 // Verifica se o inimigo vai esquivar (padrão de ataques básicos)
                 if (inimigoVaiEsquivar(escolhaAtaque, inimigo)) {
                     executarEsquivaInimigo(inimigo, ehChefao);
-
-                    // Recupera um pouco de Ginga mesmo assim (mas menos)
                     capoeirista.consumirEnergiaGinga(-5);
                     System.out.println("🌀 +5 de Ginga recuperada (reduzida)");
 
                 } else {
-                    // Comportamento normal de acerto
                     System.out.println("\n✅ CORRETO! Execute seu golpe!");
 
                     int danoBase = executarAtaqueComDano(escolhaAtaque, capoeirista, inimigo);
                     int danoFinal = calcularDanoEscalado(danoBase, dificuldade);
 
-                    System.out.println("💥 DANO ESCALADO: " + danoBase + " → " + danoFinal +
+                    System.out.println("💥 DANO: " + danoBase + " → " + danoFinal +
                             " (Estágio " + estagioAtual + ")");
                     inimigo.tomarDano(danoFinal);
 
-                    // Recarga de Ginga balanceada
+                    // Recarga de Ginga
                     int recargaGinga;
                     switch (escolhaAtaque) {
-                        case 1: recargaGinga = 15; break;  // Ataque Básico
-                        case 2: recargaGinga = 10; break;  // Ataque Difícil
-                        case 3: recargaGinga = 5;  break;  // Combinação Mortal
+                        case 1: recargaGinga = 15; break;
+                        case 2: recargaGinga = 10; break;
+                        case 3: recargaGinga = 5;  break;
                         default: recargaGinga = 10;
                     }
 
@@ -565,8 +566,15 @@ public class GerenciadorRodaCapoeira {
                 contadorAtaquesBasicos = 0;
 
                 System.out.println("\n❌ ERRADO!");
-                System.out.println("   Resposta correta: " +
+
+                // ✅ CORRIGIDO: Agora mostra a resposta correta formatada
+                System.out.println("   📖 Resposta correta: " +
                         AvaliadorRespostas.getRespostaCorretaFormatada(pergunta));
+
+                // Para perguntas de lacuna, mostra comparação
+                if (pergunta instanceof PerguntaCompletarLacuna) {
+                    System.out.println("   ✏️  Você digitou: \"" + resposta + "\"");
+                }
 
                 // Inimigo contra-ataca
                 int danoInimigo = calcularDanoInimigo(inimigo, ehChefao);

@@ -2,7 +2,16 @@ package controle;
 
 import java.util.Scanner;
 
-
+/**
+ * Temporizador de Respostas - Versão Corrigida
+ *
+ * ✅ Timer NÃO apaga a digitação do usuário
+ * ✅ Feedback visual em linha separada
+ * ✅ Contagem regressiva precisa
+ *
+ * @author Grupo Baquara
+ * @version 6.0 - Corrigida
+ */
 public class TemporizadorResposta {
 
     public static final int TEMPO_FACIL = 15;
@@ -11,132 +20,161 @@ public class TemporizadorResposta {
     public static final int TEMPO_CHEFAO = 8;
     public static final int TEMPO_PADRAO = 10;
 
-
+    /**
+     * Lê uma resposta do usuário com tempo limite
+     * O timer é exibido em uma LINHA SEPARADA para não apagar a digitação
+     */
     public static String lerComTempo(Scanner scanner, String mensagem, int tempoMaximo) {
-        // ===== VALIDAÇÃO DO TEMPO =====
-        if (tempoMaximo <= 0) {
-            System.err.println("⚠️  AVISO: tempoMaximo inválido (" + tempoMaximo + "). Usando padrão: " + TEMPO_PADRAO + "s");
-            tempoMaximo = TEMPO_PADRAO;
-        }
+        if (tempoMaximo <= 0) tempoMaximo = TEMPO_PADRAO;
+        if (tempoMaximo > 60) tempoMaximo = 60;
 
-        if (tempoMaximo > 60) {
-            System.err.println("⚠️  AVISO: tempoMaximo muito alto (" + tempoMaximo + "). Limitando a 60s");
-            tempoMaximo = 60;
-        }
-
-        // ===== EXIBIÇÃO INICIAL =====
+        // Exibe a mensagem de digitação
         System.out.print(mensagem);
         System.out.flush();
 
-        // ===== CONFIGURAÇÃO DO TEMPORIZADOR =====
+        // Guarda a referência do tempo
         long tempoInicio = System.currentTimeMillis();
-        long tempoLimiteMs = tempoMaximo * 1000L; // Converte para milissegundos
-        long tempoLimite = tempoInicio + tempoLimiteMs;
+        long tempoLimite = tempoInicio + (tempoMaximo * 1000L);
 
-        String resposta = null;
-        int ultimoSegundoExibido = tempoMaximo;
+        // Move o cursor para baixo para a linha do timer
+        System.out.println();  // Linha em branco
+        System.out.println();  // Espaço para o timer
+        System.out.print("\033[1A"); // Sobe uma linha
 
-        // ===== LOOP PRINCIPAL =====
-        while (System.currentTimeMillis() < tempoLimite) {
+        // Thread para o timer visual (em linha separada)
+        int finalTempoMaximo = tempoMaximo;
+        Thread timerThread = new Thread(() -> {
             try {
-                long agora = System.currentTimeMillis();
-                long tempoRestanteMs = tempoLimite - agora;
-                int segundosRestantes = (int) Math.ceil(tempoRestanteMs / 1000.0);
+                int ultimoSegundo = finalTempoMaximo;
+                while (System.currentTimeMillis() < tempoLimite) {
+                    long agora = System.currentTimeMillis();
+                    long restanteMs = tempoLimite - agora;
+                    int segundos = (int) Math.ceil(restanteMs / 1000.0);
 
-                // Exibe o timer apenas quando o segundo muda
-                if (segundosRestantes != ultimoSegundoExibido && segundosRestantes >= 0) {
-                    ultimoSegundoExibido = segundosRestantes;
-                    exibirTimer(segundosRestantes, tempoMaximo);
+                    if (segundos != ultimoSegundo && segundos >= 0) {
+                        ultimoSegundo = segundos;
+
+                        // Constrói a barra de progresso
+                        String barra = construirBarraProgresso(segundos, finalTempoMaximo);
+
+                        // Exibe o timer (sem \r - usa println para nova linha)
+                        System.out.print("\033[2K"); // Limpa a linha atual
+                        System.out.print("\r" + barra);
+                        System.out.flush();
+                    }
+
+                    Thread.sleep(200);
                 }
 
-                // Tenta ler do Scanner sem bloquear
+                // Tempo esgotado
+                System.out.print("\033[2K"); // Limpa a linha
+                System.out.println("\r⏰ TEMPO ESGOTADO!                         ");
+                System.out.flush();
+
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+
+        timerThread.setDaemon(true);
+        timerThread.start();
+
+        // Volta o cursor para a linha de digitação
+        System.out.print("\033[1A"); // Sobe para linha da mensagem
+        System.out.print("\033[2K"); // Limpa a linha
+        System.out.print(mensagem);
+        System.out.flush();
+
+        // Lê a resposta do usuário
+        String resposta = null;
+
+        while (System.currentTimeMillis() < tempoLimite && resposta == null) {
+            try {
                 if (System.in.available() > 0) {
                     if (scanner.hasNextLine()) {
                         resposta = scanner.nextLine().trim();
-
-                        // Só aceita se não estiver vazia
                         if (!resposta.isEmpty()) {
                             break;
+                        } else {
+                            resposta = null; // Continua esperando
                         }
                     }
                 }
-
-                // Pequena pausa para não consumir 100% da CPU
                 Thread.sleep(100);
-
-            } catch (InterruptedException e) {
-                // Interrompido, sai do loop
-                Thread.currentThread().interrupt();
-                break;
             } catch (Exception e) {
-                // Erro inesperado na leitura
-                System.err.println("Erro na leitura: " + e.getMessage());
                 break;
             }
         }
 
-        // ===== LIMPEZA DO CONSOLE =====
-        limparLinhaTimer();
+        // Interrompe o timer
+        timerThread.interrupt();
 
-        // ===== VERIFICAÇÃO DO RESULTADO =====
+        // Aguarda um pouco para o timer parar
+        try { Thread.sleep(150); } catch (InterruptedException e) {}
+
+        // Limpa as linhas do timer
+        System.out.print("\033[2K"); // Limpa linha atual
+        System.out.print("\033[1A"); // Sobe
+        System.out.print("\033[2K"); // Limpa
+        System.out.print("\033[1A"); // Sobe
+        System.out.print("\033[2K"); // Limpa
+        System.out.flush();
+
+        // Verifica o resultado
         if (resposta == null || resposta.isEmpty()) {
             System.out.println("\n⏰ TEMPO ESGOTADO! (" + tempoMaximo + " segundos)");
             return "TEMPO_ESGOTADO";
         }
 
         long tempoGasto = (System.currentTimeMillis() - tempoInicio) / 1000;
-        System.out.println("✓ Resposta recebida em " + tempoGasto + " segundos");
+        System.out.println("✅ Resposta registrada em " + tempoGasto + "s");
 
         return resposta;
     }
 
-
-    private static void exibirTimer(int segundosRestantes, int tempoTotal) {
-        // Não mostra timer se já passou do tempo
-        if (segundosRestantes < 0) return;
-
+    /**
+     * Constrói a barra de progresso visual
+     */
+    private static String construirBarraProgresso(int segundosRestantes, int tempoTotal) {
         StringBuilder sb = new StringBuilder();
-        sb.append("\r⏱️  ");
+        sb.append("⏱️  [");
 
-        // Ícone baseado na urgência
-        if (segundosRestantes <= 3) {
-            sb.append("🔴⚠️  ");
-        } else if (segundosRestantes <= 5) {
-            sb.append("🟡⏳ ");
-        } else {
-            sb.append("🟢🕐 ");
-        }
-
-        // Barra de progresso
         int barraLargura = 20;
         double proporcao = (double) segundosRestantes / tempoTotal;
         int preenchido = (int) (proporcao * barraLargura);
 
-        sb.append("[");
         for (int i = 0; i < barraLargura; i++) {
-            sb.append(i < preenchido ? "█" : "░");
+            if (i < preenchido) {
+                sb.append("▓");
+            } else {
+                sb.append("░");
+            }
         }
+
         sb.append("] ");
+        sb.append(segundosRestantes);
+        sb.append("s");
 
-        // Tempo restante
-        sb.append(segundosRestantes).append("s restantes");
+        // Alerta visual quando está acabando
+        if (segundosRestantes <= 3) {
+            sb.append(" ⚠️⚠️⚠️");
+        } else if (segundosRestantes <= 5) {
+            sb.append(" ⚠️");
+        }
 
-        System.out.print(sb.toString());
-        System.out.flush();
+        return sb.toString();
     }
 
-
-    private static void limparLinhaTimer() {
-        System.out.print("\r" + " ".repeat(60) + "\r");
-        System.out.flush();
-    }
-
-
+    /**
+     * Versão com tempo padrão
+     */
     public static String lerComTempo(Scanner scanner, String mensagem) {
         return lerComTempo(scanner, mensagem, TEMPO_PADRAO);
     }
 
-
+    /**
+     * Mostra contagem regressiva antes de começar
+     */
     public static void mostrarContagemRegressiva() {
         System.out.print("\n⏱️  Preparando... ");
         for (int i = 3; i > 0; i--) {
@@ -145,21 +183,9 @@ public class TemporizadorResposta {
                 System.out.flush();
                 Thread.sleep(500);
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
                 break;
             }
         }
         System.out.println("JÁ! 🎯");
-    }
-
-
-    public static int getTempoPorDificuldade(String dificuldade) {
-        switch (dificuldade.toUpperCase()) {
-            case "FACIL":   return TEMPO_FACIL;
-            case "MEDIO":   return TEMPO_MEDIO;
-            case "DIFICIL": return TEMPO_DIFICIL;
-            case "CHEFAO":  return TEMPO_CHEFAO;
-            default:        return TEMPO_PADRAO;
-        }
     }
 }
